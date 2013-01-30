@@ -1,0 +1,11 @@
+:ruby
+  id = params[:id].to_i || 1
+  @note = Note.find(id)
+
+.page-item-list.page-e2
+  .page-notebook-show
+    .header
+      %h1= @note.title
+    .content
+      .desc= @note.desc
+      .link= link_to "词条: #{@note.entry.title}", 'javascript:;'

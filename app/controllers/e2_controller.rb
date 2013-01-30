@@ -1,6 +1,5 @@
 class E2Controller < ApplicationController
   def index
-    id = params[:id] || 1
-    @notebook = Notebook.all[id - 1]
+    id = params[:id].to_i || 1
   end
 end
