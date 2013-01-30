@@ -1,14 +1,11 @@
 @import 'base/mixins';
-@import 'i2';
-@import 'i3';
 
-.page-i1{
+.page-i3{
   .page-web-work-list{
     .header{
 
     }
     .content.web.work{
-
       .left.content{
         float: left;
         width:300px;
@@ -17,8 +14,8 @@
         @include border-radius(15px);
         margin:15px;
 
-        .content{
-          margin: 30px;
+        .work.about{
+          
         }
       }
 
@@ -26,19 +23,13 @@
         float: left;
         margin-left: 100px;
         .work{
-          .header{
 
-          }
-          .content{
-
-          }
         }
         .work.about{
-          margin: 10px;
           margin-top: 40px;
-        }
-        .item{
-          margin-top: 20px;
+          .item{
+            margin-top: 15px;
+          }
         }
       }
     }
