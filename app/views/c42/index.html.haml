@@ -1,3 +1,8 @@
+:ruby
+  entries = Entry.all
+  search_entries = entries[2..5]
+
+
 .page-c42
 
   .top
@@ -7,6 +12,6 @@
     = render "/c41/parts/search"
 
   .page-search-list
-    - Chapter.all.each do |chapter|
+    - search_entries.each do |chapter|
       .item
         .title= link_to chapter.title, "/c43"

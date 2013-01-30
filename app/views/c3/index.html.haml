@@ -1,12 +1,13 @@
 :ruby
-  chapter = Chapter.find(1)
+  entry = Entry.find(1)
 
+  
 .page-c3
   
   .top
     = render "/c1/parts/nav"
 
   .page-show
-    .title= chapter.title
+    .title= entry.title
 
-    .content= chapter.content
+    .content= entry.content
