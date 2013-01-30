@@ -1,7 +1,9 @@
+:ruby
+  bookmarks = Bookmark.all
 .page-d1
   .title="我的书签"
   .content
-    - @bookmarks.each do |book_mark|
+    - bookmarks.each do |book_mark|
       .data
         .title= book_mark.title
         .desc= book_mark.desc

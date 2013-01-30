@@ -1,0 +1,25 @@
+@import 'base/mixins';
+
+.page-i1{
+  .page-web-work-list{
+    .header{
+
+    }
+    .content.web.work{
+
+      .left.content{
+        float: left;
+        width:300px;
+        height:500px;
+        border:solid 15px black;
+        @include border-radius(15px);
+        margin:15px;
+      }
+
+      .right.content{
+        float: left;
+        margin-left: 100px;
+      }
+    }
+  }
+}
