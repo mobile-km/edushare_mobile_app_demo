@@ -11,6 +11,6 @@
     = render "/c1/parts/search"
 
   .page-search-list
-    - search_chapters.each do |chapter|
+    - search_entries.each do |entry|
       .item
-        .title= link_to chapter.title, "/c3"
+        .title= link_to entry.title, "/c3"
