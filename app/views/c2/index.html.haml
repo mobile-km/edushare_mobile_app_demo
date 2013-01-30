@@ -1,0 +1,16 @@
+:ruby
+  entries = Entry.all
+  search_entries = entries[2..5]
+
+.page-c2
+
+  .top
+    = render "/c1/parts/nav"
+
+  .search
+    = render "/c1/parts/search"
+
+  .page-search-list
+    - search_entries.each do |entry|
+      .item
+        .title= link_to entry.title, "/c3"
