@@ -1,0 +1,10 @@
+:ruby
+  notice=Notice.all[0]
+
+.page-h2
+  .page-my-notice
+    .header
+      %h3 我的通知列表
+    .content.notice
+      .title= notice.title
+      .desc= notice.desc

@@ -1,0 +1,10 @@
+.page-b2
+
+  .top
+    = render "/a1/parts/nav"
+
+
+  .page-chapter-list
+    - Chapter.all.each do |chapter|
+      .item
+        .title= link_to chapter.title, "/b3"

@@ -1,0 +1,10 @@
+.page-b1
+
+  .top
+    = render "/a1/parts/nav"
+
+
+  .page-section-list
+    - Section.all.each do |section|
+      .item
+        .title= link_to section.title, "/b2"
