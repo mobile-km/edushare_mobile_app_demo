@@ -1,0 +1,15 @@
+:ruby
+  work = Work.all
+  work_about = WorkAbout.all
+
+.item= link_to "在手机上显示", "/i2"
+.work
+  .header
+    %h3=work.title
+  .content
+    = work.desc
+
+.work.about
+  .title="相关知识点"
+  - work_about.each do |about|
+    .item= link_to about.title, 'javascript:;'
