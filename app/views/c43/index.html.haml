@@ -1,0 +1,12 @@
+:ruby
+  chapter = Chapter.find(1)
+
+.page-c43
+  
+  .top
+    = render "/c1/parts/nav"
+
+  .page-show
+    .title= chapter.title
+
+    .content= chapter.content
