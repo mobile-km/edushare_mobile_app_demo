@@ -1,4 +1,5 @@
 EdushareMobileDemo::Application.routes.draw do
+<<<<<<< HEAD
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,4 +59,8 @@ EdushareMobileDemo::Application.routes.draw do
 
 
   resources :a1
+=======
+  resources :d1
+  resources :e1
+>>>>>>> 97541ad4428aa6f57d77e16ede14acc347bc5717
 end
