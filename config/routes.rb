@@ -3,6 +3,7 @@ EdushareMobileDemo::Application.routes.draw do
 
   resources :a1, :a2, :a3
   resources :b1, :b2, :b3
+  resources :c1, :c2, :c3
   
   resources :d1
   resources :e1
