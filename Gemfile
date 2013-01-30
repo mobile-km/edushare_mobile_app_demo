@@ -1,7 +1,7 @@
 source 'http://ruby.taobao.org'
 
 gem 'rails', '3.1.3'
-gem 'mysql2'
+# gem 'mysql2'
 gem 'json'
 gem 'therubyracer'
 gem 'haml'
