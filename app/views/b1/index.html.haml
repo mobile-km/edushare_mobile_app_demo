@@ -5,11 +5,6 @@
 
 
   .page-section-list
-    .item
-      .title= link_to "第一章", "/b2"
-
-    .item
-      .title= link_to "第二章", "/b2"
-
-    .item
-      .title= link_to "第三章", "/b2"
+    - Section.all.each do |section|
+      .item
+        .title= link_to section.title, "/b2"

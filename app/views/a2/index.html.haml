@@ -1,13 +1,16 @@
 .page-a2
 
+  :ruby
+    book = Book.find(1)
+
   .top
     = render "/a1/parts/nav"
 
-  .page-package
+  .page-book
     .img
-      = image_tag("")
+      = image_tag(book.cover_img)
     .title
-      = "Ruby 重构"
+      = book.title
 
     .download
       = link_to "下载", "/a3"

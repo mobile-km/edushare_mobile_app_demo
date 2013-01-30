@@ -4,16 +4,11 @@
     = render "/a1/parts/nav"
 
 
-  .page-package-list
-    .item
-      .img
-        = link_to image_tag(""), "/a2"
-      .title
-        = link_to "Ruby 重构", "/a2"
-
-    .item
-      .img
-        = link_to image_tag(""), "/a2"
-      .title
-        = link_to "Jquery 在线 API", "/a2"
+  .page-book-list
+    - Book.all.each do |book|
+      .item
+        .img
+          = link_to image_tag(book.cover_img), "/a2"
+        .title
+          = link_to book.title, "/a2"
   

@@ -5,11 +5,6 @@
 
 
   .page-chapter-list
-    .item
-      .title= link_to "第一节", "/b3"
-
-    .item
-      .title= link_to "第二节", "/b3"
-
-    .item
-      .title= link_to "第三节", "/b3"
+    - Chapter.all.each do |chapter|
+      .item
+        .title= link_to chapter.title, "/b3"
