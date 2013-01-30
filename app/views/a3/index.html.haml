@@ -1,9 +1,10 @@
-.page-a3
+:ruby
+  books = Book.all
+  downloading_books = books[4..5]
+  downloaded_books = books[0..1]
 
-  :ruby
-    books = Book.all
-    downloading_books = books[4..5]
-    downloaded_books = books[0..1]
+
+.page-a3
 
   .top
     = render "/a1/parts/nav"

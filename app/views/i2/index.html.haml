@@ -2,18 +2,19 @@
   work = Work.all
   work_about = WorkAbout.all
 
-.page-i1
+.page-i2
   .page-web-work-list
     .header
       %h3 我的作业列表
     .content.web.work
 
       .left.content
-        .content
-          %h2= '可以在这里显示作业'
+        .work.about
+          .title="相关知识点"
+          - work_about.each do |about|
+            .item= link_to about.title, '/i3'
 
       .right.content
-
         .item= link_to "在手机上显示", "/i2"
         .work
           .header

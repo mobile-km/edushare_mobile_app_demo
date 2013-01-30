@@ -1,0 +1,13 @@
+:ruby
+  entry = Entry.find(1)
+
+  
+.page-c53
+  
+  .top
+    = render "/c1/parts/nav"
+
+  .page-show
+    .title= entry.title
+
+    .content= entry.content

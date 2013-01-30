@@ -16,4 +16,7 @@ EdushareMobileDemo::Application.routes.draw do
   resources :h1
   resources :h2
   resources :i1
+  resources :i2
+  resources :i3
+  
 end

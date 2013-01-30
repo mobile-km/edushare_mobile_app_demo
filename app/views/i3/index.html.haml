@@ -1,19 +1,23 @@
 :ruby
   work = Work.all
   work_about = WorkAbout.all
+  chapter = Chapter.find(1)
 
-.page-i1
+.page-i3
   .page-web-work-list
     .header
       %h3 我的作业列表
     .content.web.work
 
       .left.content
-        .content
-          %h2= '可以在这里显示作业'
+        .work.about
+          .top
+            = render "/a1/parts/nav"
+          .page-show
+            .title= chapter.title
+            .content= chapter.content
 
       .right.content
-
         .item= link_to "在手机上显示", "/i2"
         .work
           .header

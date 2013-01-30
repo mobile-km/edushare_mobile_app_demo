@@ -1,6 +1,6 @@
 :ruby
-  chapters = Chapter.all
-  search_chapters = chapters[0..2]
+  entries = Entry.all
+  search_entries = entries[2..5]
 
 .page-c2
 
@@ -11,6 +11,6 @@
     = render "/c1/parts/search"
 
   .page-search-list
-    - search_chapters.each do |chapter|
+    - search_entries.each do |entry|
       .item
-        .title= link_to chapter.title, "/c3"
+        .title= link_to entry.title, "/c3"
