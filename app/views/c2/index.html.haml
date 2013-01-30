@@ -1,0 +1,12 @@
+.page-c2
+
+  .top
+    = render "/c1/parts/nav"
+
+  .search
+    = render "/c1/parts/search"
+
+  .page-search-list
+    - Chapter.all.each do |chapter|
+      .item
+        .title= link_to chapter.title, "/c3"
