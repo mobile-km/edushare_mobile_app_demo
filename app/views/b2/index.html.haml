@@ -1,3 +1,6 @@
+:ruby
+  @entries = Entry.all
+
 .page-b2
 
   .top
@@ -5,6 +8,6 @@
 
 
   .page-entry-list
-    - Entry.all.each do |entry|
+    - @entries.each do |entry|
       .item
         .title= link_to entry.title, "/b3"
