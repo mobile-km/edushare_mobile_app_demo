@@ -1,29 +1,29 @@
 .page-a3
 
+  :ruby
+    books = Book.all
+    downloading_books = books[4..5]
+    downloaded_books = books[0..1]
+
   .top
     = render "/a1/parts/nav"
 
   .downloading-list
-    .item
-      .img
-        = image_tag("")
-      .title
-        = "Ruby 重构"
-      .progress
-        = image_tag("")
+    - downloading_books.each do |book|
+      .item
+        .img
+          = image_tag(book.cover_img)
+        .title
+          = book.title
+        .progress
+          = image_tag("")
 
-    .item
-      .img
-        = image_tag("")
-      .title
-        = "Jquery 在线 API"
-      .progress
-        = image_tag("")
 
 
   .downloaded-list
-    .item
-      .img
-        = image_tag("")
-      .title
-        = "Java 重构"
+    - downloaded_books.each do |book|
+      .item
+        .img
+          = link_to image_tag(book.cover_img), "/b1"
+        .title
+          = link_to book.title, "/b1"
