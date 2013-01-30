@@ -1,5 +1,5 @@
 :ruby
-  id = params[:id].to_i || 1
+  id = params[:id] ? params[:id].to_i : 1
   @notebook = Notebook.find(id)
   @notes = Note.all
 
