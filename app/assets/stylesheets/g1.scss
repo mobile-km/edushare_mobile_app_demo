@@ -1,5 +1,18 @@
 .page-g1{
+  margin: 10px 0;
+  overflow: hidden;
+  .list{
+    float: left;
+  }
+  .orders{
+    width:60px;
+  }
+  .weekday{
+    width:60px;
+  }
   .item{
     border: 1px;
+    height: 60px;
+    font-size: 11px;
   }
 }
