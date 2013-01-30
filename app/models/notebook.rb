@@ -4,7 +4,8 @@ class Notebook < DemoModel
 
   def self.make_all
     8.times.map do |num|
-      self.new :title => "jQuery笔记#{num}", :desc => "jQuery笔记#{num}"
+      id = num + 1
+      self.new :title => "笔记本#{id}", :desc => "笔记本#{id}介绍"
     end
   end
 end

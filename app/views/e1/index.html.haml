@@ -1,8 +1,12 @@
+- @notebooks = Notebook.all
+
 .page-item-list.page-e1
   .page-my-notebook-list
     .header
       %h1 我的笔记本列表
-    .content.notebooks
-      - @notebooks.each do |nihao|
-        .list-item.notebook
-          .title=link_to nihao.title, 'javascript:;'
+    .content
+      .notebooks
+        - @notebooks.each_with_index do |notebook, index|
+          - id = index + 1
+          .list-item.notebook
+            .title=link_to notebook.title, "/e2?id=#{id}"
