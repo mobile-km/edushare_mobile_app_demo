@@ -4,7 +4,7 @@
     = render "/a1/parts/nav"
 
 
-  .page-chapter-list
-    - Chapter.all.each do |chapter|
+  .page-entry-list
+    - Entry.all.each do |entry|
       .item
-        .title= link_to chapter.title, "/b3"
+        .title= link_to entry.title, "/b3"
