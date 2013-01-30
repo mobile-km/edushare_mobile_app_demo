@@ -1,5 +1,5 @@
 class User < DemoModel
-  attr_accessor :name,:logo
+  attr_accessor :name, :logo_32, :logo_48
 
   def self.make_all
     user_1 = User.new(:name => '诸葛亮', :logo_48 => '/assets/user_zhugeliang_48.jpg', :logo_32 => '/assets/user_zhugeliang_32.jpg')

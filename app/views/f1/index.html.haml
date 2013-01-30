@@ -1,0 +1,14 @@
+:ruby
+  entry = Entry.find(1)
+  comments = Comment.all
+
+.page-item-list.page-f1
+  .page-comment-list
+    .header
+      %h1= "评论: #{entry.title}"
+    .content
+      .comments
+        - comments.each do |comment|
+          .list-item.comment
+            .title=link_to comment.user.name, 'javascript:;'
+            .content= comment.content

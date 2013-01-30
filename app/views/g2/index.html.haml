@@ -1,0 +1,13 @@
+:ruby
+  course_time_expression = CourseTimeExpression.all[0]
+  course = course_time_expression.course
+  user = course_time_expression.user
+.page-g2
+  .course-title= course.title
+
+  .course-location= course.location
+  .course-desc= course.desc
+  .course-teacher
+    .name= user.name
+    .logo= image_tag(user.logo_32)
+
