@@ -1,0 +1,7 @@
+.d1.show.page
+  .title="我的书签"
+  .content
+    - @bookmarks.each do |book_mark|
+      .data
+        .title= book_mark.title
+        .desc= book_mark.desc

@@ -1,1 +1,8 @@
-%h1 E1
+.page-item-list
+  .page-my-notebook-list
+    .header
+      %h1 我的笔记本列表
+    .content.notebooks
+      - @notebooks.each do |nihao|
+        .list-item.notebook
+          .title=link_to nihao.title, 'javascript:;'
