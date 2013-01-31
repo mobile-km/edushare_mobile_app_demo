@@ -1,0 +1,11 @@
+- id = params[:id] || 1
+- @courseware = Courseware.find id
+
+.page-item-show.page-l2
+  .page-my-courseware-show
+    .header
+      %h1= "课件: #{@courseware.title}"
+    .content
+      .courseware
+        .desc= @courseware.desc
+        .link=link_to '在浏览器打开', 'javascript:;'

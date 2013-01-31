@@ -1,12 +1,12 @@
 - @coursewares = Courseware.all
 
-.page-item-list.page-e1
-  .page-my-notebook-list
+.page-item-list.page-l1
+  .page-my-courseware-list
     .header
-      %h1 我的笔记本列表
+      %h1 我的课件列表
     .content
-      .notebooks
-        - @notebooks.each_with_index do |notebook, index|
+      .coursewares
+        - @coursewares.each_with_index do |courseware, index|
           - id = index + 1
-          .list-item.notebook
-            .title=link_to notebook.title, "/e2?id=#{id}"
+          .list-item.courseware
+            .title=link_to courseware.title, "/l2?id=#{id}"
