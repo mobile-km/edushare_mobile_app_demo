@@ -22,4 +22,6 @@ EdushareMobileDemo::Application.routes.draw do
   resources :l1
   resources :l2
   resources :l3
+
+  resources :k1, :k2, :k3
 end
