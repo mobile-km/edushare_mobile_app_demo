@@ -6,7 +6,7 @@ class DemoModel
   end
 
   def self.find(id)
-    self.all[id - 1]
+    self.all[id.to_i - 1]
   end
 
   def self.all
