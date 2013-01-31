@@ -15,5 +15,11 @@
 
 
     .comment
-      .text= text_field_tag :query, "你好"
-      .but= button_to "评论", "javascript:;", :method => 'get'
+      = form_tag(:url => {:action => ''})  do
+        .field
+          %label 用户评论
+          .comm
+            = text_area_tag :title
+
+        .field.submit
+          = button_to "评论", "javascript:;"
