@@ -31,6 +31,6 @@
       - notebooks.each do |notebook|
         .notebook
           = radio_button_tag :notebook, 'a'
-          .button= notebook.title
+          = notebook.title
       .submit= link_to '确定', 'javascript:;'
       .cancel= link_to '取消', 'javascript:;'
