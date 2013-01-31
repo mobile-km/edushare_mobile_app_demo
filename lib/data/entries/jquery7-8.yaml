@@ -1,0 +1,55 @@
+- title: 延迟对象(Deferred Object)
+  entries:
+    - title: jQuery.Deferred()
+      desc: 一个构造函数，返回一个链式实用对象方法来注册多个回调，回调队列，  调用回调队列，并转达任何同步或异步函数的成功或失败状态。
+    - title: deferred.always()
+      desc: 当Deferred（延迟）对象解决或拒绝时，调用添加处理程序。
+    - title: defereed.done()
+      desc: 当Deferred（延迟）对象解决时，调用添加处理程序。
+    - title: deferred.fail()
+      desc: 当Deferred（延迟）对象拒绝时，调用添加处理程序。
+    - title: deferred.isRejected()
+      desc: 确定一个Deferred（延迟）对象是否已被拒绝。
+    - title: deferred.isResolved()
+      desc: 确定一个Deferred（延迟）对象是否已被解决。
+    - title: deferred.notify()
+      desc: 根据给定的 args参数 调用Deferred（延迟）对象上进行中的回调 （progressCallbacks）。
+    - title: deferred.notifyWith()
+      desc: 根据给定的上下文（context）和args递延调用Deferred（延迟）对象上进行中的回调（progressCallbacks ）。
+    - title: deferred.pipe()
+      desc: 实用的方法来过滤 and/or 链Deferreds。
+    - title: deferred.progress()
+      desc: 当Deferred（延迟）对象生成进度通知时，调用添加处理程序。
+    - title: deferred.promise()
+      desc: 返回Deferred(延迟)的Promise（承诺）对象。
+    - title: deferred.reject()
+      desc: 拒绝Deferred（延迟）对象，并根据给定的args参数调用任何失败回调函数（failCallbacks）。
+    - title: deferred.rejectWith()
+      desc: 拒绝Deferred（延迟）对象，并根据给定的 context和args参数调用任何失败回调函数（failCallbacks）。
+    - title: deferred.resolve()
+      desc: 解决Deferred（延迟）对象，并根据给定的args参数调用任何完成回调函数（doneCallbacks）。
+    - title: deferred.resolveWith()
+      desc: 解决Deferred（延迟）对象，并根据给定的 context和args参数调用任何完成回调函数（doneCallbacks）。
+    - title: deferred.state()
+      desc: 确定一个Deferred（延迟）对象的当前状态。
+    - title: deferred.then()
+      desc: 当Deferred（延迟）对象解决，拒绝或仍在进行中时，调用添加处理程序。
+    - title: .promise()
+      desc: 返回一个 Promise 对象用来观察当某种类型的所有行动绑定到集合，排队与否还是已经完成。
+    - title: jQuery.when()
+      desc: 提供一种方法来执行一个或多个对象的回调函数， Deferred(延迟)对象通常表示异步事件。
+
+- title: 空间相关(Dimensions)
+  entries:
+    - title: .height()
+      desc: 获取匹配元素集合中的第一个元素的当前计算高度值 或 设置每一个匹配元素的高度值。
+    - title: .innerHeight()
+      desc: 为匹配的元素集合中获取第一个元素的当前计算高度值,包括padding，但是不包括border。
+    - title: .innerWidth()
+      desc: 为匹配的元素集合中获取第一个元素的当前计算宽度值,包括padding，但是不包括border。
+    - title: .outerHeight()
+      desc: 为匹配的元素集合中获取第一个元素的当前计算高度值,包括padding，border和选择性的margin。返回一个整数（不包含“px”）表示的值或 null如果空集合的元素调用。
+    - title: .outerWidth()
+      desc: 为匹配的元素集合中获取第一个元素的当前计算宽度值,包括padding，border。
+    - title: .width()
+      desc: 为匹配的元素集合中获取第一个元素的当前计算宽度值或给每个匹配的元素设置宽度。
