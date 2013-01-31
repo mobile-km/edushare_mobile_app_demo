@@ -29,4 +29,8 @@
     .desc 请选择目标笔记本
     .notebooks
       - notebooks.each do |notebook|
-        .notebook= link_to notebook.title, 'javascript:;'
+        .notebook
+          = radio_button_tag :notebook, 'a'
+          .button= notebook.title
+      .submit= link_to '确定', 'javascript:;'
+      .cancel= link_to '取消', 'javascript:;'
