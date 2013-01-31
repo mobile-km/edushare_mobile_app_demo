@@ -1,0 +1,13 @@
+:ruby
+  important_notes = ImportantNote.all
+
+.page-m1
+  .page-show
+    .header
+      %h2= "重要词条页"
+    .content
+      - important_notes.each do |important_note|
+        .list-item.important_note
+          .title= link_to important_note.title ,'javascript:;'
+          .number= "标记 #{important_note.number}次"
+          .time= important_note.time

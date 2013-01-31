@@ -20,9 +20,4 @@
         = link_to "相关作业", "/k3"
 
       .coursewares
-        .desc 相关课件
-        - coursewares.each_with_index do |courseware, index|
-          - id = index + 1
-          .courseware
-            .link= link_to courseware.title, "/l3"
-
+        = link_to '相关课件', '/l3'
