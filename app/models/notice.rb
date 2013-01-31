@@ -1,15 +1,6 @@
 # -*- coding: utf-8 -*-
-class Notice
+class Notice < DemoModel
   attr_accessor :title, :desc
-
-  def initialize options
-    @title = options[:title]
-    @desc  = options[:desc]
-  end
-
-  def self.all
-    @all ||= self.make_all
-  end
 
   def self.make_all
     8.times.map do |num|
