@@ -1,12 +1,13 @@
 :ruby
   entry = Entry.find(1)
   coursewares = Courseware.all
+  notebooks = Notebook.all
 
 .page-b3
   .top
     = render "/a1/parts/nav"
     .comments-link=link_to '评论', '/f1'
-
+    .notebook-link=link_to '添加到笔记', 'javascript:;'
   .bookmark
     = link_to "添加书签", "/d1"
 
@@ -21,3 +22,15 @@
 
       .coursewares
         = link_to '相关课件', '/l3'
+
+  .toast{:style => 'position:fixed;margin:0 auto;border:8px solid #ccc;background:#fff;display:none;'} 笔记添加成功!
+
+  .note-dialog{:style => 'position:fixed;margin:0 auto;border:8px solid #ccc;background:#fff;display:none;'}
+    .desc 请选择目标笔记本
+    .notebooks
+      - notebooks.each do |notebook|
+        .notebook
+          = radio_button_tag :notebook, 'a'
+          = notebook.title
+      .submit= link_to '确定', 'javascript:;'
+      .cancel= link_to '取消', 'javascript:;'
