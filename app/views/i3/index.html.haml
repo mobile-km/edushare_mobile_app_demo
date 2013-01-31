@@ -1,7 +1,7 @@
 :ruby
   work = Work.all
   work_about = WorkAbout.all
-  chapter = Chapter.find(1)
+  entry = Entry.find(1)
 
 .page-i3
   .page-web-work-list
@@ -14,8 +14,8 @@
           .top
             = render "/a1/parts/nav"
           .page-show
-            .title= chapter.title
-            .content= chapter.content
+            .title= entry.title
+            .content= entry.content
 
       .right.content
         = render "/i1/parts/right"
