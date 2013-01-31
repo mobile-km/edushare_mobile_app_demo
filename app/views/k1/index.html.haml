@@ -1,1 +1,10 @@
+:ruby
+  homeworks = Homework.all
+
 .page-k1
+
+  .page-homework-list
+    - homeworks.each do |homework|
+      .item
+        .title
+          = link_to homework.title, "/k2"
