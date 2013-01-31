@@ -1,21 +1,18 @@
 .page-h1{
-  .page-my-notice-list{
-    .header{
 
-    }
-    .content.notices{
-      .list-item.notice{
-        margin: 15px;
-        line-height: 30px;
-        height: 30px;
+  .content.notices{
+    .list-item.notice{
+      margin: 15px;
+      line-height: 30px;
+      height: 30px;
 
-        a{
-          text-decoration: none;
-        }
+      a{
+        text-decoration: none;
       }
-    }
-    .content.notices .list-item.notice:nth-of-type(odd){
+
+      &.unread{
         background-color:rgba(6, 6, 6, 0.5);
+      }
     }
   }
 }

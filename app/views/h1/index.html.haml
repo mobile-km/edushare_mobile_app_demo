@@ -2,11 +2,10 @@
   notices=Notice.all
 
 .page-h1
-  .page-my-notice-list
-    .header
-      %h2 我的通知列表
-    .content.notices
-      - notices.each do |notice|
-        .list-item.notice
-          %div
-            .title=link_to notice.title, '/h2'
+  .header
+    %h2 我的通知列表
+  .content.notices
+    - notices.each do |notice|
+      - class_name = notice.unread ? 'unread' : 'read'
+      .list-item.notice{:class=>class_name}
+        .title=link_to notice.title, '/h2'
