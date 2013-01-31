@@ -1,0 +1,14 @@
+:ruby
+  @entry = Entry.find(1)
+  @coursewares = Courseware.entry1_related
+
+.page-item-list.page-l3
+  .page-my-courseware-list
+    .header
+      %h1= "词条: #{@entry.title}相关课件列表"
+    .content
+      .coursewares
+        - @coursewares.each_with_index do |courseware, index|
+          - id = index + 1
+          .list-item.courseware
+            .title=link_to courseware.title, "/l2?id=#{id}"
