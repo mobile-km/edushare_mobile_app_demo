@@ -1,5 +1,6 @@
 :ruby
   entry = Entry.find(1)
+  coursewares = Courseware.all
 
 .page-b3
   .top
@@ -9,3 +10,14 @@
     .title= entry.title
 
     .content= entry.content
+    .related
+      .homeworks
+        = link_to "相关作业", "/k3"
+
+      .coursewares
+        .desc 相关课件
+        - coursewares.each_with_index do |courseware, index|
+          - id = index + 1
+          .courseware
+            .link= link_to courseware.title, "/l3"
+

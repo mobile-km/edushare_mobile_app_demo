@@ -1,0 +1,11 @@
+:ruby
+  homeworks = Homework.all
+  relative_homeworks = homeworks[2..5]
+
+.page-k3
+  
+  .page-homework-list
+    - relative_homeworks.each do |homework|
+      .item
+        .title
+          = link_to homework.title, "/k2"
