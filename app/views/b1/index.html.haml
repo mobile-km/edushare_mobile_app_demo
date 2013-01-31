@@ -7,6 +7,9 @@
   .top
     = render "/a1/parts/nav"
 
+  .bookmark
+    = link_to "添加书签", "/d1"
+
 
   .page-section-list
     - Section.all.each do |section|
