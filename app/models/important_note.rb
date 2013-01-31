@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 class ImportantNote < DemoModel
-  attr_accessor :title, :desc, :number, :time
-
+  attr_accessor :desc, :time, :entry
+  delegate :title, :to => :entry
+  delegate :number, :to => :entry
+ 
   def self.make_all
     8.times.map do |num|
-      self.new :title => "重要词条 #{num}", 
-               :desc => "重要词条 #{num} 的要素详情",
-               :number => "#{num*2 + 1}",
-               :time => "#{num * 2}:#{num * 7}"
+      id = num + 1
+
+      self.new :desc => "重要词条 #{id} 的要素详情",
+               :entry => Entry.find(id),
+               :time => 3.days.ago - num.hours +  num.minute
     end
   end
-
 end
