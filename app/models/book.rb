@@ -12,7 +12,7 @@ class Book < DemoModel
     a1_1 = self.new
     a1_1.title = 'Jquery API'
     a1_1.cover_img = '/assets/ruby.jpg'
-    BOOK_1_SECTIONS.each do |section|
+    LoadData::BOOK_1_SECTIONS.each do |section|
       a1_1.add_section(section)
     end
 
