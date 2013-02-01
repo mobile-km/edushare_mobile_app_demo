@@ -53,4 +53,11 @@ module LoadData
     bm.id = bookmark['id']
     bm
   end
+
+
+  ####### 通知列表
+  arr = YAML.load_file(Rails.root.join("lib/data/notice.yaml"))
+  NOTICES = arr.map do |notice|
+    Notice.new :title => notice['title'], :read_status => notice['read_status'], :desc => notice['desc']
+  end
 end

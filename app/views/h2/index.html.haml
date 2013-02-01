@@ -1,5 +1,5 @@
 :ruby
-  notice=Notice.all[0]
+  notice=Notice.find(params[:id] || 1)
 
 .page-h2
   .page-my-notice
