@@ -1,4 +1,5 @@
 - title: css
+  desc: 这些方法用来获取并设置CSS相关的元素属性
   entries:
     - title: .addClass()
       desc: 为每个匹配的元素添加指定的样式类名
@@ -52,6 +53,7 @@
       desc: 为匹配的元素集合中获取第一个元素的当前计算宽度值或给每个匹配的元素设置宽度
 
 - title: 数据(Data)
+  desc: 这些方法让我们关联任意的数据到对应的DOM元素上。
   entries:
     - title: .clearQueue()
       desc: 从列队中移除所有未执行的项
