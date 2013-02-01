@@ -1,5 +1,6 @@
 
 - title: 回调对象（Callbacks Object）
+  desc: jQuery 封装的一些回调方法
   entries:
     - title: jQuery.Callbacks( flags )
       desc: 一个多用途的回调列表对象，提供了强大的的方式来管理回调函数列表。
@@ -23,6 +24,7 @@
       desc: 从回调列表中的删除一个回调或回调集合。
 
 - title: 核心 （Core）
+  desc: jQuery 封装的一些最常用最核心的方法
   entries:
     - title: jQuery.holdReady()
       desc: 暂停或恢复.ready() 事件的执行。
