@@ -6,6 +6,7 @@ class DemoModel
   end
 
   def self.find(id)
+    return nil if id.blank?
     self.all[id.to_i - 1]
   end
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 module LoadData
   arr_1 = YAML.load_file(Rails.root.join("lib/data/entries/jquery1-2.yaml"))
   arr_2 = YAML.load_file(Rails.root.join("lib/data/entries/jquery3-4.yaml"))
@@ -65,4 +66,10 @@ module LoadData
   COURSEWARES = arr.map do |hash|
     Courseware.new :title => hash["title"], :desc => hash["desc"], :entry => Entry.find(hash["entry_id"])
   end
+  ####### 作业列表
+  arr = YAML.load_file(Rails.root.join("lib/data/homeworks.yaml"))
+  HOMEWORKS = arr.map do |hash|
+    Homework.new :title => hash["title"], :content => hash["content"], :entry => Entry.find(hash["entry_id"])
+  end
+
 end

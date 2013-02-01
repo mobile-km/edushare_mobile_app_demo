@@ -14,6 +14,10 @@ class Entry < DemoModel
     end
   end
 
+  def self.homework_related
+    [1, 4, 8, 9].map {|id| self.find(id)}
+  end
+
   def number
     self.id * 2 + 1 
   end

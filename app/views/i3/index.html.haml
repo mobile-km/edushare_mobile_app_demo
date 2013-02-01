@@ -1,17 +1,9 @@
-:ruby
-  entry = Entry.find(1)
-
 .page-i3
   .page-web-work-list
     .content.web.work
 
       .left.content
-        .work.about
-          .top
-            = render "/a1/parts/nav"
-          .page-show
-            .title= entry.title
-            .content= entry.content
+        = render :template => '/b3/index', :locals => {:id => 1}
 
       .right.content
         = render "/i1/parts/right"

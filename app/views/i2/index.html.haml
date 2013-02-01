@@ -1,5 +1,5 @@
 :ruby
-  work_about = WorkAbout.all
+  entries = Entry.homework_related
 
 .page-i2
   .page-web-work-list
@@ -8,8 +8,8 @@
       .left.content
         .work.about
           .title="相关知识点"
-          - work_about.each do |about|
-            .item= link_to about.title, '/i3'
+          - entries.each do |entry|
+            .item= link_to entry.title, 'i3'
 
       .right.content
         = render "/i1/parts/right"
