@@ -1,30 +1,21 @@
 :ruby
-  books = Book.all
-  downloading_books = books[4..5]
-  downloaded_books = books[0..1]
+  books = Book.all[0..5]
 
+= page_top_nav(0)
 
 .page-a3
-
-  .top
-    = render "/a1/parts/nav"
-
-  .downloading-list
-    - downloading_books.each do |book|
-      .item
-        .img
-          = image_tag(book.cover_img)
-        .title
-          = book.title
-        .progress
-          = image_tag("/assets/progress.jpg")
-
-
-
-  .downloaded-list
-    - downloaded_books.each do |book|
+  .books-list
+    - books.each do |book|
       .item
         .img
           = link_to image_tag(book.cover_img), "/b1"
         .title
           = link_to book.title, "/b1"
+        .author
+          诸葛亮
+
+        .progress
+          .p{:style=>'width:20%;'}
+        .download-status
+          .t 正在下载…
+          .per 20%
