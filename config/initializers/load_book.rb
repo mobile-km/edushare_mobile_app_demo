@@ -4,8 +4,7 @@ arr_3 = YAML.load_file(Rails.root.join("lib/data/entries/jquery5-6.yaml"))
 arr_4 = YAML.load_file(Rails.root.join("lib/data/entries/jquery7-8.yaml"))
 arr = arr_1 + arr_2 + arr_3 + arr_4
 
-book = Book.find(1)
-arr.each do |hash|
+BOOK_1_SECTIONS = arr.map do |hash|
   section = Section.new(:title => hash["title"])
 
   hash["entries"].each do |entries_hash|
@@ -13,5 +12,5 @@ arr.each do |hash|
     section.add_entry(entry)  
   end
 
-  book.add_section(section)
+  section
 end
