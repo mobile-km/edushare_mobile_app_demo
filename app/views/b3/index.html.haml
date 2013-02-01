@@ -3,10 +3,11 @@
   entry_id = 1 if entry_id > Entry.all.count
   entry = Entry.find(params[:id] || entry_id)
   coursewares = Courseware.all
-  notebooks = Notebook.all
 
 = page_top_bar entry.title, '/b2'
 = page_bottom_nav_entry
+= render '/b3/parts/toast'
+= render '/b3/parts/dialog'
 
 .page-b3
   .page-show
@@ -30,14 +31,3 @@
       =link_to "标记为重要", "javascript:;"
     .count{:data =>{:count=>entry.number} }
 
-  .toast{:style => 'position:fixed;margin:0 auto;border:8px solid #ccc;background:#fff;display:none;'} 笔记添加成功!
-
-  .note-dialog{:style => 'position:fixed;margin:0 auto;border:8px solid #ccc;background:#fff;display:none;'}
-    .desc 请选择目标笔记本
-    .notebooks
-      - notebooks.each do |notebook|
-        .notebook
-          = radio_button_tag :notebook, 'a'
-          = notebook.title
-      .submit= link_to '确定', 'javascript:;'
-      .cancel= link_to '取消', 'javascript:;'
