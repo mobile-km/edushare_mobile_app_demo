@@ -1,0 +1,12 @@
+- title: "jQuery API: 写一个发送简单POST Ajax请求的函数jquery_ajax_1"
+  content: jquery_ajax_1需要发送一个POST Ajax请求，到http://homework.zhugeliang.com/jquery-ajax-1，请求数据包含name(你的姓名)、student_num(你的学号)两个域，并把响应数据里的byte值转换成字符串作为jquery_ajax_1的返回值。
+- title: "jQuery API: 写一个发送GET Ajax请求并处理自定义响应报头的函数jquery_ajax_2"
+  content: jquery_ajax_2需要发送一个GET Ajax请求， 到http://homework.zhugeliang.com/jquery-ajax-2，把一个包含header_value(响应的X-JQuery-Ajax-2报头的值)以及data(响应数据)两个域的javascript对象作为jquery_ajax_2的返回值。
+- title: "jQuery API: 写一个发送PUT Ajax请求并包含自定义请求报头的函数jquery_ajax_3"
+  content: jquery_ajax_3需要发送一个PUT Ajax请求，到http://homework.zhugeliang.com/jquery-ajax-3，包含自定义请求报头X-JQuery-Ajax-3，值为你的学号，把响应数据作为jquery_ajax_3的返回值。
+- title: "ruby重构: 重构初体验 课后感想"
+  content: 试阐述自己所理解的重构的意义，重构所能带来的好处。如果对重构的作用有疑义，也请写在作业里。
+- title: "ruby重构: 重构的基本原理 课后感想"
+  content: 试阐述重构和抽象的关系，重构对抽象的影响。并回答问题：重构的目的是减少代码长度吗？
+- title: "Thinking in Java: 第五章习题"
+  content: 用public、private、protected 以及“友好的”数据成员及方法成员创建一个类，创建属于这个类的一个对象，观察在试图访问所有类成员时会获得哪种类型的编译器错误提示并记录这些编译器错误提示。注意同一个目录内的类属于“默认”包的一部分。
