@@ -1,0 +1,10 @@
+- notebooks = Notebook.all
+.note-dialog{:style => 'position:fixed;margin:0 auto;border:8px solid #ccc;background:#fff;display:none;'}
+  .desc 请选择目标笔记本
+  .notebooks
+    - notebooks.each do |notebook|
+      .notebook
+        = radio_button_tag :notebook, 'a'
+        = notebook.title
+    .submit= link_to '确定', 'javascript:;'
+    .cancel= link_to '取消', 'javascript:;'
