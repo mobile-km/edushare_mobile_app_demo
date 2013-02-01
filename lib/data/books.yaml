@@ -1,0 +1,20 @@
+- title: 'Jquery API'
+  cover_img: '/assets/ruby.jpg'
+  downloaded: true
+  progress: 100
+- title: 'Ruby 重构'
+  cover_img: '/assets/ruby.jpg'
+  downloaded: true
+  progress: 100
+- title: 'Java 重构'
+  cover_img: '/assets/ruby.jpg'
+  downloaded: true
+  progress: 100
+- title: 'Thinking in Java'
+  cover_img: '/assets/ruby.jpg'
+  downloaded: true
+  progress: 100
+- title: 'Head first Java'
+  cover_img: '/assets/ruby.jpg'
+  downloaded: false
+  progress: 36
