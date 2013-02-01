@@ -1,0 +1,18 @@
+- title: "Java程序设计"
+  desc: "课程描述占位"
+  location: '一营操练场'
+- title: "Java EE & Android"
+  desc: "课程描述占位"
+  location: '二营操练场'
+- title: "Javascript & jQuery"
+  desc: "课程描述占位"
+  location: '三营操练场'
+- title: "数据结构"
+  desc: "课程描述占位"
+  location: '四营操练场'
+- title: "代码重构"
+  desc: "课程描述占位"
+  location: '五营操练场'
+- title: "计算机操作系统"
+  desc: "课程描述占位"
+  location: '六营操练场'
