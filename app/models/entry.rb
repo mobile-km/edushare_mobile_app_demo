@@ -6,7 +6,7 @@ class Entry < DemoModel
     Book.find(1).sections.map(&:entries).flatten
   end
 
-  def section_entries(id)
+  def self.section_entries(id)
     Section.find(id).entries
   end
 

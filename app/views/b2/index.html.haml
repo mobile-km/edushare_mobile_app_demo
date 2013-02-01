@@ -1,5 +1,5 @@
 :ruby
-  entries = Entry.all
+  entries = Entry.section_entries(params[:id] || 1)
 
 .page-b2
 
