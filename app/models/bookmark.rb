@@ -1,13 +1,9 @@
 # coding: utf-8
-class Bookmark
-  attr_accessor :title, :url
-
-  def self.all
-    @all ||= self.make_all
-  end
+class Bookmark < DemoModel
+  attr_accessor :title, :id
 
   def self.make_all
-    
+    LoadData::BOOKMARKS
   end
   
 end

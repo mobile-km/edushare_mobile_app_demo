@@ -15,6 +15,19 @@ module LoadData
 
     section
   end
+  ####### 知识包列表
+  def self.books
+    arr = YAML.load_file(Rails.root.join('lib/data/books.yaml'))
+    books = arr.map do |hash|
+      Book.new :user => User.find(hash["user_id"]),:title => hash["title"], :cover_img => hash["cover_img"],
+        :downloaded => hash["downloaded"], :progress => hash["progress"]
+    end
+    book_1 = books[0]
+    LoadData::BOOK_1_SECTIONS.each do |section|
+      book_1.add_section(section)
+    end
+    books
+  end
   ####### 评论列表
   arr = YAML.load_file(Rails.root.join("lib/data/comments.yaml"))
   COMMENTS = arr.map do |hash|
@@ -30,5 +43,14 @@ module LoadData
   arr = YAML.load_file(Rails.root.join("lib/data/notes.yaml"))
   NOTES = arr.each_with_index.map do |hash, index|
     Note.new :entry => Entry.find(index + 1), :desc => hash["desc"]
+  end
+
+  ####### 书签列表
+  arr = YAML.load_file(Rails.root.join("lib/data/bookmark.yaml"))
+  BOOKMARKS = arr.map do |bookmark|
+    bm = Bookmark.new
+    bm.title = bookmark['title']
+    bm.id = bookmark['id']
+    bm
   end
 end
