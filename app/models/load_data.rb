@@ -6,16 +6,23 @@ module LoadData
   arr_4 = YAML.load_file(Rails.root.join("lib/data/entries/jquery7-8.yaml"))
   arr = arr_1 + arr_2 + arr_3 + arr_4
 
-  BOOK_1_SECTIONS = arr.map do |hash|
-    section = Section.new(:title => hash["title"])
+  def self.load_sections(array)
+    array.map do |hash|
+      section = Section.new(:title => hash["title"])
 
-    hash["entries"].each do |entries_hash|
-      entry = Entry.new(:title => entries_hash["title"], :content => entries_hash["desc"])
-      section.add_entry(entry)  
+      hash["entries"].each do |entries_hash|
+        entry = Entry.new(:title => entries_hash["title"], :content => entries_hash["desc"])
+        section.add_entry(entry)  
+      end
+
+      section
     end
-
-    section
   end
+
+  BOOK_1_SECTIONS = load_sections arr
+
+  BOOK_2_SECTIONS = load_sections YAML.load_file(Rails.root.join("lib/data/entries/ruby.yaml"))
+
   ####### 知识包列表
   def self.books
     arr = YAML.load_file(Rails.root.join('lib/data/books.yaml'))
@@ -24,8 +31,13 @@ module LoadData
         :downloaded => hash["downloaded"], :progress => hash["progress"]
     end
     book_1 = books[0]
+    book_2 = books[1]
     LoadData::BOOK_1_SECTIONS.each do |section|
       book_1.add_section(section)
+    end
+
+    LoadData::BOOK_2_SECTIONS.each do |section|
+      book_2.add_section(section)
     end
     books
   end
