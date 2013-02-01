@@ -60,4 +60,9 @@ module LoadData
   NOTICES = arr.map do |notice|
     Notice.new :title => notice['title'], :read_status => notice['read_status'], :desc => notice['desc']
   end
+  ####### 课件列表
+  arr = YAML.load_file(Rails.root.join("lib/data/coursewares.yaml"))
+  COURSEWARES = arr.map do |hash|
+    Courseware.new :title => hash["title"], :desc => hash["desc"], :entry => Entry.find(hash["entry_id"])
+  end
 end
