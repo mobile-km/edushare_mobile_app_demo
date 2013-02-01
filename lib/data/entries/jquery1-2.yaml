@@ -2,25 +2,26 @@
   desc: jQuery 封装的关于异步请求的一些方法
   entries:
     - title: jQuery.ajax()
-      desc: 该方法执行一个异步的HTTP（Ajax）的请求。
+      desc: $.ajax()函数所有的基础jQuery的Ajax请求发送。它往往不是必须的，直接调用这个函数，几个高层次的替代品如$.get()和.load()可用，更容易使用，如果不常见的选项是必需的，不过， $.ajax()可以使用更灵活。在简单地说， $.ajax()函数可以不带参数调用。
     - title: .ajaxComplete()
-      desc: 当Ajax请求完成后注册一个回调函数。这是一个 AjaxEvent。
+      desc: 无论哪一个Ajax请求被完成，所有ajaxComplete处理器都将被执行。如果我们必须区分的请求,我们可以使参数传递给这个处理器。 他是通过事件对象、 XMLHttpRequest 对象和设置对象中使用的请求，做每一次ajaxComplete 处理器执行的。 举个例子,我们能限制我们的回调到只处理事件处理某一特定的URL。
     - title: .ajaxError()
-      desc: Ajax请求出错时注册一个回调处理函数，这是一个 Ajax Event。
+      desc: 无论哪一个Ajax请求被完成，所有ajaxError处理器都将被执行。如果我们必须区分的请求,我们可以使参数传递给这个处理器。 他是通过事件对象、 XMLHttpRequest 对象和设置对象中使用的请求，每次ajaxError 处理器执行，它传递事件对象，jqXHR对象（在 jQuery 1.5之前是XHR对象），和用来创建请求的设置（settings）对象。如果请求失败，因为JavaScript引发了一个异常，  作为第四个参数的异常对象被传递给处理程序。 举个例子,我们能限制我们的回调到只处理事件处理某一特定的URL。
     - title: .ajaxSend()
-      desc: 在Ajax请求发送之前绑定一个要执行的函数，这是一个 Ajax Event.
+      desc: 无论哪一个Ajax请求被发送，所有ajaxSend处理器都将被执行。 如果我们必须区分的请求,我们可以使参数传递给这个处理器。 每次ajaxSend 处理器执行，它传递事件对象，jqXHR对象（在 jQuery 1.4中是XHR对象），和用来创建请求的设置（settings object）对象。如果请求失败，因为JavaScript引发了一个异常，  作为第四个参数的异常对象被传递给处理程序。 举个例子,我们能限制我们的回调到只处理事件处理某一特定的URL。
     - title: .ajaxStart()
-      desc: 在AJAX 请求刚开始时执行一个处理函数。 这是一个 Ajax Event.
+      desc: .ajaxStart() 方法在 AJAX 请求发送前执行函数。它是一个 Ajax 事件。无论在何时发送 Ajax 请求，jQuery 都会检查是否存在其他 Ajax 请求。如果不存在，则 jQuery 会触发该 ajaxStart 事件。在此时，由 .ajaxStart() 方法注册的任何函数都会被执行。
+
     - title: .ajaxStop()
-      desc: 在AJAX 请求完成时执行一个处理函数。 这是一个 Ajax Event。
+      desc: .ajaxStop() 方法在 AJAX 请求结束时执行函数。它是一个 Ajax 事件。无论 Ajax 请求在何时完成 ，jQuery 都会检查是否存在其他 Ajax 请求。如果不存在，则 jQuery 会触发该 ajaxStop 事件。在此时，由 .ajaxStop() 方法注册的任何函数都会被执行。
     - title: .ajaxSuccess()
-      desc: 绑定一个函数当 Ajax 请求成功完成时执行。 这是一个Ajax Event.
+      desc: ajaxSuccess() 方法在 AJAX 请求成功时执行函数。它是一个 Ajax 事件。,XMLHttpRequest 对象和设置作为参数传递给回调函数。 无论 Ajax 请求在何时成功完成 ，jQuery 都会触发该 ajaxSuccess 事件。在此时，由 .ajaxSuccess() 方法注册的任何函数都会被执行。
     - title: jQuery.ajaxPrefilter()
-      desc: 在每个请求之前被发送和$.ajax()处理它们前处理自定义Ajax选项或修改现有选项。
+      desc: 一个可选的字符串，其中包含一个或多个空格分隔的数据类型。 一个处理程序设置 未来的Ajax请求的默认值。options 是请求的选项 originalOptions 值作为提供给Ajax方法的选项，未经修改的， 因此， ajaxSettings没有默认值jqXHR 是请求的jqXHR对象
     - title: jQuery.ajaxSetup()
-      desc: 为以后要用到的Ajax请求设置默认的值
+      desc: 一个用来配置默认Ajax请求的{键-值}对，所有的选项都是可选的。用于设置$.ajaxSetup()的详细参数, 参见 $.ajax(). 所有后面的 Ajax 调用任何函数都将使用新的设置参数,除非被特别的请求, 直到下一次调用$.ajaxSetup().全局回调函数应使用他们各自的全局Ajax事件处理方法-.ajaxStart(), .ajaxStop(), .ajaxComplete(), .ajaxError(), .ajaxSuccess(), .ajaxSend()-设置，而不是为 $.ajaxSetup() 设置 options 对象。
     - title: jQuery.ajaxTransport()
-      desc: 创建一个对象用于处理Ajax数据的实际传输。
+      desc: 一个处理程序，使用第一个参数中提供的数据类型返回新的传输（transport）对象传输（transport）是一个对象，它提供了两种方法，send 和 abort，内部使用的 由$.ajax()发出请求。传输（transport）是最高级的方法用来增强$.ajax()并且应仅作为当预过滤器（prefilters）和转换器（converters）无法满足你的需求的时候的最后的手段 。由于每个请求需要有自己的传输（transport）对象实例，运输不能直接注册。  因此，你应该提供一个函数返回传输（transport）代替。
     - title: jQuery.get()
       desc: 使用一个HTTP GET请求从服务器加载数据。
     - title: jQuery.getJSON()
