@@ -8,7 +8,7 @@ module LoadData
 
   def self.load_sections(array)
     array.map do |hash|
-      section = Section.new(:title => hash["title"])
+      section = Section.new(:title => hash["title"], :desc => hash["desc"])
 
       hash["entries"].each do |entries_hash|
         entry = Entry.new(:title => entries_hash["title"], :content => entries_hash["desc"])

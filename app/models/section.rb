@@ -1,6 +1,6 @@
 # coding: utf-8
 class Section < DemoModel
-  attr_accessor :title, :entries, :book
+  attr_accessor :title, :entries, :book, :desc
 
   def self.make_all
     Book.find(1).sections

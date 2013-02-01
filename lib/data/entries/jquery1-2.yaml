@@ -1,4 +1,5 @@
 - title: Ajax
+  desc: jQuery 封装的关于异步请求的一些方法
   entries:
     - title: jQuery.ajax()
       desc: 该方法执行一个异步的HTTP（Ajax）的请求。
@@ -37,6 +38,7 @@
     - title: .serializeArray()
       desc: 将用作提交的表单元素的值编译成拥有name和value对象组成的数组。
 - title: 属性(Attributes)
+  desc: jQuery 封装的DOM的属性的读和写方法
   entries:
     - title: .addClass()
       desc: 为每个匹配的元素添加指定的样式类名
