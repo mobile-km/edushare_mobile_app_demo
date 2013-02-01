@@ -20,5 +20,15 @@ module LoadData
   COMMENTS = arr.map do |hash|
     Comment.new :user => User.find(hash["user_id"]), :content => hash["content"]
   end
-  ################
+  #######  我的笔记本列表
+  arr = YAML.load_file(Rails.root.join("lib/data/notebooks.yaml"))
+  NOTEBOOKS = arr.map do |hash|
+    Notebook.new :title => hash["title"], :desc => hash["desc"]
+  end
+
+  #######  我的笔记本列表 条目
+  arr = YAML.load_file(Rails.root.join("lib/data/notes.yaml"))
+  NOTES = arr.each_with_index.map do |hash, index|
+    Note.new :entry => Entry.find(index + 1), :desc => hash["desc"]
+  end
 end
