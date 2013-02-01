@@ -15,4 +15,10 @@ module LoadData
 
     section
   end
+  ####### 评论列表
+  arr = YAML.load_file(Rails.root.join("lib/data/comments.yaml"))
+  COMMENTS = arr.map do |hash|
+    Comment.new :user => User.find(hash["user_id"]), :content => hash["content"]
+  end
+  ################
 end

@@ -11,6 +11,7 @@
         - comments.each do |comment|
           .list-item.comment
             .title=link_to comment.user.name, 'javascript:;'
+            .logo=image_tag comment.user.logo_32
             .content= comment.content
 
     .comment
