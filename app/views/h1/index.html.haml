@@ -8,4 +8,4 @@
     - notices.each do |notice|
       - class_name = notice.read_status ? 'true' : 'false'
       .list-item.notice{:class=>class_name}
-        .title=link_to notice.title, '/h2'
+        .title=link_to notice.title, "/h2?id=#{notice.id}"
