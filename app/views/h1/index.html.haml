@@ -6,6 +6,6 @@
     %h2 我的通知列表
   .content.notices
     - notices.each do |notice|
-      - class_name = notice.unread ? 'unread' : 'read'
+      - class_name = notice.read_status ? 'true' : 'false'
       .list-item.notice{:class=>class_name}
-        .title=link_to notice.title, '/h2'
+        .title=link_to notice.title, "/h2?id=#{notice.id}"

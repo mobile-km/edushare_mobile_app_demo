@@ -1,0 +1,16 @@
+- title: XMLHttpRequest对象介绍
+  desc: XMLHttpRequest对象是浏览器中原生的发送异步请求用的 javascript API
+  entry_id: 1
+- title: 浏览器跨域请求的一些介绍
+  desc: 出于安全考虑，浏览器中的 javascript 发送异步请求是有跨域限制的
+  entry_id: 1
+- title: RUBY的元编程技术介绍
+  desc: 元编程简单来说就是让程序写程序，通过本课件，可以了解到这门比较高阶的技术
+  entry_id: 1
+- title: JAVA的反射技术介绍
+  desc: 一些常用JAVA框架中都用到了反射技术，属于比较高阶的技术
+  entry_id: 1
+- title: 常用的设计模式的一些介绍
+  desc: 设计模式其实就是很多前人总结的如何更有效的组织代码的一些经验模式
+  entry_id: 1
+
