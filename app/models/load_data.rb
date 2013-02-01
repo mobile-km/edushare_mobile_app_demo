@@ -44,4 +44,13 @@ module LoadData
   NOTES = arr.each_with_index.map do |hash, index|
     Note.new :entry => Entry.find(index + 1), :desc => hash["desc"]
   end
+
+  ####### 书签列表
+  arr = YAML.load_file(Rails.root.join("lib/data/bookmark.yaml"))
+  BOOKMARKS = arr.map do |bookmark|
+    bm = Bookmark.new
+    bm.title = bookmark['title']
+    bm.id = bookmark['id']
+    bm
+  end
 end
