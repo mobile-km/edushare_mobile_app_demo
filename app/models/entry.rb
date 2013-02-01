@@ -6,4 +6,7 @@ class Entry < DemoModel
     Book.find(1).sections[0].entries
   end
 
+  def number
+    self.id * 2
+  end
 end
