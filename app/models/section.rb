@@ -5,7 +5,7 @@ class Section < DemoModel
   def self.make_all
     @section_jquery7_8 = self.load_yaml('jquery7-8')
     @section_jquery3_4 = self.load_yaml('jquery3-4')
-    @section_jquery5_6 = self.load_yaml('jquery5-6')
+    # @section_jquery5_6 = self.load_yaml('jquery5-6')
     [@section_jquery3_4, @section_jquery5_6, @section_jquery7_8].flatten
   end
 
