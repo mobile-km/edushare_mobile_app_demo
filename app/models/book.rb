@@ -1,6 +1,6 @@
 # coding: utf-8
 class Book < DemoModel
-  attr_accessor :title, :cover_img, :sections, :downloaded, :progress
+  attr_accessor :title, :cover_img, :sections, :bookmark, :downloaded, :progress
 
   def add_section(section)
     self.sections ||= []
@@ -15,7 +15,7 @@ class Book < DemoModel
     my_books = downloaded_books + [books[4]]
     my_books
   end
-
+  
   def self.make_all
     LoadData.books
   end
