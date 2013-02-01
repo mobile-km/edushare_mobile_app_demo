@@ -20,7 +20,7 @@ module LoadData
   def self.books
     arr = YAML.load_file(Rails.root.join('lib/data/books.yaml'))
     books = arr.map do |hash|
-      Book.new :user => User.find(hash["user_id"]),:title => hash["title"], :cover_img => hash["cover_img"],
+      Book.new :creator => User.find(hash["user_id"]),:title => hash["title"], :cover_img => hash["cover_img"],
         :downloaded => hash["downloaded"], :progress => hash["progress"]
     end
     book_1 = books[0]
@@ -51,7 +51,7 @@ module LoadData
   BOOKMARKS = arr.map do |bookmark|
     bm = Bookmark.new
     bm.title = bookmark['title']
-    bm.id = bookmark['id']
+    bm.entry_id = bookmark['entry_id']
     bm
   end
 
