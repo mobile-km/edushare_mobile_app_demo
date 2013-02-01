@@ -1,6 +1,6 @@
 :ruby
   work = Homework.all[1]
-  work_about = WorkAbout.all
+  entries = Entry.homework_related
 .right
   .item= link_to "在手机上显示", "/i2"
   .work
@@ -10,6 +10,6 @@
       = work.content
 
   .work.about
-    .title="相关知识点"
-    - work_about.each do |about|
-      .item= link_to about.title, 'javascript:;'
+    .title 相关词条
+    - entries.each do |entry|
+      .item= link_to entry.title, 'javascript:;'

@@ -3,7 +3,9 @@ class Entry < DemoModel
   attr_accessor :section, :title, :content
 
   def self.make_all
-    Book.find(1).sections.map(&:entries).flatten
+    Book.all.map do |book|
+      book.sections ? book.sections.map(&:entries) : []
+    end.flatten
   end
 
   def self.search(word)
@@ -12,6 +14,10 @@ class Entry < DemoModel
       e.title.downcase.include?(keyword) ||
       e.content.downcase.include?(keyword)
     end
+  end
+
+  def self.homework_related
+    [1, 4, 8, 9].map {|id| self.find(id)}
   end
 
   def number

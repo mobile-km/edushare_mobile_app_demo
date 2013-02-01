@@ -1,9 +1,12 @@
 - title: "jQuery API: 写一个发送简单POST Ajax请求的函数jquery_ajax_1"
   content: jquery_ajax_1需要发送一个POST Ajax请求，到http://homework.zhugeliang.com/jquery-ajax-1，请求数据包含name(你的姓名)、student_num(你的学号)两个域，并把响应数据里的byte值转换成字符串作为jquery_ajax_1的返回值。
+  entry_id: 1
 - title: "jQuery API: 写一个发送GET Ajax请求并处理自定义响应报头的函数jquery_ajax_2"
   content: jquery_ajax_2需要发送一个GET Ajax请求， 到http://homework.zhugeliang.com/jquery-ajax-2，把一个包含header_value(响应的X-JQuery-Ajax-2报头的值)以及data(响应数据)两个域的javascript对象作为jquery_ajax_2的返回值。
+  entry_id: 1
 - title: "jQuery API: 写一个发送PUT Ajax请求并包含自定义请求报头的函数jquery_ajax_3"
   content: jquery_ajax_3需要发送一个PUT Ajax请求，到http://homework.zhugeliang.com/jquery-ajax-3，包含自定义请求报头X-JQuery-Ajax-3，值为你的学号，把响应数据作为jquery_ajax_3的返回值。
+  entry_id: 1
 - title: "ruby重构: 重构初体验 课后感想"
   content: 试阐述自己所理解的重构的意义，重构所能带来的好处。如果对重构的作用有疑义，也请写在作业里。
 - title: "ruby重构: 重构的基本原理 课后感想"

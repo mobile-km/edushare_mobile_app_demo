@@ -304,3 +304,20 @@ body.mobile{
     }
   }
 }
+
+.page-b1{
+  .desc{
+    background-color:#CECECE;
+    padding:10px 15px;
+  }
+  .sections{
+    .item{
+      height:72px;
+      padding:0 15px;
+      border-bottom:solid 1px #D5D5D5;
+      .title{
+        height:36px;line-height:36px;
+      }
+    }
+  }
+}

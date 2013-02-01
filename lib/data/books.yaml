@@ -1,24 +1,33 @@
-- title: 'jQuery API'
+- title: 'Jquery API'
+  desc: "jQuery是一个兼容多种浏览器的javascript库，核心理念是write less, do more。它是当下最为流行的javascript库，在世界前10000个访问最多的网站中，有超过55%在使用jQuery。"
   user_id: 1
   cover_img: '/assets/covers/jquery.png'
   downloaded: true
   progress: 100
+
 - title: '软件重构方法'
+  desc: ""
   user_id: 1
   cover_img: '/assets/covers/refactor.png'
   downloaded: true
   progress: 100
+
 - title: 'C#.NET 手册'
+  desc: ""
   user_id: 1
   cover_img: '/assets/covers/dotnet.png'
   downloaded: true
   progress: 100
+
 - title: 'Thinking in Java'
+  desc: ""
   user_id: 2
   cover_img: '/assets/covers/tijava.png'
   downloaded: true
   progress: 100
+
 - title: 'HTML5最佳实践'
+  desc: ""
   user_id: 2
   cover_img: '/assets/covers/html5.png'
   downloaded: false
