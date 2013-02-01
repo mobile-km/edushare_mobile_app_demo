@@ -1,6 +1,6 @@
 # coding: utf-8
 class Book < DemoModel
-  attr_accessor :title, :cover_img, :sections, :bookmark, :downloaded, :progress
+  attr_accessor :title, :cover_img, :sections, :bookmark, :downloaded, :progress, :user
 
   def add_section(section)
     self.sections ||= []
