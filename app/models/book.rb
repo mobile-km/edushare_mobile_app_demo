@@ -14,7 +14,7 @@ class Book < DemoModel
     a1_1.cover_img = '/assets/ruby.jpg'
     LoadData::BOOK_1_SECTIONS.each do |section|
       a1_1.add_section(section)
-    end
+    end    
 
     a1_2 = self.new
     a1_2.title = 'Ruby 重构'
