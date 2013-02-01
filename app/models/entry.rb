@@ -3,14 +3,19 @@ class Entry < DemoModel
   attr_accessor :section, :title, :content
 
   def self.make_all
-    Book.find(1).sections[0].entries
+    Book.find(1).sections.map(&:entries).flatten
+  end
+
+  def section_entries(id)
+    Section.find(id).entries
   end
 
   def self.search(word)
     keyword = word.downcase
     self.all.select do |e|
-      e.title.include?(keyword) || e.content.include?(keyword)
-    end.uniq
+      e.title.downcase.include?(keyword) ||
+      e.content.downcase.include?(keyword)
+    end
   end
 
   def number
