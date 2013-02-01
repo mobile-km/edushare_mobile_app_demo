@@ -1,5 +1,5 @@
 :ruby
-  bookmarks = Bookmark.all
+  bookmarks = Bookmark.list_all
 
 .page-d1
 
@@ -7,7 +7,6 @@
     ="我的书签"
 
   .content
-    - bookmarks.each do |book_mark|
+    - bookmarks.each do |bookmark|
       .data
-        .title= book_mark.title
-        .desc= book_mark.desc
+        .title= link_to bookmark.title, "/b3?id=#{bookmark.id}"
