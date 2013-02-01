@@ -50,7 +50,7 @@ module LoadData
   BOOKMARKS = arr.map do |bookmark|
     bm = Bookmark.new
     bm.title = bookmark['title']
-    bm.id = bookmark['id']
+    bm.entry_id = bookmark['entry_id']
     bm
   end
 
