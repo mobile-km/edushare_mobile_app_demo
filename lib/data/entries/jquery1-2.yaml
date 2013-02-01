@@ -1,0 +1,62 @@
+- title: Ajax
+  entries:
+    - title: jQuery.ajax()
+      desc: 执行一个异步的HTTP（Ajax）的请求。
+    - title: .ajaxComplete()
+      desc: 当Ajax请求完成后注册一个回调函数。这是一个 AjaxEvent。
+    - title: .ajaxError()
+      desc: Ajax请求出错时注册一个回调处理函数，这是一个 Ajax Event。
+    - title: .ajaxSend()
+      desc: 在Ajax请求发送之前绑定一个要执行的函数，这是一个 Ajax Event.
+    - title: .ajaxStart()
+      desc: 在AJAX 请求刚开始时执行一个处理函数。 这是一个 Ajax Event.
+    - title: .ajaxStop()
+      desc: 在AJAX 请求完成时执行一个处理函数。 这是一个 Ajax Event。
+    - title: .ajaxSuccess()
+      desc: 绑定一个函数当 Ajax 请求成功完成时执行。 这是一个Ajax Event.
+    - title: jQuery.ajax()
+      desc: 执行一个异步的HTTP（Ajax）的请求。
+    - title: jQuery.ajaxPrefilter()
+      desc: 在每个请求之前被发送和$.ajax()处理它们前处理自定义Ajax选项或修改现有选项。
+    - title: jQuery.ajaxSetup()
+      desc: 为以后要用到的Ajax请求设置默认的值
+    - title: jQuery.ajaxTransport()
+      desc: 创建一个对象用于处理Ajax数据的实际传输。
+    - title: jQuery.get()
+      desc: 使用一个HTTP GET请求从服务器加载数据。
+    - title: jQuery.getJSON()
+      desc: 使用一个HTTP GET请求从服务器加载JSON编码数据。
+    - title: jQuery.getScript()
+      desc: 使用一个HTTP GET请求从服务器加载并执行一个 JavaScript 文件
+    - title: jQuery.param()
+      desc: 创建一个序列化的数组或对象，适用于一个URL 地址查询字符串或Ajax请求。
+    - title: jQuery.post()
+      desc: 通过服务器HTTP POST请求加载数据。
+    - title: .load()
+      desc: 从服务器载入数据并且将返回的 HTML 代码并插入至 匹配的元素 中。
+    - title: .serialize()
+      desc: 将用作提交的表单元素的值编译成字符串。
+    - title: .serializeArray()
+      desc: 将用作提交的表单元素的值编译成拥有name和value对象组成的数组。
+- title: 属性(Attributes)
+  entries:
+    - title: .addClass()
+      desc: 为每个匹配的元素添加指定的样式类名
+    - title: .attr()
+      desc: 获取匹配的元素集合中的第一个元素的属性的值 或 设置每一个匹配元素的一个或多个属性。
+    - title: .hasClass()
+      desc: 确定任何一个匹配元素是否有被分配给定的（样式）类。
+    - title: .html()
+      desc: 从集合的第一个匹配元素中获取HTML内容 或 设置每一个匹配元素的html内容。
+    - title: .prop()
+      desc: 获取匹配的元素集中的第一个元素的属性（property）值或设置每一个匹配元素的一个或多个属性。
+    - title: .removeAttr()
+      desc: 为匹配的元素集合中的每个元素中移除一个属性。
+    - title: .removeClass()
+      desc: 移除集合中每个匹配元素上一个，多个或全部样式。
+    - title: .removeProp()
+      desc: 为集合中匹配的元素删除一个属性（property）。
+    - title: .toggleClass()
+      desc: "在匹配的元素集合中的每个元素上添加或删除一个或多个样式类,取决于这个样式类是否存在或价值切换属性。即：如果存在（不存在）就删除（添加）一个类。"
+    - title: .val()
+      desc: 获取匹配的元素集合中第一个元素的当前值或设置匹配的元素集合中每个元素的值。
