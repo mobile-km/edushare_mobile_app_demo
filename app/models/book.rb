@@ -1,14 +1,20 @@
 # coding: utf-8
 class Book < DemoModel
-  attr_accessor :title, :cover_img
+  attr_accessor :title, :cover_img, :sections
+
+  def add_section(section)
+    self.sections ||= []
+    self.sections << section
+    section.book = self
+  end
 
   def self.make_all
     a1_1 = self.new
-    a1_1.title = 'Ruby 重构'
+    a1_1.title = 'Jquery API'
     a1_1.cover_img = '/assets/ruby.jpg'
 
     a1_2 = self.new
-    a1_2.title = 'Jquery 在线 API'
+    a1_2.title = 'Ruby 重构'
     a1_2.cover_img = '/assets/ruby.jpg'
 
     a1_3 = self.new

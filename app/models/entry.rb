@@ -3,9 +3,7 @@ class Entry < DemoModel
   attr_accessor :section, :title, :content
 
   def self.make_all
-    Section.all.map do |section|
-      section.entries
-    end.flatten
+    Book.find(1).sections[0].entries
   end
 
 end
