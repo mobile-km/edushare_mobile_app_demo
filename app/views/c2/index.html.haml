@@ -1,6 +1,5 @@
 :ruby
-  entries = Entry.all
-  search_entries = entries[2..5]
+  entries = Entry.search('ajax')
 
 .page-c2
 
@@ -11,6 +10,6 @@
     = render "/c1/parts/search"
 
   .page-search-list
-    - search_entries.each do |entry|
+    - entries.each do |entry|
       .item
-        .title= link_to entry.title, "/c3"
+        .title= link_to entry.title, "/c3?id=#{entry.id}"
