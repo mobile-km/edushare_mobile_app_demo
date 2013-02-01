@@ -1,17 +1,15 @@
+:ruby
+  books = Book.all
+
+= page_top_bar '下载课本', '/a3'
+
 .page-a1
-
-  .search
-    = button_to "搜索", "/c1", :method => 'get'
-
-  .top
-    = render "/a1/parts/nav"
-
-
-  .page-book-list
-    - Book.all.each do |book|
+  .books-list
+    - books.each do |book|
       .item
         .img
           = link_to image_tag(book.cover_img), "/a2"
         .title
           = link_to book.title, "/a2"
-  
+        .author
+          作者：#{book.creator.name}

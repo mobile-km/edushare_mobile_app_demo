@@ -30,6 +30,7 @@ body.mobile{
   background-color:#EEEEEE;
   overflow:hidden;
   color:#444;
+  position:relative;
 
   a{
     color:#000;
@@ -82,7 +83,7 @@ body.mobile{
     font-weight:bold;
 
     &:hover{
-      background-color:#bbb;
+      background-color:#76A0E1;
     }
     &.current{
       border-bottom:solid 6px #3379E5;
@@ -90,7 +91,83 @@ body.mobile{
   }
 }
 
-.page-a3{
+.page-top-bar{
+  @extend .page-top-nav;
+  border-bottom:solid 2px #B1B1B1;
+
+  a.go-back{
+    float:left;
+    height:52px;line-height:20em;
+    font-size:0;
+    overflow:hidden;
+    width:52px;
+    background:url('navicons/goback.png') 14px 14px no-repeat;
+    background-color:#ccc;
+    &:hover{
+      background:url('navicons/gobackhover.png') 14px 14px no-repeat;
+      background-color:#76A0E1;
+    }
+  }
+  .title{
+    height:52px;
+    line-height:52px;
+    float:left;
+    margin-left:10px;
+    color:#000;
+  }
+}
+
+.page-bottom-nav{
+  height:54px - 2px;
+  background-color:#DCDCDC;
+  border-top:solid 2px #B1B1B1;
+  @include floatfix;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:360px;
+
+  a.nav{
+    height:52px;
+    text-align:center;
+    width:90px;
+    float:left;
+    overflow:hidden;
+    font-size:0;
+    line-height:20em;
+
+    &.download{
+      background:url(navicons/download24.png) 33px 14px no-repeat;
+    }
+    &.stat{
+      background:url(navicons/stat24.png) 33px 14px no-repeat;
+    }
+    &.notice{
+      background:url(navicons/notice24.png) 33px 14px no-repeat;
+    }
+    &.setting{
+      background:url(navicons/setting24.png) 33px 14px no-repeat;
+    }
+
+    &:hover{
+      &.download{
+        background:url(navicons/download24hover.png) 33px 14px no-repeat;
+      }
+      &.stat{
+        background:url(navicons/stat24hover.png) 33px 14px no-repeat;
+      }
+      &.notice{
+        background:url(navicons/notice24hover.png) 33px 14px no-repeat;
+      }
+      &.setting{
+        background:url(navicons/setting24hover.png) 33px 14px no-repeat;
+      }
+      background-color:#76A0E1 !important;
+    }
+  }
+}
+
+.page-a1, .page-a3{
   .books-list{
     .item{
       height:72px;
@@ -109,7 +186,7 @@ body.mobile{
       .author{
         margin-left:85px;
         font-size:12px;
-        color:#999;
+        color:#888;
       }
 
       .progress{
@@ -130,7 +207,7 @@ body.mobile{
       .download-status{
         margin-left:85px;
         margin-right:16px;
-        color:#999;
+        color:#888;
         font-size:12px;
         @include floatfix;
         .t{float:left;}
@@ -142,6 +219,19 @@ body.mobile{
       }
 
       &.downloading{
+        .img{
+          position:relative;
+          &:before{
+            content:"";
+            position:absolute;
+            top:0;right:0;
+            height:24px;width:24px;
+            background:url('covers/downloading.png');
+          }
+        }
+        .author{
+          display:none;
+        }
         .progress, .download-status{
           display:block;
         }

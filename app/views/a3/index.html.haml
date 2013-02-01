@@ -1,18 +1,20 @@
 :ruby
-  books = Book.all[0..5]
+  books = Book.my
 
 = page_top_nav(0)
+= page_bottom_nav
 
 .page-a3
   .books-list
     - books.each do |book|
-      .item
+      - klass = book.downloaded ? '' : 'downloading'
+      .item{:class=>klass}
         .img
           = link_to image_tag(book.cover_img), "/b1"
         .title
           = link_to book.title, "/b1"
         .author
-          诸葛亮
+          作者：#{book.creator.name}
 
         .progress
           .p{:style=>'width:20%;'}
