@@ -19,7 +19,7 @@ module LoadData
   def self.books
     arr = YAML.load_file(Rails.root.join('lib/data/books.yaml'))
     books = arr.map do |hash|
-      Book.new :title => hash["title"], :cover_img => hash["cover_img"],
+      Book.new :user => User.find(hash["user_id"]),:title => hash["title"], :cover_img => hash["cover_img"],
         :downloaded => hash["downloaded"], :progress => hash["progress"]
     end
     book_1 = books[0]

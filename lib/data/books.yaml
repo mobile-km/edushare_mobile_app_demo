@@ -1,20 +1,25 @@
 - title: 'Jquery API'
+  user_id: 1
   cover_img: '/assets/ruby.jpg'
   downloaded: true
   progress: 100
 - title: 'Ruby 重构'
+  user_id: 1
   cover_img: '/assets/ruby.jpg'
   downloaded: true
   progress: 100
 - title: 'Java 重构'
+  user_id: 1
   cover_img: '/assets/ruby.jpg'
   downloaded: true
   progress: 100
 - title: 'Thinking in Java'
+  user_id: 2
   cover_img: '/assets/ruby.jpg'
   downloaded: true
   progress: 100
 - title: 'Head first Java'
+  user_id: 2
   cover_img: '/assets/ruby.jpg'
   downloaded: false
   progress: 36
