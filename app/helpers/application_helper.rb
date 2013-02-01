@@ -11,4 +11,8 @@ module ApplicationHelper
   def page_bottom_nav
     render 'index/parts/page_bottom_nav'
   end
+
+  def page_bottom_nav_entry
+    render 'index/parts/page_bottom_nav_entry'
+  end
 end

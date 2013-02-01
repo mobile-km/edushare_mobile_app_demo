@@ -5,29 +5,30 @@
   coursewares = Courseware.all
   notebooks = Notebook.all
 
+= page_top_bar entry.title, '/b2'
+= page_bottom_nav_entry
+
 .page-b3
-  .top
+  .page-show
+    .title= entry.title
+    .content= entry.content
+    .related.hide
+      .homeworks
+        = link_to "相关作业", '/k3'
+      .coursewares
+        = link_to '相关课件', '/l3'
+
+  .top.hide
     = render "/a1/parts/nav"
     .comments-link=link_to '评论', '/f1'
     .notebook-link=link_to '添加到笔记', 'javascript:;'
-  .bookmark
+  .bookmark.hide
     = link_to "添加书签", "/d1"
 
-  .mark
+  .mark.hide
     .important
       =link_to "标记为重要", "javascript:;"
     .count{:data =>{:count=>entry.number} }
-
-  .page-show
-    .title= entry.title
-
-    .content= entry.content
-    .related
-      .homeworks
-        = link_to "相关作业", "/k3"
-
-      .coursewares
-        = link_to '相关课件', '/l3'
 
   .toast{:style => 'position:fixed;margin:0 auto;border:8px solid #ccc;background:#fff;display:none;'} 笔记添加成功!
 

@@ -10,3 +10,4 @@
     - Section.all.each do |section|
       .item
         .title= link_to section.title, "/b2"
+        .sdesc= truncate section.desc, :length=>24

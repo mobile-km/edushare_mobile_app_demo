@@ -167,6 +167,35 @@ body.mobile{
   }
 }
 
+.page-bottom-nav.entry a.nav{
+  &.add-note{
+    background:url(navicons/add-note24.png) 33px 14px no-repeat;
+  }
+  &.add-bookmark{
+    background:url(navicons/bookmark24.png) 33px 14px no-repeat;
+  }
+  &.prev-entry{
+    background:url(navicons/prev24.png) 33px 14px no-repeat;
+  }
+  &.next-entry{
+    background:url(navicons/next24.png) 33px 14px no-repeat;
+  }
+  &:hover{
+    &.add-note{
+      background:url(navicons/add-note24hover.png) 33px 14px no-repeat;
+    }
+    &.add-bookmark{
+      background:url(navicons/bookmark24hover.png) 33px 14px no-repeat;
+    }
+    &.prev-entry{
+      background:url(navicons/prev24hover.png) 33px 14px no-repeat;
+    }
+    &.next-entry{
+      background:url(navicons/next24hover.png) 33px 14px no-repeat;
+    }
+  }
+}
+
 .page-a1, .page-a3{
   .books-list{
     .item{
@@ -312,12 +341,58 @@ body.mobile{
   }
   .sections{
     .item{
-      height:72px;
+      height:64px;
       padding:0 15px;
       border-bottom:solid 1px #D5D5D5;
       .title{
         height:36px;line-height:36px;
       }
+      .sdesc{
+        font-size:12px;
+        color:#888;
+      }
+    }
+  }
+}
+
+.page-b2{
+  @extend .page-b1;
+  .entries{
+    .item{
+      height:48px;
+      padding:0 15px;
+      border-bottom:solid 1px #D5D5D5;
+      position:relative;
+
+      .title{
+        height:48px;line-height:48px;
+      }
+      a.add-note{
+        overflow:hidden;
+        font-size:0;
+        line-height:48px;
+        width:24px;
+        height:24px;
+        background:url('add_to_note.png');
+        position:absolute;
+        right:12px;top:12px;
+        &:hover{
+          background-color:#cbd5e5;
+        }
+      }
+    }
+  }
+}
+
+.page-b3{
+  .page-show{
+    .title{
+      padding:15px;
+      border-bottom:solid 2px #b1b1b1;
+      font-weight:bold;
+    }
+    .content{
+      padding:15px;
     }
   }
 }
