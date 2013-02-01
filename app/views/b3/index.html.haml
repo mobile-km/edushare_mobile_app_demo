@@ -1,5 +1,6 @@
 :ruby
-  entry = Entry.find(1)
+  entry_id = id > Entry.all.count ? nil : id
+  entry = Entry.find(params[:id] || entry_id || 1)
   coursewares = Courseware.all
   notebooks = Notebook.all
 

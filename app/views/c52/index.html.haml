@@ -1,14 +1,13 @@
 :ruby
-  entries = Entry.all
-  search_entries = entries[2..5]
+  entries = Entry.search 'deferred'
 
 .page-c52
 
   .top
-    = render "/a1/parts/nav"
-
+    .menu
+      = link_to "词条列表", "/b2"
 
   .page-search-list
-    - search_entries.each do |entry|
+    - entries.each do |entry|
       .item
-        .title= link_to entry.title, "/c53"
+        .title= link_to entry.title, "/c53?id=#{entry.id}"

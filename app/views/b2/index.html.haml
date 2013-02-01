@@ -1,5 +1,5 @@
 :ruby
-  entries = Entry.all
+  entries = Section.find(params[:id] || 1).entries
 
 .page-b2
 
@@ -17,4 +17,4 @@
   .page-entry-list
     - entries.each do |entry|
       .item
-        .title= link_to entry.title, "/b3"
+        .title= link_to entry.title, "/b3?id=#{entry.id}"

@@ -1,7 +1,7 @@
 class DemoModel
   def initialize(options = {})
     options.each do |k, v|
-      self.instance_variable_set "@#{k}", v
+      self.send "#{k}=", v
     end
   end
 
@@ -11,5 +11,9 @@ class DemoModel
 
   def self.all
     @all ||= self.make_all
+  end
+
+  def id
+    self.class.all.index(self) + 1
   end
 end

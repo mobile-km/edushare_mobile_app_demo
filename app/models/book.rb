@@ -1,6 +1,6 @@
 # coding: utf-8
 class Book < DemoModel
-  attr_accessor :title, :cover_img, :sections
+  attr_accessor :title, :cover_img, :sections, :bookmark, :downloaded, :progress, :user
 
   def add_section(section)
     self.sections ||= []
@@ -8,34 +8,16 @@ class Book < DemoModel
     section.book = self
   end
 
+  def self.my
+    books = Book.all
+    downloaded_books = books[0..1]
+    downloading_books = books[4]
+    my_books = downloaded_books + [books[4]]
+    my_books
+  end
+  
   def self.make_all
-    a1_1 = self.new
-    a1_1.title = 'Jquery API'
-    a1_1.cover_img = '/assets/ruby.jpg'
-    BOOK_1_SECTIONS.each do |section|
-      a1_1.add_section(section)
-    end
-
-    a1_2 = self.new
-    a1_2.title = 'Ruby 重构'
-    a1_2.cover_img = '/assets/ruby.jpg'
-
-    a1_3 = self.new
-    a1_3.title = 'Java 重构'
-    a1_3.cover_img = '/assets/ruby.jpg'
-
-
-    a1_4 = self.new
-    a1_4.title = 'Thinking in Java'
-    a1_4.cover_img = '/assets/ruby.jpg'
-
-
-    a1_5 = self.new
-    a1_5.title = 'Head first Java'
-    a1_5.cover_img = '/assets/ruby.jpg'
-
-
-    [a1_1, a1_2, a1_3, a1_4, a1_5]
+    LoadData.books
   end
   
 end

@@ -1,0 +1,8 @@
+- content: ajax 方法是最常用的方法
+  user_id: 6
+- content: 有了它写起异步请求来刷刷的
+  user_id: 5
+- content: jQuery 的作者真实人才啊，把异步请求封装的这么好用
+  user_id: 4
+- content:  其实它就是对 XMLHttpRequest对象 的封装，使其用起来更方便
+  user_id: 3

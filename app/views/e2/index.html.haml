@@ -13,4 +13,4 @@
         - @notes.each_with_index do |nihao, index|
           - id = index + 1
           .list-item.notebook
-            .title=link_to nihao.title, "/e3?id=#{id}"
+            .title=link_to "笔记:#{nihao.entry.title}", "/e3?id=#{id}"

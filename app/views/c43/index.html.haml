@@ -1,12 +1,1 @@
-:ruby
-  entry = Entry.find(1)
-
-.page-c43
-  
-  .top
-    = render "/c1/parts/nav"
-
-  .page-show
-    .title= entry.title
-
-    .content= entry.content
+= render :template => '/b3/index', :locals => {:id => 43}
