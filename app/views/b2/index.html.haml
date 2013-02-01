@@ -1,5 +1,5 @@
 :ruby
-  entries = Entry.all
+  entries = Section.find(params[:id] || 1).entries
 
 .page-b2
 
