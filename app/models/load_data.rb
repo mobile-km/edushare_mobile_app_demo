@@ -83,5 +83,9 @@ module LoadData
   HOMEWORKS = arr.map do |hash|
     Homework.new :title => hash["title"], :content => hash["content"], :entry => Entry.find(hash["entry_id"])
   end
-
+  ####### 课程
+  arr = YAML.load_file(Rails.root.join("lib/data/courses.yaml"))
+  COURSES = arr.map do |hash|
+    Course.new :title => hash["title"], :desc => hash["desc"], :location => hash["location"]
+  end
 end
