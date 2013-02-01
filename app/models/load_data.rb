@@ -18,11 +18,15 @@ module LoadData
       section
     end
   end
-
   BOOK_1_SECTIONS = load_sections arr
-
   BOOK_2_SECTIONS = load_sections YAML.load_file(Rails.root.join("lib/data/entries/ruby.yaml"))
-
+  ######## 用户
+  def self.users
+    arr = YAML.load_file(Rails.root.join("lib/data/users.yaml"))
+    arr.map do |hash|
+      User.new :name => hash["name"], :logo_32 => hash["logo_32"], :logo_48 => hash["logo_48"]
+    end
+  end
   ####### 知识包列表
   def self.books
     arr = YAML.load_file(Rails.root.join('lib/data/books.yaml'))
