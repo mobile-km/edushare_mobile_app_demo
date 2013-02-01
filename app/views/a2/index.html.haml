@@ -1,20 +1,27 @@
 :ruby
   book = Book.find(1)
 
+= page_top_bar '课本详细信息', '/a1'
+
 .page-a2
-
-  .top
-    = render "/a1/parts/nav"
-
   .page-book
-    .img
-      = image_tag(book.cover_img)
-    .title
-      = book.title
+    .meta
+      .img= image_tag(book.cover_img)
+      .title= book.title
+      .ops
+        %a.download{:href=>'/a3'} 下载课本
+        %a.online-read{:href=>'/b1'} 在线查看
+    .intro
+      .t 摘要信息：
+      .i 282个知识条目
+      .i 创建于2012-11-23
+    .creator
+      .t 作者：
+      .c
+        .avatar= image_tag book.creator.logo_32
+        .name= book.creator.name
 
-    .download
-      = link_to "下载", "/a3"
-
-    .online-read
-      = link_to "在线查看", "/b1"
+    .intro
+      .t 简介：
+      .i jQuery是一个兼容多种浏览器的javascript库，核心理念是write less, do more。它是当下最为流行的javascript库，在世界前10000个访问最多的网站中，有超过55%在使用jQuery。
 

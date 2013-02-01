@@ -17,7 +17,7 @@
           作者：#{book.creator.name}
 
         .progress
-          .p{:style=>'width:20%;'}
+          .p{:style=>"width:#{book.progress}%;"}
         .download-status
           .t 正在下载…
-          .per 20%
+          .per #{book.progress}%
