@@ -1,0 +1,1 @@
+kill `cat /web/2010/pids/unicorn-app-demo.pid`
