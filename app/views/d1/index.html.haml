@@ -1,10 +1,10 @@
 :ruby
-  bookmarks = Bookmark.list_all
+  bookmarks = Bookmark.all
 
 .page-d1
 
   .title
-    ="我的书签"
+    = "我的书签"
 
   .content
     - bookmarks.each do |bookmark|

@@ -1,6 +1,6 @@
 # coding: utf-8
 class Book < DemoModel
-  attr_accessor :title, :cover_img, :sections
+  attr_accessor :title, :cover_img, :sections, :bookmark
 
   def add_section(section)
     self.sections ||= []
@@ -14,25 +14,30 @@ class Book < DemoModel
     a1_1.cover_img = '/assets/ruby.jpg'
     LoadData::BOOK_1_SECTIONS.each do |section|
       a1_1.add_section(section)
-    end    
+    end
+    a1_1.bookmark = Bookmark.find(1)
 
     a1_2 = self.new
     a1_2.title = 'Ruby 重构'
     a1_2.cover_img = '/assets/ruby.jpg'
+    a1_2.bookmark = Bookmark.find(2)
 
     a1_3 = self.new
     a1_3.title = 'Java 重构'
     a1_3.cover_img = '/assets/ruby.jpg'
+    a1_3.bookmark = Bookmark.find(3)
 
 
     a1_4 = self.new
     a1_4.title = 'Thinking in Java'
     a1_4.cover_img = '/assets/ruby.jpg'
+    a1_4.bookmark = Bookmark.find(4)
 
 
     a1_5 = self.new
     a1_5.title = 'Head first Java'
     a1_5.cover_img = '/assets/ruby.jpg'
+    a1_5.bookmark = Bookmark.find(5)
 
 
     [a1_1, a1_2, a1_3, a1_4, a1_5]
