@@ -1,5 +1,5 @@
 :ruby
-  entry = Entry.find(1)
+  entry = Entry.find(params[:id] || 1)
   coursewares = Courseware.all
   notebooks = Notebook.all
 

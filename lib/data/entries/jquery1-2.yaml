@@ -14,8 +14,6 @@
       desc: 在AJAX 请求完成时执行一个处理函数。 这是一个 Ajax Event。
     - title: .ajaxSuccess()
       desc: 绑定一个函数当 Ajax 请求成功完成时执行。 这是一个Ajax Event.
-    - title: jQuery.ajax()
-      desc: 执行一个异步的HTTP（Ajax）的请求。
     - title: jQuery.ajaxPrefilter()
       desc: 在每个请求之前被发送和$.ajax()处理它们前处理自定义Ajax选项或修改现有选项。
     - title: jQuery.ajaxSetup()
