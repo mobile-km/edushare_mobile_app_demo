@@ -6,10 +6,6 @@ class Entry < DemoModel
     Book.find(1).sections.map(&:entries).flatten
   end
 
-  def self.section_entries(id)
-    Section.find(id).entries
-  end
-
   def self.search(word)
     keyword = word.downcase
     self.all.select do |e|
