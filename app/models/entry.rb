@@ -15,6 +15,6 @@ class Entry < DemoModel
   end
 
   def number
-    self.id * 2
+    self.id * 2 + 1 
   end
 end
