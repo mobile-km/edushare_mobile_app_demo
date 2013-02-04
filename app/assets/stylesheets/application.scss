@@ -252,6 +252,24 @@ body.mobile{
   }
 }
 
+.page-bottom-nav.note a.nav{
+  width:180px;
+  &.prev-note{
+    background:url(navicons/prev24.png) 78px 14px no-repeat;
+  }
+  &.next-note{
+    background:url(navicons/next24.png) 78px 14px no-repeat;
+  }
+  &:hover{
+    &.prev-note{
+      background:url(navicons/prev24hover.png) 78px 14px no-repeat;
+    }
+    &.next-note{
+      background:url(navicons/next24hover.png) 78px 14px no-repeat;
+    }
+  }
+}
+
 .page-a1, .page-a3{
   .books-list{
     .item{
@@ -587,6 +605,19 @@ body.mobile{
 }
 
 .page-e3{
+  .meta{
+    background-color:#3379E5;
+    color:white;
+    height:24px;line-height:24px;
+    font-size:12px;
+    padding:0 15px;
+    .place{
+      float:left;
+    }
+    .count{
+      float:right;
+    }
+  }
   .entry{
     padding:15px;
     border-bottom:solid 1px #b1b1b1;

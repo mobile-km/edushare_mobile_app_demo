@@ -18,6 +18,10 @@ module ApplicationHelper
     render 'index/parts/page_bottom_nav_entry', :entry => entry
   end
 
+  def page_bottom_nav_note(note)
+    render 'index/parts/page_bottom_nav_note', :note => note
+  end
+
   def page_bottom_nav_notebooks
     render 'index/parts/page_bottom_nav_notebooks'
   end

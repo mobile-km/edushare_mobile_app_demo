@@ -2,6 +2,9 @@
   content: 执行异步HTTP的方法
   entry_id: 1
 
+- title: 熟悉 javascript 基础语法
+  content: 想用好jQuery，需要 javascript 基础
+
 - title: ajaxComplete()
   content: ajax请求完成后的回调
   entry_id: 2
@@ -24,8 +27,3 @@
 - title: ajaxSuccess()
   content: ajax成功后的回调
   entry_id: 7
-
-- title: 熟悉 javascript 基础语法
-  content: 想用好jQuery，需要 javascript 基础
-
-  

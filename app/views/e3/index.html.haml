@@ -4,9 +4,15 @@
   entry = @note.entry
 
 = page_top_bar @note.title, '/e2'
+= page_bottom_nav_note(@note)
 
 .page-item-show.page-e3
-  .entry
-    .link= link_to "来自词条：#{@note.entry.title}", '/b3'
+  .meta
+    .place 第#{id}条笔记
+    .count 总共8条
+
+  - if entry
+    .entry
+      .link= link_to "来自词条：#{@note.entry.title}", '/b3'
 
   .content= @note.content

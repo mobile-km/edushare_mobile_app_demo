@@ -1,0 +1,10 @@
+:ruby
+  prev_id = note.id - 1
+  next_id = note.id + 1
+
+  prev_href = prev_id > 0 ? "/e3?id=#{prev_id}" : 'javascript:;'
+  next_href = next_id < Entry.all.length ? "/e3?id=#{next_id}" : 'javascript:;'
+
+.page-bottom-nav.note
+  %a.nav.prev-note{:href=>prev_href} 上一条
+  %a.nav.next-note{:href=>next_href} 下一条
