@@ -60,7 +60,7 @@ module LoadData
   #######  我的笔记本列表 条目
   arr = YAML.load_file(Rails.root.join("lib/data/notes.yaml"))
   NOTES = arr.each_with_index.map do |hash, index|
-    Note.new :entry => Entry.find(index + 1), :desc => hash["desc"]
+    Note.new :title => hash["title"], :content => hash["content"], :entry => Entry.find(index + 1)
   end
 
   ####### 书签列表
