@@ -1,5 +1,5 @@
 name = "app-demo"
-path = "/web/2010"
+path = "/MINDPIN_MRS_DATA"
 # worker 数量
 worker_processes 3
 
