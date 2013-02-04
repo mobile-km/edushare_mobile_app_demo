@@ -1,1 +1,1 @@
-kill `cat /web/2010/pids/unicorn-app-demo.pid`
+kill `cat /MINDPIN_MRS_DATA/pids/unicorn-app-demo.pid`
