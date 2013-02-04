@@ -153,11 +153,17 @@ body.mobile{
     &.stat{
       background:url(navicons/stat24.png) 33px 14px no-repeat;
     }
+    &.kebiao{
+      background:url(navicons/kebiao24.png) 33px 14px no-repeat;
+    }
     &.notice{
       background:url(navicons/notice24.png) 33px 14px no-repeat;
     }
     &.setting{
       background:url(navicons/setting24.png) 33px 14px no-repeat;
+    }
+    &.new-notebook{
+      background:url(navicons/add-notebook24.png) 33px 14px no-repeat;
     }
 
     &:hover{
@@ -167,12 +173,19 @@ body.mobile{
       &.stat{
         background:url(navicons/stat24hover.png) 33px 14px no-repeat;
       }
+      &.kebiao{
+        background:url(navicons/kebiao24hover.png) 33px 14px no-repeat;
+      }
       &.notice{
         background:url(navicons/notice24hover.png) 33px 14px no-repeat;
       }
       &.setting{
         background:url(navicons/setting24hover.png) 33px 14px no-repeat;
       }
+      &.new-notebook{
+        background:url(navicons/add-notebook24hover.png) 33px 14px no-repeat;
+      }
+
       background-color:#76A0E1 !important;
     }
   }

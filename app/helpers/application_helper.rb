@@ -16,4 +16,8 @@ module ApplicationHelper
   def page_bottom_nav_entry(entry)
     render 'index/parts/page_bottom_nav_entry', :entry => entry
   end
+
+  def page_bottom_nav_notebooks
+    render 'index/parts/page_bottom_nav_notebooks'
+  end
 end
