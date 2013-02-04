@@ -1,4 +1,5 @@
 - @notebooks = Notebook.all
+- arr = [8, 6, 11]
 
 = page_top_nav(1)
 
@@ -9,4 +10,5 @@
         - id = index + 1
         .item.notebook
           .img
-          .title=link_to notebook.title, "/e2?id=#{id}"
+          .title=link_to notebook.title, "/e2"
+          .count #{arr[index]}个条目
