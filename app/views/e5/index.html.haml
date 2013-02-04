@@ -1,12 +1,10 @@
+= page_top_bar '创建文字笔记', '/e2', :submit=>'/e2'
+
 .page-item-form.page-e5
   .page-note-new
-    .header
-      %h1 创建一条新的笔记
     .content
       .field.title
+        %label 笔记标题
         = text_field_tag :title
       .field.content
         = text_area_tag :content
-      .field.submit
-        = link_to '提交', '/e1'
-        = link_to '取消', '/e1'
