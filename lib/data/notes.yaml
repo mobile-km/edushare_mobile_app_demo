@@ -1,24 +1,31 @@
 - title: jQuery.ajax()
   content: 执行异步HTTP的方法
+  entry_id: 1
 
 - title: ajaxComplete()
   content: ajax请求完成后的回调
+  entry_id: 2
    
-- title: 使用 ajax 需要的一些注意
+- title: 使用 ajax 需要注意的一些事情
   content: 大概了解流程就好，需要API时现查，太多了记不住
 
 - title: ajaxSend()
   content: ajax请求执行回调
+  entry_id: 4
 
 - title: ajaxStart()
   content: ajax开始时的回调
+  entry_id: 5
 
 - title: ajaxStop()
   content: ajax结束后的回调
+  entry_id: 6
 
 - title: ajaxSuccess()
   content: ajax成功后的回调
+  entry_id: 7
 
-- title: jQuery.ajaxPrefilter()
-  content: 设置请求参数， json 格式的
+- title: 熟悉 javascript 基础语法
+  content: 想用好jQuery，需要 javascript 基础
+
   
