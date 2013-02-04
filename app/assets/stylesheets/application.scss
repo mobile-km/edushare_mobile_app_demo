@@ -568,15 +568,31 @@ body.mobile{
 .page-e2{
   .notes{
     .note{
-      height:48px;
       padding:0 15px;
       border-bottom:solid 1px #D5D5D5;
-      position:relative;
-
       .title{
-        height:48px;line-height:48px;
+        height:36px;line-height:36px;
+      }
+      .content{
+        height:20px;line-height:20px;
+        color:#666;font-size:13px;
+      }
+      .time{
+        color:#999;font-size:12px;
+        margin-bottom:5px;
+        margin-top:2px;
       }
     }
+  }
+}
+
+.page-e3{
+  .entry{
+    padding:15px;
+    border-bottom:solid 1px #b1b1b1;
+  }
+  .content{
+    padding:15px;
   }
 }
 

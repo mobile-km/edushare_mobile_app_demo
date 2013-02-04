@@ -1,12 +1,12 @@
 :ruby
   id = params[:id] ? params[:id].to_i : 1
   @note = Note.find(id)
+  entry = @note.entry
 
-.page-item-show.page-e2
-  .page-notebook-show
-    .header
-      %h1= @note.title
-    .content
-      .entry
-        .desc= @note.content
-        .link= link_to "词条: #{@note.entry.title}", '/b3'
+= page_top_bar @note.title, '/e2'
+
+.page-item-show.page-e3
+  .entry
+    .link= link_to "来自词条：#{@note.entry.title}", '/b3'
+
+  .content= @note.content
