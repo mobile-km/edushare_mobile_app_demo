@@ -1,5 +1,12 @@
+:ruby
+  prev_id = entry.id - 1
+  next_id = entry.id + 1
+
+  prev_href = prev_id > 0 ? "/b3?id=#{prev_id}" : 'javascript:;'
+  next_href = next_id < Entry.all.length ? "/b3?id=#{next_id}" : 'javascript:;'
+
 .page-bottom-nav.entry
   %a.nav.add-note{:href=>'javascript:;'} 添加笔记
   %a.nav.add-bookmark{:href=>'/d1'} 添加书签
-  %a.nav.prev-entry{:href=>'javascript:;'} 上一条
-  %a.nav.next-entry{:href=>'javascript:;'} 下一条
+  %a.nav.prev-entry{:href=>prev_href} 上一条
+  %a.nav.next-entry{:href=>next_href} 下一条
