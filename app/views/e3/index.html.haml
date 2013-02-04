@@ -5,8 +5,8 @@
 .page-item-show.page-e2
   .page-notebook-show
     .header
-      %h1= @note.entry.title
+      %h1= @note.title
     .content
       .entry
-        .desc= @note.desc
+        .desc= @note.content
         .link= link_to "词条: #{@note.entry.title}", '/b3'

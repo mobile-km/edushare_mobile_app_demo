@@ -1,11 +1,9 @@
 :ruby
-  entry_id = defined?(id) ? id : 1
-  entry_id = 1 if entry_id > Entry.all.count
-  entry = Entry.find(params[:id] || entry_id)
+  entry = Entry.find(params[:id] || 1)
   coursewares = Courseware.all
 
 = page_top_bar entry.title, '/b2'
-= page_bottom_nav_entry
+= page_bottom_nav_entry(entry)
 = render '/b3/parts/toast'
 = render '/b3/parts/dialog'
 
@@ -23,8 +21,6 @@
     = render "/a1/parts/nav"
     .comments-link=link_to '评论', '/f1'
     .notebook-link=link_to '添加到笔记', 'javascript:;'
-  .bookmark.hide
-    = link_to "添加书签", "/d1"
 
   .mark.hide
     .important

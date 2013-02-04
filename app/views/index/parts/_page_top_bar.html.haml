@@ -1,3 +1,5 @@
 .page-top-bar
   %a.go-back{:href=>href} 返回
   .title= title
+  - if has_search
+    %a.search{:href=>'/c41'} 搜索
