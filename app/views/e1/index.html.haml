@@ -1,14 +1,15 @@
 - @notebooks = Notebook.all
+- arr = [8, 6, 11]
 
 = page_top_nav(1)
+= page_bottom_nav_notebooks
 
 .page-item-list.page-e1
   .page-my-notebook-list
-    .header
-      %h1 我的笔记本列表
-    .content
-      .notebooks
-        - @notebooks.each_with_index do |notebook, index|
-          - id = index + 1
-          .list-item.notebook
-            .title=link_to notebook.title, "/e2?id=#{id}"
+    .notebooks
+      - @notebooks.each_with_index do |notebook, index|
+        - id = index + 1
+        .item.notebook
+          .img
+          .title=link_to notebook.title, "/e2"
+          .count #{arr[index]}个条目

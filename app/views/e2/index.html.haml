@@ -1,16 +1,14 @@
 :ruby
-  id = params[:id] ? params[:id].to_i : 1
-  @notebook = Notebook.find(id)
+  @notebook = Notebook.find(1)
   @notes = Note.all
+
+= page_top_bar @notebook.title, '/e1'
+= page_bottom_nav_in_a_notebook
 
 .page-item-list.page-e2
   .page-notebook-show
-    .header
-      %h1= @notebook.title
-    .content
-      .desc= @notebook.desc
-      .notes
-        - @notes.each_with_index do |nihao, index|
-          - id = index + 1
-          .list-item.notebook
-            .title=link_to "笔记:#{nihao.title}", "/e3?id=#{id}"
+    .notes
+      - @notes.each_with_index do |nihao, index|
+        - id = index + 1
+        .list-item.note
+          .title=link_to "#{nihao.title}", "/e3?id=#{id}"
