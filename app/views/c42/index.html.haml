@@ -2,16 +2,13 @@
   entries = Entry.search('jquery')
   section = Section.find(7)
 
+= page_top_bar '在课本中搜索', '/b1'
+
 .page-c42
-
-  .top
-    .menu
-      = link_to "章节列表", "/b2"
-
-  .search
-    = render "/c41/parts/search"
+  = render "/c41/parts/search"
 
   .page-search-list
-    - entries.each do |entry|
-      .item
-        .title= link_to entry.title, "/c43?id=#{entry.id}"
+    .entries
+      - entries.each do |entry|
+        .item
+          .title= link_to entry.title, "/c43?id=#{entry.id}"
