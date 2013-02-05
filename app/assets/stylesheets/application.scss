@@ -50,6 +50,7 @@ body.mobile{
   }
 
   .toast{
+    z-index: 9999;
     position:absolute;
     width:120px;
     height:48px;line-height:48px;
