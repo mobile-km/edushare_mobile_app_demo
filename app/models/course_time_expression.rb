@@ -1,5 +1,5 @@
 class CourseTimeExpression < DemoModel
-  attr_accessor :course, :user, :sn_id
+  attr_accessor :course, :user, :sn_id, :period
 
   def self.find_by_sn_id(sn_id)
     ALL[sn_id][0]
@@ -22,38 +22,24 @@ class CourseTimeExpression < DemoModel
 
     [
       # 星期一
-      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "1-1"),
-      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "1-2"),
-      CourseTimeExpression.new(:course => c_5, :user => user_2, :sn_id => "1-5"),
-      CourseTimeExpression.new(:course => c_5, :user => user_2, :sn_id => "1-6"),
-      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "1-7"),
-      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "1-8"),
+      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "1-1", :period => 2),
+      CourseTimeExpression.new(:course => c_5, :user => user_2, :sn_id => "1-5", :period => 2),
+      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "1-7", :period => 2),
       # 星期二
-      CourseTimeExpression.new(:course => c_2, :user => user_1, :sn_id => "2-3"),
-      CourseTimeExpression.new(:course => c_2, :user => user_1, :sn_id => "2-4"),
-      CourseTimeExpression.new(:course => c_3, :user => user_1, :sn_id => "2-7"),
-      CourseTimeExpression.new(:course => c_3, :user => user_1, :sn_id => "2-8"),
-      CourseTimeExpression.new(:course => c_4, :user => user_2, :sn_id => "2-9"),
-      CourseTimeExpression.new(:course => c_4, :user => user_2, :sn_id => "2-10"),
+      CourseTimeExpression.new(:course => c_2, :user => user_1, :sn_id => "2-3", :period => 2),
+      CourseTimeExpression.new(:course => c_3, :user => user_1, :sn_id => "2-7", :period => 2),
+      CourseTimeExpression.new(:course => c_4, :user => user_2, :sn_id => "2-9", :period => 2),
       # 星期三
-      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "3-3"),
-      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "3-4"),
-      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "3-11"),
-      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "3-12"),
+      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "3-3", :period => 2),
+      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "3-11", :period => 2),
       # 星期四
-      CourseTimeExpression.new(:course => c_3, :user => user_1, :sn_id => "4-1"),
-      CourseTimeExpression.new(:course => c_3, :user => user_1, :sn_id => "4-2"),
-      CourseTimeExpression.new(:course => c_2, :user => user_1, :sn_id => "4-7"),
-      CourseTimeExpression.new(:course => c_2, :user => user_1, :sn_id => "4-8"),
-      CourseTimeExpression.new(:course => c_4, :user => user_2, :sn_id => "4-9"),
-      CourseTimeExpression.new(:course => c_4, :user => user_2, :sn_id => "4-10"),
+      CourseTimeExpression.new(:course => c_3, :user => user_1, :sn_id => "4-1", :period => 2),
+      CourseTimeExpression.new(:course => c_2, :user => user_1, :sn_id => "4-7", :period => 2),
+      CourseTimeExpression.new(:course => c_4, :user => user_2, :sn_id => "4-9", :period => 2),
       # 星期五
-      CourseTimeExpression.new(:course => c_5, :user => user_2, :sn_id => "5-1"),
-      CourseTimeExpression.new(:course => c_5, :user => user_2, :sn_id => "5-2"),
-      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "5-5"),
-      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "5-6"),
-      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "5-7"),
-      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "5-8"),
+      CourseTimeExpression.new(:course => c_5, :user => user_2, :sn_id => "5-1", :period => 2),
+      CourseTimeExpression.new(:course => c_1, :user => user_1, :sn_id => "5-5", :period => 2),
+      CourseTimeExpression.new(:course => c_6, :user => user_2, :sn_id => "5-7", :period => 2)
     ]
   end
   ALL = make_all.group_by{|i|i.sn_id}
