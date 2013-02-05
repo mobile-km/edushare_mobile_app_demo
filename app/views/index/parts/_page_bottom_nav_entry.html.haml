@@ -3,7 +3,7 @@
   next_id = entry.id + 1
 
   prev_href = prev_id > 0 ? "/b3?id=#{prev_id}" : 'javascript:;'
-  next_href = next_id < Entry.all.length ? "/b3?id=#{next_id}" : 'javascript:;'
+  next_href = next_id <= Entry.all.length ? "/b3?id=#{next_id}" : 'javascript:;'
 
 .page-bottom-nav.entry
   %a.nav.add-note{:href=>'javascript:;'} 添加笔记
