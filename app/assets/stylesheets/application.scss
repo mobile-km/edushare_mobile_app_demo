@@ -4,7 +4,6 @@
 @import 'base/reset';
 @import 'base/typography';
 // -----------------
-@import 'g1';
 @import 'd1';
 @import 'm1';
 
@@ -182,6 +181,7 @@ body.mobile{
     overflow:hidden;
     font-size:0;
     line-height:20em;
+    position:relative;
 
     &.download{
       background:url(navicons/download24.png) 33px 14px no-repeat;
@@ -193,7 +193,18 @@ body.mobile{
       background:url(navicons/kebiao24.png) 33px 14px no-repeat;
     }
     &.notice{
-      background:url(navicons/notice24.png) 33px 14px no-repeat;
+      background:url(navicons/message24.png) 33px 14px no-repeat;
+      &:before{
+        content:"3";font-size:9px;
+        width:14px;height:14px;line-height:14px;
+        background-color:#E60013;
+        border:solid 2px white;
+        @include border-radius(14px);
+        color:white;
+        position:absolute;
+        top:5px;left:24px;
+        box-shadow:0 0 2px rgba(black, 0.5);
+      }
     }
     &.setting{
       background:url(navicons/setting24.png) 33px 14px no-repeat;
@@ -216,7 +227,7 @@ body.mobile{
         background:url(navicons/kebiao24hover.png) 33px 14px no-repeat;
       }
       &.notice{
-        background:url(navicons/notice24hover.png) 33px 14px no-repeat;
+        background:url(navicons/message24hover.png) 33px 14px no-repeat;
       }
       &.setting{
         background:url(navicons/setting24hover.png) 33px 14px no-repeat;
@@ -711,6 +722,18 @@ body.mobile{
         font-size:12px;color:#999;
         margin-top:5px;
       }
+
+      &.false{
+        .title{
+          font-weight:bold;
+        }
+        &:after{
+          content:"未读通知";
+          position:absolute;
+          right:15px;bottom:12px;
+          font-size:12px;color:#666;
+        }
+      }
     }
   }
 }
@@ -727,5 +750,45 @@ body.mobile{
   }
   .desc{
     padding:15px;
+  }
+}
+
+.page-g1{
+  @include floatfix;
+  background:url('wall2.png');
+  .orders.list{
+    width:15px;
+    float:left;
+    padding-top:19px;
+    background-color:rgba(white, 0.8);
+    border-right:solid 2px rgba(black, 0.8);
+    .item.order{
+      height:44px;line-height:44px;
+      font-size:10px;text-align:center;
+      color:black;
+    }
+  }
+  .weekdays{
+    @include floatfix;
+    width:360px - 17px;
+    float:left;
+
+    .weekday.list{
+      width:49px;
+      float:left;
+      .item.title{
+        font-size:10px;
+        color:black;
+        font-weight:bold;
+        text-align:center;
+        background-color:rgba(white, 0.8);
+        border-bottom:solid 2px rgba(black, 0.8);
+        height:17px;line-height:17px;
+      }
+      .item.course{
+        font-size:10px;
+        height:43px;border-bottom:solid 1px rgba(black, 0.2);
+      }
+    }
   }
 }

@@ -1,11 +1,10 @@
 = page_top_bar '我的课程表', '/a3'
 
-- weekdays = ['','星期一','星期二','星期三','星期四','星期五','星期六','星期日']     
-- orders = ['','1','2','3','4','5','6','7','8','9','10','11','12']
+- weekdays = ['','一','二','三','四','五','六','日']     
 
 .page-g1
   .orders.list
-    - 0.upto(12) do |order|
+    - 1.upto(12) do |order|
       .order.item= order
   .weekdays
     - 1.upto(7) do |weekday|
