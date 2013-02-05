@@ -1,6 +1,8 @@
 :ruby
   entry = Entry.find(params[:id] || 1)
   coursewares = Courseware.all
+  important_number = entry.number
+  style = important_number > 0 ? '' : 'display:none'
 
 = page_top_bar entry.title, '/b2'
 = page_bottom_nav_entry(entry)
@@ -9,6 +11,10 @@
 
 .page-b3
   .page-show
+    .important{:style=>style,:data=>{:count=>important_number}}
+      %span> 被标记为重要，已标记
+      %span.count>= important_number
+      %span> 次
     .title= entry.title
     .content= simple_format entry.content
     .related.hide
@@ -21,9 +27,3 @@
     = render "/a1/parts/nav"
     .comments-link=link_to '评论', '/f1'
     .notebook-link=link_to '添加到笔记', 'javascript:;'
-
-  .mark.hide
-    .important
-      =link_to "标记为重要", "javascript:;"
-    .count{:data =>{:count=>entry.number} }
-

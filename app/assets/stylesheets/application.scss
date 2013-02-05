@@ -224,30 +224,40 @@ body.mobile{
 }
 
 .page-bottom-nav.entry a.nav{
+  width:72px;
   &.add-note{
-    background:url(navicons/add-note24.png) 33px 14px no-repeat;
+    background:url(navicons/add-note24.png) 24px 14px no-repeat;
+  }
+  &.mark-important{
+    background:url(navicons/important24.png) 24px 14px no-repeat;
+    &.red{
+      background:url(navicons/important24red.png) 24px 14px no-repeat;
+    }
   }
   &.add-bookmark{
-    background:url(navicons/bookmark24.png) 33px 14px no-repeat;
+    background:url(navicons/bookmark24.png) 24px 14px no-repeat;
   }
   &.prev-entry{
-    background:url(navicons/prev24.png) 33px 14px no-repeat;
+    background:url(navicons/prev24.png) 24px 14px no-repeat;
   }
   &.next-entry{
-    background:url(navicons/next24.png) 33px 14px no-repeat;
+    background:url(navicons/next24.png) 24px 14px no-repeat;
   }
   &:hover{
     &.add-note{
-      background:url(navicons/add-note24hover.png) 33px 14px no-repeat;
+      background:url(navicons/add-note24hover.png) 24px 14px no-repeat;
+    }
+    &.mark-important{
+      background:url(navicons/important24hover.png) 24px 14px no-repeat;
     }
     &.add-bookmark{
-      background:url(navicons/bookmark24hover.png) 33px 14px no-repeat;
+      background:url(navicons/bookmark24hover.png) 24px 14px no-repeat;
     }
     &.prev-entry{
-      background:url(navicons/prev24hover.png) 33px 14px no-repeat;
+      background:url(navicons/prev24hover.png) 24px 14px no-repeat;
     }
     &.next-entry{
-      background:url(navicons/next24hover.png) 33px 14px no-repeat;
+      background:url(navicons/next24hover.png) 24px 14px no-repeat;
     }
   }
 }
@@ -460,6 +470,14 @@ body.mobile{
 
 .page-b3{
   .page-show{
+    .important{
+      background-color: #3379E5;
+      color: white;
+      font-size: 12px;
+      height: 24px;
+      line-height: 24px;
+      padding: 0 15px;
+    }
     .title{
       padding:15px;
       border-bottom:solid 2px #b1b1b1;
