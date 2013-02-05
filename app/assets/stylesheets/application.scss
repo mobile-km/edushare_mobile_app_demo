@@ -7,8 +7,6 @@
 @import 'g1';
 @import 'd1';
 @import 'm1';
-@import 'h1';
-@import 'h2';
 
 body.mobile{
   background:#ddd;
@@ -50,6 +48,18 @@ body.mobile{
     border:solid 1px #ABADB3;
     font-size:16px;
     padding:8px;
+  }
+
+  .toast{
+    position:absolute;
+    width:120px;
+    height:48px;line-height:48px;
+    background-color:rgba(black, 0.9);
+    color:white;
+    @include border-radius(4px);
+    top:(600px - 48px) / 2;
+    left:(360px - 120px) / 2;
+    text-align:center;
   }
 }
 
@@ -443,14 +453,14 @@ body.mobile{
   @extend .page-b1;
   .entries{
     .item{
-      height:48px;
-      padding:0 15px;
+      padding:12px 15px;
       border-bottom:solid 1px #D5D5D5;
       position:relative;
 
       .title{
-        height:48px;line-height:48px;
+        height:24px;line-height:24px;
       }
+
       a.add-note{
         overflow:hidden;
         font-size:0;
@@ -684,5 +694,38 @@ body.mobile{
         height:240px;
       }
     }
+  }
+}
+
+.page-h1{
+  .notices{
+    .notice{
+      padding:12px 15px;
+      border-bottom:solid 1px #D5D5D5;
+      position:relative;
+
+      .title{
+        height:24px;line-height:24px;
+      }
+      .time{
+        font-size:12px;color:#999;
+        margin-top:5px;
+      }
+    }
+  }
+}
+
+.page-h2{
+  .title{
+    padding:15px;
+    border-bottom:solid 1px #b1b1b1;
+    font-weight:bold;
+  }
+  .time{
+    padding:15px;
+    border-bottom:solid 1px #b1b1b1;
+  }
+  .desc{
+    padding:15px;
   }
 }
