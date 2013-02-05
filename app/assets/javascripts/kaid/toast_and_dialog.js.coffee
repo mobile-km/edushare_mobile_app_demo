@@ -1,6 +1,6 @@
 jQuery ->
   $add_to_notebook_link = jQuery('.page-bottom-nav .add-note, .page-b2 .add-note')
-  $toast = jQuery('.toast')
+  $toast = jQuery('.toast.note')
   $dialog = jQuery('.note-dialog')
   $notebook_submit = $dialog.find('.submit a')
   $notebook_cancel = $dialog.find('.cancel a')
