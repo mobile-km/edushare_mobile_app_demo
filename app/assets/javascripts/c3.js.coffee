@@ -8,7 +8,4 @@ jQuery ->
     console.log(0 == count)
     $important.slideDown() if 0 == count
     jQuery(this).addClass('red')
-      
-
-
-    
+    jQuery('.toast').fadeIn().delay(1000).fadeOut()
