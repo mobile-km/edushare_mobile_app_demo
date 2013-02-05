@@ -51,6 +51,18 @@ body.mobile{
     font-size:16px;
     padding:8px;
   }
+
+  .toast{
+    position:absolute;
+    width:120px;
+    height:48px;line-height:48px;
+    background-color:rgba(black, 0.9);
+    color:white;
+    @include border-radius(4px);
+    top:(600px - 48px) / 2;
+    left:(360px - 120px) / 2;
+    text-align:center;
+  }
 }
 
 .page-index{
