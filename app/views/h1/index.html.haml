@@ -1,11 +1,12 @@
 :ruby
   notices=Notice.all
 
+= page_top_bar '收到的通知', '/a3'
+
 .page-h1
-  .header
-    %h2 我的通知列表
   .content.notices
     - notices.each do |notice|
       - class_name = notice.read_status ? 'true' : 'false'
       .list-item.notice{:class=>class_name}
         .title=link_to notice.title, "/h2?id=#{notice.id}"
+        .time 2012年12月21日 12:00

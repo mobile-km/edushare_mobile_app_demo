@@ -1,9 +1,11 @@
 :ruby
   notice=Notice.find(params[:id] || 1)
 
+= page_top_bar '通知详情', '/h1'
+
 .page-h2
   .page-my-notice
-    .header
-      %h3=notice.title
     .content.notice
+      .title= notice.title
+      .time 2012年12月21日 12:00
       .desc= notice.desc

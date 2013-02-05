@@ -6,8 +6,9 @@ module ApplicationHelper
                                        :submit => options[:submit]
   end
 
-  def page_top_nav(current)
-    render 'index/parts/page_top_nav', :current => current
+  def page_top_nav(current, options = {})
+    render 'index/parts/page_top_nav', :current => current,
+                                       :has_search => options[:has_search]
   end
 
   def page_bottom_nav
