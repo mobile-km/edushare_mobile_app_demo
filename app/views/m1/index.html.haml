@@ -9,5 +9,5 @@
       - important_notes.each_with_index do |important_note,index|
         .list-item.important_note
           .title= link_to important_note.entry.title ,"/c3?id=#{index + 1}"
-          .number= "标记 #{important_note.entry.number}次"
+          .number= "标记 #{important_note.number}次"
           .time= important_note.time

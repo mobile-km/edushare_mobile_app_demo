@@ -96,4 +96,13 @@ module LoadData
   COURSES = arr.map do |hash|
     Course.new :title => hash["title"], :desc => hash["desc"], :location => hash["location"]
   end
+  ###### 重要词条
+  arr = YAML.load_file(Rails.root.join("lib/data/important_notes.yaml"))
+  IMPORTANTNOTES = arr.map do |hash|
+    entry_id = hash["entry_id"]
+    entry = Entry.find(entry_id)
+    time = 3.days.ago - entry_id.hours +  entry_id.minute
+    important_note = ImportantNote.new(:entry => entry, :number => hash["number"], :time => time)
+    entry.important_note = important_note
+  end
 end

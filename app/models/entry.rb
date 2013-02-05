@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class Entry < DemoModel
-  attr_accessor :section, :title, :content
+  attr_accessor :section, :title, :content, :important_note
 
   def self.make_all
     Book.all.map do |book|
@@ -19,8 +19,8 @@ class Entry < DemoModel
   def self.homework_related
     [1, 4, 8, 9].map {|id| self.find(id)}
   end
-  
-  def number
-    self.id * 2 + 1 
+
+  def important_number
+    important_note.blank? ? 0 : important_note.number
   end
 end

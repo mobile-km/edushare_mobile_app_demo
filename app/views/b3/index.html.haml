@@ -1,7 +1,7 @@
 :ruby
   entry = Entry.find(params[:id] || 1)
   coursewares = Courseware.all
-  important_number = entry.number
+  important_number = entry.important_number
   style = important_number > 0 ? '' : 'display:none'
 
 = page_top_bar entry.title, '/b2'
