@@ -12,9 +12,6 @@
         .title.item= weekdays[weekday]
         - 1.upto(12) do |order|
           - cte = CourseTimeExpression.find_by_sn_id("#{weekday}-#{order}")
-          - if cte.blank?
-            .course.item.blank
-          - else
-            .course.item= link_to cte.course.title,"/g2"
-
-
+          .course.item
+            -if cte
+              %a.c{:class=>"period_#{cte.period} c#{cte.course.id}", :href=>'/g2'}= cte.course.title

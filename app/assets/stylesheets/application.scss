@@ -788,6 +788,40 @@ body.mobile{
       .item.course{
         font-size:10px;
         height:43px;border-bottom:solid 1px rgba(black, 0.2);
+        a.c{
+          display:block;
+          margin-right:1px;
+          background-color:#317DCB;
+          border:solid 2px white;
+          @include border-radius(3px);
+          color:white;
+          padding:5px;
+          overflow:hidden;
+          box-shadow:0 1px 2px rgba(black, 0.4) inset, 0 0 1px rgba(black, 0.5);
+          text-shadow:0 0 1px rgba(black, 0.4);
+
+          &.period_1{
+            height:29px;
+          }
+          &.period_2{
+            height:73px;
+          }
+          &.period_3{
+            height:117px;
+          }
+          &.c1{
+            background-color:#649700;
+          }
+          &.c3{
+            background-color:#c12f2f;
+          }
+          &.c5{
+            background-color:#e3a000;
+          }
+          &.c6{
+            background-color:#cc4376;
+          }
+        }
       }
     }
   }
