@@ -29,4 +29,6 @@ EdushareMobileDemo::Application.routes.draw do
   resources :l3
 
   resources :k1, :k2, :k3
+
+  get "/html_demo/*path" => "html_demo#index"
 end
