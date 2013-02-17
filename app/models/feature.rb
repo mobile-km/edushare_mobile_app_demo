@@ -1,5 +1,5 @@
 class Feature < DemoModel
-  attr_accessor :title, :desc, :purpose
+  attr_accessor :title, :problem, :solution
 
   def self.make_all
     LoadData::FEATURES
