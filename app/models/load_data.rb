@@ -114,8 +114,8 @@ module LoadData
   arr = YAML.load_file(Rails.root.join("lib/data/features.yaml"))
   FEATURES = arr.map do |hash|
     title = hash["title"]
-    desc = hash["desc"]
-    purpose = hash["purpose"]
-    Feature.new(:title => title, :desc => desc, :purpose => purpose)
+    problem = hash["problem"]
+    solution = hash["solution"]
+    Feature.new(:title => title, :problem => problem, :solution => solution)
   end
 end
