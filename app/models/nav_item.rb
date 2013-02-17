@@ -43,6 +43,7 @@ class NavItem < DemoModel
         @last_item = item
 
         c_arr = hash["children"]
+        children = []
         if !c_arr.blank?
           parent = @current_parent
           @current_parent = item
@@ -51,6 +52,7 @@ class NavItem < DemoModel
 
           @current_parent = parent
         end
+        item.children = children
 
         item
       end
