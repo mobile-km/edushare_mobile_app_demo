@@ -1,5 +1,5 @@
 class HtmlDemoController < ApplicationController
-  layout false
+  layout 'html_demo'
   def index
     render "/html_demo/#{params[:path]}"
   end

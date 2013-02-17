@@ -1,0 +1,16 @@
+!!! 5
+%html{:lang=>'zh'}
+  %head
+    %meta{:charset=>'utf-8'}
+    %title EduShare Mobile App DEMO
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+
+  %body.html-demo
+    .page-content
+      = yield
+    .footer
+      ©MINDPIN 2013
+
+    = yield :javascript
