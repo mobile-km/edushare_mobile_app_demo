@@ -108,4 +108,12 @@ module LoadData
   ###### 导航
   arr = YAML.load_file(Rails.root.join("lib/data/nav_items.yaml"))
   NAV_ITEMS = NavItem.parse(arr)
+  ##### 功能列表
+  arr = YAML.load_file(Rails.root.join("lib/data/features.yaml"))
+  FEATURES = arr.map do |hash|
+    title = hash["title"]
+    desc = hash["desc"]
+    purpose = hash["purpose"]
+    Feature.new(:title => title, :desc => desc, :purpose => purpose)
+  end
 end
