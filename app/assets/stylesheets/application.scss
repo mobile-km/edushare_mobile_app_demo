@@ -7,9 +7,95 @@
 @import 'd1';
 @import 'm1';
 
+body.html-demo{
+  font-size:14px;
+
+  .footer{
+    padding:15px;
+    border-top:solid 1px #b1b1b1;
+    margin-top:15px;
+  }
+
+  a          { text-decoration: none      }
+  a:hover    { text-decoration: underline }
+  a:active   { text-decoration: underline }
+  strike     { color: grey                }
+  u          { text-decoration: none;
+               background-color: yellow   }
+  tt         { color: #2e3436;            }
+  pre        { color: #2e3436;
+               margin-left: 20px          }
+  h1         { text-align: center;
+               color: #4e9a06             }
+  h2         { color: #4e9a06             }
+  h3         { color: #4e9a06             }
+  h4         { color: #4e9a06             }
+  h5         { color: #4e9a06             }
+  span.insen { color: grey                }
+  .page { max-width: 1200px;}
+  .menu{
+    float:left; width: 500px;
+  }
+
+  .content {
+    padding-left: 520px;
+    ul{
+      padding-left:28px;
+    }
+  }
+
+  .notebook{font-variant: small-caps;
+      color:#4e9a06;
+      padding: 0px 20px;}
+  hr{clear:both;}
+}
+
 body.mobile{
   background:#ddd;
   font-size:16px;
+
+  .page-content{
+    width:360px;
+    height:600px;
+    background-color:#EEEEEE;
+    overflow:hidden;
+    color:#444;
+    position:relative;
+
+    a{
+      color:#000;
+      @include transition(background ease-in 0.2s);
+      text-decoration:none;
+    }
+
+    input[type=text]{
+      height:30px;line-height:30px;
+      border:solid 1px #ABADB3;
+      @include border-radius(2px);
+      padding:0 8px;
+      font-size:16px;
+    }
+
+    textarea{
+      border:solid 1px #ABADB3;
+      font-size:16px;
+      padding:8px;
+    }
+
+    .toast{
+      z-index: 9999;
+      position:absolute;
+      width:120px;
+      height:48px;line-height:48px;
+      background-color:rgba(black, 0.9);
+      color:white;
+      @include border-radius(4px);
+      top:(600px - 48px) / 2;
+      left:(360px - 120px) / 2;
+      text-align:center;
+    }
+  }
+
 }
 
 .page-phone-img{
@@ -19,48 +105,6 @@ body.mobile{
   background:url('android_frame_360x600.png') 0 0 no-repeat;
   padding-left:35px;
   padding-top:107px + 29px;
-}
-
-.page-content{
-  width:360px;
-  height:600px;
-  background-color:#EEEEEE;
-  overflow:hidden;
-  color:#444;
-  position:relative;
-
-  a{
-    color:#000;
-    @include transition(background ease-in 0.2s);
-    text-decoration:none;
-  }
-
-  input[type=text]{
-    height:30px;line-height:30px;
-    border:solid 1px #ABADB3;
-    @include border-radius(2px);
-    padding:0 8px;
-    font-size:16px;
-  }
-
-  textarea{
-    border:solid 1px #ABADB3;
-    font-size:16px;
-    padding:8px;
-  }
-
-  .toast{
-    z-index: 9999;
-    position:absolute;
-    width:120px;
-    height:48px;line-height:48px;
-    background-color:rgba(black, 0.9);
-    color:white;
-    @include border-radius(4px);
-    top:(600px - 48px) / 2;
-    left:(360px - 120px) / 2;
-    text-align:center;
-  }
 }
 
 .page-index{
@@ -162,144 +206,145 @@ body.mobile{
     margin-left:10px;
     color:#000;
   }
-}
 
-.page-bottom-nav{
-  height:54px - 2px;
-  background-color:#DCDCDC;
-  border-top:solid 2px #B1B1B1;
-  @include floatfix;
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:360px;
+  .page-bottom-nav{
+    height:54px - 2px;
+    background-color:#DCDCDC;
+    border-top:solid 2px #B1B1B1;
+    @include floatfix;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:360px;
 
-  a.nav{
-    height:52px;
-    text-align:center;
-    width:90px;
-    float:left;
-    overflow:hidden;
-    font-size:0;
-    line-height:20em;
-    position:relative;
+    a.nav{
+      height:52px;
+      text-align:center;
+      width:90px;
+      float:left;
+      overflow:hidden;
+      font-size:0;
+      line-height:20em;
+      position:relative;
 
-    &.download{
-      background:url(navicons/download24.png) 33px 14px no-repeat;
-    }
-    &.stat{
-      background:url(navicons/stat24.png) 33px 14px no-repeat;
-    }
-    &.kebiao{
-      background:url(navicons/kebiao24.png) 33px 14px no-repeat;
-    }
-    &.notice{
-      background:url(navicons/message24.png) 33px 14px no-repeat;
-      &:before{
-        content:"3";font-size:9px;
-        width:14px;height:14px;line-height:14px;
-        background-color:#E60013;
-        border:solid 2px white;
-        @include border-radius(14px);
-        color:white;
-        position:absolute;
-        top:5px;left:24px;
-        box-shadow:0 0 2px rgba(black, 0.5);
-      }
-    }
-    &.setting{
-      background:url(navicons/setting24.png) 33px 14px no-repeat;
-    }
-    &.new-notebook{
-      background:url(navicons/add-notebook24.png) 33px 14px no-repeat;
-    }
-    &.new-note{
-      background:url(navicons/add-text-note24.png) 33px 14px no-repeat;
-    }
-
-    &:hover{
       &.download{
-        background:url(navicons/download24hover.png) 33px 14px no-repeat;
+        background:url(navicons/download24.png) 33px 14px no-repeat;
       }
       &.stat{
-        background:url(navicons/stat24hover.png) 33px 14px no-repeat;
+        background:url(navicons/stat24.png) 33px 14px no-repeat;
       }
       &.kebiao{
-        background:url(navicons/kebiao24hover.png) 33px 14px no-repeat;
+        background:url(navicons/kebiao24.png) 33px 14px no-repeat;
       }
       &.notice{
-        background:url(navicons/message24hover.png) 33px 14px no-repeat;
+        background:url(navicons/message24.png) 33px 14px no-repeat;
+        &:before{
+          content:"3";font-size:9px;
+          width:14px;height:14px;line-height:14px;
+          background-color:#E60013;
+          border:solid 2px white;
+          @include border-radius(14px);
+          color:white;
+          position:absolute;
+          top:5px;left:24px;
+          box-shadow:0 0 2px rgba(black, 0.5);
+        }
       }
       &.setting{
-        background:url(navicons/setting24hover.png) 33px 14px no-repeat;
+        background:url(navicons/setting24.png) 33px 14px no-repeat;
       }
       &.new-notebook{
-        background:url(navicons/add-notebook24hover.png) 33px 14px no-repeat;
+        background:url(navicons/add-notebook24.png) 33px 14px no-repeat;
       }
       &.new-note{
-        background:url(navicons/add-text-note24hover.png) 33px 14px no-repeat;
+        background:url(navicons/add-text-note24.png) 33px 14px no-repeat;
       }
 
-      background-color:#76A0E1 !important;
-    }
-  }
-}
+      &:hover{
+        &.download{
+          background:url(navicons/download24hover.png) 33px 14px no-repeat;
+        }
+        &.stat{
+          background:url(navicons/stat24hover.png) 33px 14px no-repeat;
+        }
+        &.kebiao{
+          background:url(navicons/kebiao24hover.png) 33px 14px no-repeat;
+        }
+        &.notice{
+          background:url(navicons/message24hover.png) 33px 14px no-repeat;
+        }
+        &.setting{
+          background:url(navicons/setting24hover.png) 33px 14px no-repeat;
+        }
+        &.new-notebook{
+          background:url(navicons/add-notebook24hover.png) 33px 14px no-repeat;
+        }
+        &.new-note{
+          background:url(navicons/add-text-note24hover.png) 33px 14px no-repeat;
+        }
 
-.page-bottom-nav.entry a.nav{
-  width:72px;
-  &.add-note{
-    background:url(navicons/add-note24.png) 24px 14px no-repeat;
-  }
-  &.mark-important{
-    background:url(navicons/important24.png) 24px 14px no-repeat;
-    &.red{
-      background:url(navicons/important24red.png) 24px 14px no-repeat;
+        background-color:#76A0E1 !important;
+      }
     }
   }
-  &.add-bookmark{
-    background:url(navicons/bookmark24.png) 24px 14px no-repeat;
-  }
-  &.prev-entry{
-    background:url(navicons/prev24.png) 24px 14px no-repeat;
-  }
-  &.next-entry{
-    background:url(navicons/next24.png) 24px 14px no-repeat;
-  }
-  &:hover{
+
+  .page-bottom-nav.entry a.nav{
+    width:72px;
     &.add-note{
-      background:url(navicons/add-note24hover.png) 24px 14px no-repeat;
+      background:url(navicons/add-note24.png) 24px 14px no-repeat;
     }
     &.mark-important{
-      background:url(navicons/important24hover.png) 24px 14px no-repeat;
+      background:url(navicons/important24.png) 24px 14px no-repeat;
+      &.red{
+        background:url(navicons/important24red.png) 24px 14px no-repeat;
+      }
     }
     &.add-bookmark{
-      background:url(navicons/bookmark24hover.png) 24px 14px no-repeat;
+      background:url(navicons/bookmark24.png) 24px 14px no-repeat;
     }
     &.prev-entry{
-      background:url(navicons/prev24hover.png) 24px 14px no-repeat;
+      background:url(navicons/prev24.png) 24px 14px no-repeat;
     }
     &.next-entry{
-      background:url(navicons/next24hover.png) 24px 14px no-repeat;
+      background:url(navicons/next24.png) 24px 14px no-repeat;
+    }
+    &:hover{
+      &.add-note{
+        background:url(navicons/add-note24hover.png) 24px 14px no-repeat;
+      }
+      &.mark-important{
+        background:url(navicons/important24hover.png) 24px 14px no-repeat;
+      }
+      &.add-bookmark{
+        background:url(navicons/bookmark24hover.png) 24px 14px no-repeat;
+      }
+      &.prev-entry{
+        background:url(navicons/prev24hover.png) 24px 14px no-repeat;
+      }
+      &.next-entry{
+        background:url(navicons/next24hover.png) 24px 14px no-repeat;
+      }
     }
   }
-}
 
-.page-bottom-nav.note a.nav{
-  width:180px;
-  &.prev-note{
-    background:url(navicons/prev24.png) 78px 14px no-repeat;
-  }
-  &.next-note{
-    background:url(navicons/next24.png) 78px 14px no-repeat;
-  }
-  &:hover{
+  .page-bottom-nav.note a.nav{
+    width:180px;
     &.prev-note{
-      background:url(navicons/prev24hover.png) 78px 14px no-repeat;
+      background:url(navicons/prev24.png) 78px 14px no-repeat;
     }
     &.next-note{
-      background:url(navicons/next24hover.png) 78px 14px no-repeat;
+      background:url(navicons/next24.png) 78px 14px no-repeat;
+    }
+    &:hover{
+      &.prev-note{
+        background:url(navicons/prev24hover.png) 78px 14px no-repeat;
+      }
+      &.next-note{
+        background:url(navicons/next24hover.png) 78px 14px no-repeat;
+      }
     }
   }
+
 }
 
 .page-a1, .page-a3{
