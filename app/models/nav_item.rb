@@ -5,6 +5,10 @@ class NavItem < DemoModel
     LoadData::NAV_ITEMS
   end
 
+  def self.by_url(url)
+    LoadData::NAV_ITEM_HASH[url]
+  end
+
   def self.parse(arr)
     Parse.new(arr).result
   end
@@ -20,10 +24,12 @@ class NavItem < DemoModel
       @arr = arr
       @current_parent = nil
       @last_item = nil
+      @item_hash = {}
     end
 
     def result
-      _parse_array(@arr)
+      items = _parse_array(@arr)
+      {:items => items, :item_hash => @item_hash}
     end
 
     def _parse_array(array)
@@ -32,6 +38,7 @@ class NavItem < DemoModel
         url = hash["url"]
 
         item = NavItem.new(:title => title, :url => url, :parent => @current_parent)
+        @item_hash[url] = item
         item._set_prev(@last_item)
         @last_item = item
 
