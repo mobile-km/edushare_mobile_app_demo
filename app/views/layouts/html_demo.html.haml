@@ -8,22 +8,29 @@
     = javascript_include_tag 'application'
 
   %body.html-demo
-    .page-html-nav
-      - NavItem.items.each do |ni|
-        .item
-          %a.link{:href=>ni.url}= ni.title
-          - children = ni.children
-          - if !children.blank?
-            .children
-              - ni.children.each do |sni|
-                .item
-                  %a.link{:href=>sni.url}= sni.title
+    :ruby
+      current_navitem = NavItem.by_url(request.path)
 
     .page-title
-      网页标题
-    .page-content
-      = yield
-    .footer
-      © 2013 MINDPIN
+      .t= current_navitem.title
+
+    .page-body
+      .page-html-nav
+        - NavItem.items.each do |ni|
+          .item
+            %a.link{:href=>ni.url}= ni.title
+            - children = ni.children
+            - if !children.blank?
+              .children
+                - ni.children.each do |sni|
+                  .item
+                    %a.link{:href=>sni.url}= sni.title
+
+      .page-content
+        = yield
+
+    .page-footer
+      .f
+        © 2013 MINDPIN
 
     = yield :javascript
