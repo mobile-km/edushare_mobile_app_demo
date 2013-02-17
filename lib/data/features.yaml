@@ -1,6 +1,15 @@
 - title: 功能名称1
-  desc: 功能描述1
-  purpose: 功能针对的问题1
+  purpose:
+    解决了xxx问题
+    blahblahblah
+  desc:
+    功能描述1
+    blahblahblah
+
 - title: 功能名称2
-  desc: 功能描述2
-  purpose: 功能针对的问题2
+  purpose:
+    解决了xxx问题
+    blahblahblah
+  desc:
+    功能描述2
+    blahblahblah

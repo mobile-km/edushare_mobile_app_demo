@@ -1,3 +1,7 @@
+- title: 首页
+  url: /html_demo/index.html
+  children:
+
 - title: 01-演示索引页
   url: /html_demo/01.html
   children:
