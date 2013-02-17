@@ -10,9 +10,24 @@
   %body.html-demo
     :ruby
       current_navitem = NavItem.by_url(request.path)
+      prev_navitem = current_navitem.prev
+      next_navitem = current_navitem.next
 
     .page-title
-      .t= current_navitem.title
+      .tt
+        .t= current_navitem.title
+        .idx
+          %a{:href=>'/html_demo/index.html'} 首页
+        .prv
+          - if !prev_navitem.blank?
+            %a{:href=>prev_navitem.url} 上一页
+          - else
+            .quiet 上一页
+        .nxt
+          - if !next_navitem.blank?
+            %a{:href=>next_navitem.url} 下一页
+          - else
+            .quiet 下一页
 
     .page-body
       .page-html-nav
@@ -27,6 +42,12 @@
                     %a.link{:href=>sni.url}= sni.title
 
       .page-content
+        - if !current_navitem.children.blank?
+          .page-content-nav
+            - current_navitem.children.each do |cni|
+              .item
+                %a.link{:href=>cni.url}= cni.title
+
         = yield
 
     .page-footer

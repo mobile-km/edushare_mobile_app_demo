@@ -9,20 +9,55 @@
 
 body.html-demo{
   font-size:14px;
+  a{
+    color:#3779FF;
+    &:hover{
+      color:#4386fc;
+    }
+  }
 
   .page-title{
     background-color:#F5F5F5;
     border-bottom:solid 1px #eee;
     margin-bottom:20px;
 
-    .t{
+    .tt{
       width:980px;
-      height:30px;line-height:30px;
-      margin:0 auto;
       padding:20px 0;
-      font-size:26px;
-      // color:#D1372C;
+      margin:0 auto;
+      position:relative;
+
+      .t{
+        height:30px;line-height:30px;
+        font-size:26px;
+        // color:#D1372C;
+      }
+      a{
+        color:#666;
+        font-weight:bold;
+        &:hover{
+          color:#333;
+          text-decoration:none;
+        }
+      }
+
+      .idx{
+        position:absolute;
+        top:20px;right:160px;
+        font-size:16px;
+      }
+      .prv{
+        position:absolute;
+        top:20px;right:80px;
+        font-size:16px;
+      }
+      .nxt{
+        position:absolute;
+        top:20px;right:0;
+        font-size:16px;
+      }
     }
+
   }
 
   .page-body{
@@ -56,8 +91,66 @@ body.html-demo{
     .page-content{
       margin-left:200px;
 
+      .page-content-nav{
+        overflow:hidden;
+        margin-bottom:20px;
+        padding-bottom:20px;
+        border-bottom:solid 1px #EEEEEE;
+
+        .item{
+          float:left;
+          height:30px;line-height:30px;
+          margin-right:20px;
+          position:relative;
+          padding-left:20px;
+          &:before{
+            content:"";
+            display:block;
+            background-color:#ddd;
+            width:10px;height:10px;
+            @include border-radius(20px);
+            position:absolute;
+            top:11px;left:0;
+          }
+        }
+      }
+
       ul{
         padding-left:28px;
+      }
+
+      .page-func{
+        .t{
+          font-weight:bold;
+          color:#666;
+          font-size:16px;
+          margin-bottom:20px;
+        }
+        .ct{
+          color:#666;
+          margin-bottom:20px;
+        }
+      }
+
+      .page-func{
+        @include floatfix;
+        .func-purpose{
+          width:300px;
+          height:400px;
+          float:left;
+          background-color:#ffeeee;
+          padding:15px;
+          border:solid 1px rgba(black, 0.1);
+        }
+        .func-desc{
+          margin-left:20px;
+          width:300px;
+          height:400px;
+          float:left;
+          background-color:#eeffee;
+          padding:15px;
+          border:solid 1px rgba(black, 0.1);
+        }
       }
 
     }

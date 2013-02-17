@@ -1,64 +1,51 @@
-- title: EduShare 产品介绍
+- title: 演示首页
   url: /html_demo/index.html
-  children:
 
-- title: 01-演示索引页
-  url: /html_demo/01.html
-  children:
-
-- title: 02-版本历史
-  url: /html_demo/02.html
-  children:
-
-- title: 03-免责声明
-  url: /html_demo/03.html
-  children:
-
-- title: 04-版权说明
-  url: /html_demo/04.html
-  children:
-
-- title: 05-项目概述
+- title: 产品概述
   url: /html_demo/05.html
-  children:
 
-- title: 06-技术方案设计与建设
+- title: 功能介绍
   url: /html_demo/06.html
   children:
-    - title: 01-系统功能综述
-      url: /html_demo/06/01.html
+    - title: 个人资源管理
+      url: /html_demo/0601.html
       children:
-        - title: 01-教学工作台
-          url: /html_demo/06/01/01.html
-          children:
-        - title: 02-教学方案录入
-          url: /html_demo/06/01/02.html
-          children:
-        - title: 03-Office文档的在线即时处理
-          url: /html_demo/06/01/03.html
-          children:
-        - title: 04-多媒体课件的在线即时播放
-          url: /html_demo/06/01/04.html
-          children:
-        - title: 05-作业完成度的图形化展现
-          url: /html_demo/06/01/05.html
-          children:
-        - title: 06-师生问答互动
-          url: /html_demo/06/01/06.html
-          children:
-        - title: 07-教学贡献度统计
-          url: /html_demo/06/01/07.html
-          children:
-        - title: 08-教学资源利用率的可视化展现
-          url: /html_demo/06/01/08.html
-          children:
-        - title: 09-杂项功能
-          url: /html_demo/06/01/09.html
-          children:
-    - title: 02-系统部署方式
-      url: /html_demo/06/02.html
-      children:
+        - title: 个人资源盘
+          url: /html_demo/060101.html
+        - title: 课程资源组织
+          url: /html_demo/060102.html
 
-- title: 07-附录
-  url: /html_demo/07.html
+    - title: 多人资源共享
+      url: /html_demo/0602.html
+
+    - title: 视频播放和文档阅读
+      url: /html_demo/0603.html
+
+    - title: 教学互动
+      url: /html_demo/0604.html 
+      children:
+        - title: 作业
+          url: /html_demo/060401.html
+        - title: 问答
+          url: /html_demo/060402.html
+        - title: 调查
+          url: /html_demo/060402.html
+
+    - title: 图形化数据
+      url: /html_demo/0605.html 
+
+- title: 合作机会
+  url: /html_demo/08.html
   children:
+
+    - title: 部署方式
+      url: /html_demo/0801.html
+
+    - title: 技术支持
+      url: /html_demo/0804.html
+
+    - title: 免责声明
+      url: /html_demo/0803.html
+
+    - title: 版权说明
+      url: /html_demo/0803.html
