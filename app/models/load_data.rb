@@ -118,4 +118,13 @@ module LoadData
     solution = hash["solution"]
     Feature.new(:title => title, :problem => problem, :solution => solution)
   end
+  ##### 场景
+  arr = YAML.load_file(Rails.root.join("lib/data/scenes.yaml"))
+  SCENES = arr.map do |hash|
+    title = hash["title"]
+    url = hash["url"]
+    scene = Scene.new(:title => title, :url => url)
+    scene._build_pages(hash["pages"])
+    scene
+  end
 end
