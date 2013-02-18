@@ -1,0 +1,118 @@
+- title: 下载知识包
+  url: /html_demo/scenes/1
+  pages:
+    - image: a1.png
+      desc: 这个页面显示出了系统中所有可以下载的知识包，我们点击第一个 jQuery API 进入这个知识包的详情页面
+    - image: a2.png
+      desc: 这个是 jQuery API 知识包的详情页面，显示了这个知识包的概要，作者和简介，可以点击 在线查看 按钮直接开始浏览知识包的内容，也可以点击 下载课件 按钮把整个知识包下载到本地，方便在没有网络的情况下浏览知识包，我们点击 下载课件
+    - image: a3.png
+      desc: 这个页面显示出了已经下载完的和正在下载的知识包，经过一段时间的等待，我们看到 jQuery API 已经下载完了
+
+- title: 浏览下载完的知识包
+  url: /html_demo/scenes/1
+  pages:
+    - image: b1.png
+      desc: 这个页面显示出了jQuery API 包已经下载完成的各个章节显示以及描述 ，我们点击第一个 Ajax 章节 进入这个章节的详情页面
+    - image: b2.png 
+      desc: 这个是 Ajax 章节的详情页面，显示了这个章节的 描述 和 章节中各个知识点，我们点击第一个 jQuery.ajax() 知识点 进入这个知识点的详情页面
+    - image: b3.png
+      desc: 这个是 jQuery.ajax() 知识点的详情页面，显示了这个章节的 描述 和 详细信息，让我们了解以及理解jQuery.ajax()这个知识点
+
+- title: 关键词搜索功能
+  url: /html_demo/scenes/3
+  pages:
+    - image: c1.png
+      desc: 这个页面提供了一个全局搜索框，可以输入关键词来搜索所有知识包内的相关词条，在这里我们搜索class关键词进入下一步。
+    - image: c2.png
+      desc: 这个页面列出了全局搜索关键词class后返回的结果，可以看见所有包含class关键字的词条，接下来我们点击.addClass()词条进入下一步。
+    - image: c3.png
+      desc: 这个页面显示了.addClass()词条的信息，在这里我们能看到词条标题和词条的内容，在这里我们结束全局搜索的演示。
+    - image: c41.png
+      desc: 这个页面提供了一个知识包搜索框，可以输入关键词来搜索某个知识包内的相关词条，在这里我们搜索ajax关键词进入下一步。
+    - image: c42.png
+      desc: 这个页面列出了jQuery知识包内搜索关键词ajax后返回的结果，可以看见该知识包内所有包含ajax关键字的词条，接下来我们点击jQuery.ajax()词条进入下一步。
+    - image: c43.png
+      desc: 这个页面显示了jQuery.ajax()词条的信息，在这里我们能看到词条标题和词条的内容，在这里我们结束知识包内搜索的演示。
+
+- title: 增加书签
+  url: 
+  pages:
+    - image: b3.png
+      desc: 词条详细内容页面，点击底部导航，从左到右数第三个按钮，会把当前页面添加到我的书签列表，并且跳转到我的书签列表页面
+
+    - image: d1.png
+      desc: 我的书签列表页面，显示不同知识包下的书签位置列表，点击相应的链接，会进入具体位置页面
+
+- title: 收藏词条到笔记本
+  url: /html_demo/scenes/1
+  pages:
+    - image: b3.png
+      desc: 这个是一个词条的详情页面，我们点击左下角的 "+" 号
+    - image: b3_1.png
+      desc: 弹出了 增加到指定笔记本 的浮动框，选择其中的一个点击确定，提示 笔记增加完毕，点击页面左上角后退，回到知识包列表页面
+    - image: a1.png
+      desc: 回到这个页面，点击页面顶部的 笔记 选项卡，进入笔记本列表页面
+    - image: e1.png
+      desc: 这个页面列出了自己所有的笔记本，可以点击页面左下角的按钮增加一个新的笔记本，这里我们点击 前端开发笔记 进入这个笔记本
+    - image: e2.png
+      desc: 这个页面列出了收藏到这个笔记本的所有词条，第一个就是我们刚才收藏的词条
+
+- title: 评论
+  url: /html_demo/scenes/2
+  pages:
+    - image: b3.png
+      desc: 这个是 jQuery.ajax() 知识点的详情页面，显示了这个章节的 描述 和 详细信息，让我们了解以及理解jQuery.ajax()这个知识点，我们点击评论按钮进入评论页面
+    - image: f1.png 
+      desc: 这个是 jQuery.ajax() 知识点的评论页面，在这个页面中显示了这个知识点的评论，我们可以在评论框中进行评论 
+
+- title: 课程表
+  url: /html_demo/scenes/6
+  pages:
+    - image: g1.png
+      desc: 这个页面展示了课程表功能，接下来我们点击周一前两节的Java程序设计进入下一步。
+    - image: g2.png
+      desc: 这个页面列出了Java程序设计这门课的课程名称，上课地点，课程介绍和任课老师，在此我们完成课程表功能的演示。
+
+- title: 通知
+  url: /html_demo/scenes/3
+  pages:
+    - image: h1.png
+      desc: 这个是收到的通知页面，上面显示出了 通知的标题，通知的具体时间，以及通知是否已查看 ，我们点击第一个 活动安排通知 进入这个通知的详情页面
+    - image: h2.png 
+      desc: 这个是通知的详细页面，上面显示出了 通知的标题，通知的具体时间，通知的具体内容活动
+
+- title: 作业
+  url: /html_demo/scenes/8
+  pages:
+    - image: k1.png
+      desc: 这个页面展示了作业列表功能，接下来我们点击第一条作业条目进入下一步。
+    - image: k2.png
+      desc: 这个页面列出了jQuery API发送POST Ajax请求作业的标题以及描述，在此我们完成作业功能的演示。
+
+- title: 词条相关作业以及课件
+  url: /html_demo/scenes/12
+  pages:
+    - image: b3.png
+      desc: 这个页面展示了词条信息，列出了词条标题和词条内容，在这里我们点击相关作业进入下一步。
+    - image: k3.png
+      desc: 这个页面列出了jQuery.ajax()词条的相关作业，再此我们完成词条相关作业的演示。
+    - image: b3.png
+      desc: 我们回到词条信息页面，接下来我们点击相关课件进入下一步。
+    - image: l3.png
+      desc: 这个页面列出了jQuery.ajax()词条的相关课件，再此我们完成词条相关课件的演示。
+
+- title: 我的课件列表
+  url: 
+  pages:
+    - image: l1.png
+      desc: 当前用户全部的课件列表，从全局导航进入，显示若干个课件标题
+    - image: l2.png
+      desc: 某个课件的摘要页面，显示某个课件的摘要信息，包含 '在浏览器打开' 按钮
+
+- title: 标记为重要
+  url: 
+  pages:
+    - image: b3_2.png
+      desc: 点击底部导航加号旁边的标记按钮，该页面会被标记下来，并且显示标记次数，该次数会在 '重要词条' 列表页显示出来
+    - image: m1.png
+      desc: 重要词条列表页，显示了所有曾被至少标记过一次的重要词条，按照标记次数和标记时间来排序，列表项里显示 已标记X次
