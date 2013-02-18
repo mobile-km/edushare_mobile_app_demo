@@ -10,4 +10,8 @@ class Page < DemoModel
     self.next = page
     page.prev = self
   end
+
+  def self.by_url(url)
+    LoadData::PAGES_HASH[url]
+  end
 end

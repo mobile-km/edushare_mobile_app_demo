@@ -127,4 +127,10 @@ module LoadData
     scene._build_pages(hash["pages"])
     scene
   end
+
+  page_hash = {}
+  SCENES.map{|scene|scene.pages}.flatten.each do |page|
+    page_hash[page.url] = page
+  end
+  PAGES_HASH = page_hash
 end
