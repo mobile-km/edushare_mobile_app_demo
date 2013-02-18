@@ -21,3 +21,11 @@
       desc: 这个页面展示了课程表功能，接下来我们点击周一前两节的Java程序设计进入下一步。
     - image: g2.png
       desc: 这个页面列出了Java程序设计这门课的课程名称，上课地点，课程介绍和任课老师，在此我们完成课程表功能的演示。
+
+- title: 作业
+  url: /html_demo/scenes/8
+  pages:
+    - image: k1.png
+      desc: 这个页面展示了作业列表功能，接下来我们点击第一条作业条目进入下一步。
+    - image: k2.png
+      desc: 这个页面列出了jQuery API发送POST Ajax请求作业的标题以及描述，在此我们完成作业功能的演示。
