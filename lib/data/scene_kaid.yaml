@@ -29,3 +29,15 @@
       desc: 这个页面展示了作业列表功能，接下来我们点击第一条作业条目进入下一步。
     - image: k2.png
       desc: 这个页面列出了jQuery API发送POST Ajax请求作业的标题以及描述，在此我们完成作业功能的演示。
+
+- title: 词条相关作业以及课件
+  url: /html_demo/scenes/12
+  pages:
+    - image: b3.png
+      desc: 这个页面展示了词条信息，列出了词条标题和词条内容，在这里我们点击相关作业进入下一步。
+    - image: k3.png
+      desc: 这个页面列出了jQuery.ajax()词条的相关作业，再此我们完成词条相关作业的演示。
+    - image: b3.png
+      desc: 我们回到词条信息页面，接下来我们点击相关课件进入下一步。
+    - image: l3.png
+      desc: 这个页面列出了jQuery.ajax()词条的相关课件，再此我们完成词条相关课件的演示。
