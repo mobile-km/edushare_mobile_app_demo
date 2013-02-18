@@ -13,3 +13,11 @@
       desc: 这个页面列出了jQuery知识包内搜索关键词ajax后返回的结果，可以看见该知识包内所有包含ajax关键字的词条，接下来我们点击jQuery.ajax()词条进入下一步。
     - image: c43.png
       desc: 这个页面显示了jQuery.ajax()词条的信息，在这里我们能看到词条标题和词条的内容，在这里我们结束知识包内搜索的演示。
+
+- title: 课程表
+  url: /html_demo/scenes/6
+  pages:
+    - image: g1.png
+      desc: 这个页面展示了课程表功能，接下来我们点击周一前两节的Java程序设计进入下一步。
+    - image: g2.png
+      desc: 这个页面列出了Java程序设计这门课的课程名称，上课地点，课程介绍和任课老师，在此我们完成课程表功能的演示。
