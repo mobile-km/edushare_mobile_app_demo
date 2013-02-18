@@ -14,6 +14,14 @@
   url: /html_demo/scenes/2
   pages:
     - image: b3.png
-      desc: 这个是 jQuery.ajax() 知识点的详情页面，显示了这个章节的 描述 和 详细信息，让我们了解以及理解jQuery.ajax()这个知识点,我们点击评论按钮进入评论页面
+      desc: 这个是 jQuery.ajax() 知识点的详情页面，显示了这个章节的 描述 和 详细信息，让我们了解以及理解jQuery.ajax()这个知识点，我们点击评论按钮进入评论页面
     - image: f1.png 
       desc: 这个是 jQuery.ajax() 知识点的评论页面，在这个页面中显示了这个知识点的评论，我们可以在评论框中进行评论 
+
+- title: 通知
+  url: /html_demo/scenes/3
+  pages:
+    - image: h1.png
+      desc: 这个是收到的通知页面，上面显示出了 通知的标题，通知的具体时间，以及通知是否已查看 ，我们点击第一个 活动安排通知 进入这个通知的详情页面
+    - image: h2.png 
+      desc: 这个是通知的详细页面，上面显示出了 通知的标题，通知的具体时间，通知的具体内容活动
