@@ -1,9 +1,19 @@
 - title: 浏览下载完的知识包
   url: /html_demo/scenes/1
   pages:
-    - image: b1.png（这些图片会统一放在 public/html_demo_png/scenes/）
+    - image: b1.png
       desc: 这个页面显示出了jQuery API 包已经下载完成的各个章节显示以及描述 ，我们点击第一个 Ajax 章节 进入这个章节的详情页面
     - image: b2.png 
       desc: 这个是 Ajax 章节的详情页面，显示了这个章节的 描述 和 章节中各个知识点，我们点击第一个 jQuery.ajax() 知识点 进入这个知识点的详情页面
     - image: b3.png
       desc: 这个是 jQuery.ajax() 知识点的详情页面，显示了这个章节的 描述 和 详细信息，让我们了解以及理解jQuery.ajax()这个知识点
+
+
+
+- title: 评论
+  url: /html_demo/scenes/2
+  pages:
+    - image: b3.png
+      desc: 这个是 jQuery.ajax() 知识点的详情页面，显示了这个章节的 描述 和 详细信息，让我们了解以及理解jQuery.ajax()这个知识点,我们点击评论按钮进入评论页面
+    - image: f1.png 
+      desc: 这个是 jQuery.ajax() 知识点的评论页面，在这个页面中显示了这个知识点的评论，我们可以在评论框中进行评论 

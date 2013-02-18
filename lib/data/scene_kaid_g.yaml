@@ -1,7 +1,0 @@
-- title: 课程表
-  url: /html_demo/scenes/6
-  pages:
-    - image: g1.png
-      desc: 这个页面展示了课程表功能，接下来我们点击周一前两节的Java程序设计进入下一步。
-    - image: g2.png
-      desc: 这个页面列出了Java程序设计这门课的课程名称，上课地点，课程介绍和任课老师，在此我们完成课程表功能的演示。
