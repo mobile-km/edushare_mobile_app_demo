@@ -10,7 +10,7 @@
     - image: p31.png
       desc: 随着时间的推移，问题的答案逐渐增多，一些答案的得票数也发生变化。
     - image: p32.png
-      desc: 答案也包含附件。
+      desc: 答案也可以包含附件。
     - image: p42.png
       desc: 现在最新的答案已经因为的票最高而排到了前边。
     - image: q.png
