@@ -142,8 +142,9 @@ module LoadData
   arr = YAML.load_file(Rails.root.join("lib/data/mobile_scenes.yaml"))
   MOBILE_SCENES = arr.map do |hash|
     title = hash["title"]
+    desc = hash["desc"]
     url = hash["url"]
-    scene = Scene.new(:title => title, :url => url)
+    scene = Scene.new(:title => title, :url => url, :desc => desc)
     scene._build_pages(hash["pages"],"mobile")
     scene
   end
@@ -151,8 +152,9 @@ module LoadData
   arr = YAML.load_file(Rails.root.join("lib/data/web_scenes.yaml"))
   WEB_SCENES = arr.map do |hash|
     title = hash["title"]
+    desc = hash["desc"]
     url = hash["url"]
-    scene = Scene.new(:title => title, :url => url)
+    scene = Scene.new(:title => title, :url => url, :desc => desc)
     scene._build_pages(hash["pages"],"web")
     scene
   end
