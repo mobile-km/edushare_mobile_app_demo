@@ -1,10 +1,15 @@
-- title: 演示首页
+- title: 首页
   url: /html_demo/index.html
+  children:
+    - title: 方向与趋势
+      url: /html_demo/0501.html
+    - title: 发展思路
+      url: /html_demo/0502.html
+    - title: 产品概要
+      url: /html_demo/0503.html
 
-- title: 产品概述
-  url: /html_demo/05.html
 
-- title: 功能介绍（WEB）
+- title: 功能简介 - 网页端
   url: /html_demo/06.html
   children:
     - title: 个人资源管理
@@ -34,7 +39,7 @@
     - title: 图形化数据
       url: /html_demo/0605.html 
 
-- title: 功能介绍（移动版）
+- title: 功能简介 - 移动端
   url: /html_demo/07.html
   children:
     - title: 轻量知识阅读
@@ -54,24 +59,24 @@
     - title: 教学互动
       url: /html_demo/0703.html
       children:
-        - title: 课程表
+        - title: 课程信息
           url: /html_demo/070301.html
         - title: 教学通知
           url: /html_demo/070302.html
 
 
-- title: 合作机会
+- title: 商业合作
   url: /html_demo/08.html
   children:
-
     - title: 部署方式
       url: /html_demo/0801.html
-
     - title: 技术支持
       url: /html_demo/0804.html
 
+- title: 附录
+  url: /html_demo/09.html
+  children:
     - title: 免责声明
       url: /html_demo/0802.html
-
     - title: 版权说明
       url: /html_demo/0803.html

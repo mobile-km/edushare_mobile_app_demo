@@ -12,10 +12,13 @@
       current_navitem = NavItem.by_url(request.path)
       prev_navitem = current_navitem.prev
       next_navitem = current_navitem.next
+      parent_navitem = current_navitem.parent
+      title = current_navitem.title
 
     .page-title
       .tt
-        .t= current_navitem.title
+        %a.logo{:href=>'/html_demo/index.html'} 返回首页
+
         .idx
           %a{:href=>'/html_demo/index.html'} 首页
         .prv
@@ -32,22 +35,38 @@
     .page-body
       .page-html-nav
         - NavItem.items.each do |ni|
-          .item
+          - is_current = ni == current_navitem
+          - is_open = ni == parent_navitem
+          - klass = is_current ? 'current' : is_open ? 'open' : ''
+
+          .item{:class=>klass}
             %a.link{:href=>ni.url}= ni.title
-            - children = ni.children
-            - if !children.blank?
-              .children
-                - ni.children.each do |sni|
-                  .item
-                    %a.link{:href=>sni.url}= sni.title
+            .children
+              - ni.children.each do |sni|
+                .item{:class=>sni == current_navitem ? 'current' : ''}
+                  %a.sublink{:href=>sni.url}= sni.title
+
+      .page-bread
+        - if parent_navitem.blank?
+          .home
+            %a{:href=>'/html_demo/index.html'} HOME
+          .nav
+            %a{:href=>current_navitem.url}= current_navitem.title
+        - else
+          .home
+            %a{:href=>'/html_demo/index.html'} HOME
+          .nav
+            %a{:href=>parent_navitem.url}= parent_navitem.title
+          .nav
+            %a{:href=>current_navitem.url}= current_navitem.title
+
+      - if !parent_navitem.blank? && !current_navitem.children.blank?
+        .page-content-nav
+          - current_navitem.children.each do |cni|
+            .item
+              %a.link{:href=>cni.url}= cni.title
 
       .page-content
-        - if !current_navitem.children.blank?
-          .page-content-nav
-            - current_navitem.children.each do |cni|
-              .item
-                %a.link{:href=>cni.url}= cni.title
-
         = yield
 
     .page-footer

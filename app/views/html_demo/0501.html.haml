@@ -1,0 +1,8 @@
+.page-05
+  .items
+    = SummaryItem.direction_items.each do |item|
+      .item
+        .title= item.title
+        .desc= item.desc
+        .img
+          %img.i{:src=>item.image_url}
