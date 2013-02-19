@@ -1,0 +1,9 @@
+.page-05
+  .page-block
+    .items
+      - items.each do |item|
+        .item
+          .stitle= item.title
+          .desc= simple_format item.desc
+          .img
+            %img.i{:src=>item.image_url}
