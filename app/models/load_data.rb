@@ -124,7 +124,7 @@ module LoadData
     title = hash["title"]
     url = hash["url"]
     scene = Scene.new(:title => title, :url => url)
-    scene._build_pages(hash["pages"])
+    scene._build_pages(hash["pages"],"mobile")
     scene
   end
 
@@ -133,7 +133,7 @@ module LoadData
     title = hash["title"]
     url = hash["url"]
     scene = Scene.new(:title => title, :url => url)
-    scene._build_pages(hash["pages"])
+    scene._build_pages(hash["pages"],"web")
     scene
   end
 

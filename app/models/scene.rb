@@ -13,10 +13,10 @@ class Scene < DemoModel
     LoadData::WEB_SCENES
   end
 
-  def _build_pages(pages_arr)
+  def _build_pages(pages_arr,kind)
     self.pages = []
     pages_arr.each_with_index do |hash,index|
-      image_url = Page.image_url(hash["image"])
+      image_url = Page.image_url(hash["image"],kind)
       desc = hash["desc"]
       url = File.join(self.url,"#{index+1}")
       self.pages << Page.new(:image_url => image_url, :desc => desc, :url => url)
