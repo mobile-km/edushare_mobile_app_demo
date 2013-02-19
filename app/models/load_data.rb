@@ -118,6 +118,14 @@ module LoadData
     solution = hash["solution"]
     Feature.new(:title => title, :problem => problem, :solution => solution)
   end
+  ##### 引用资料
+  arr = YAML.load_file(Rails.root.join("lib/data/references.yaml"))
+  REFERENCES = arr.map do |hash|
+    title = hash["title"]
+    desc = hash["desc"]
+    url = hash["url"]
+    Reference.new(:title => title, :desc => desc, :url => url)
+  end
   ##### 场景
   arr = YAML.load_file(Rails.root.join("lib/data/mobile_scenes.yaml"))
   MOBILE_SCENES = arr.map do |hash|
