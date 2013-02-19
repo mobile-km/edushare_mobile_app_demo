@@ -1,0 +1,53 @@
+- title: 编写教学方案
+  desc: 创建管理教学方案
+  url: /html_demo/web_scenes/7
+  pages:
+    - image: a1.png
+      desc: 这个页面是Java程序设计的课程详情页面，在该页面最下方可以看见包含的教学方案列表，我们点击添加教学方案。
+    - image: a2.png
+      desc: 这里是教学方案创建页面，填入对应的标题跟描述，点击确定完成创建。
+    - image: b1.png
+      desc: 这个页面显示教学方案详情和管理，可以在这里进入教学方案分配的页面，同时可以预览学生看到的最终效果。
+    - image: b2.png
+      desc: 我们点击新增章节，为该方案创建一些章节。
+    - image: f1.png
+      desc: 然后我们点击学生参与方案右边的分配文字链接，进入学生分配页面，默认是选中所有参与该教学方案所属课程的学生，老师可以进一步调整。我们保持全选，然后点击确认。
+    - image: c3.png
+      desc: 通过上传文件按钮，选择需要上传的文件，可以显示该文件上传进度。
+    - image: c4.png
+      desc: 还可以通过从资源盘选择按钮，选取在个人资源盘里的的文件作为章节课件。
+
+
+- title: 浏览教学方案
+  desc: 查看教学方案相关的章节，课件跟教学资源
+  url: /html_demo/web_scenes/8
+  pages:
+    - image: d1.png
+      desc: 我们回到教学方案详情和管理页面，点击预览，可以看见学生看到的教学方案最终效果。这里有每个章节下边的课件查看和预览，当前是第一张杰面向对象基础的一个教学课件预览，我们点击用JAVA开发的Android程序。
+    - image: d2.png
+      desc: 这里我们看到用JAVA开发的Android程序这个教学视频的预览。
+
+
+
+- title: 组织课件
+  desc: 查看教学方案相关的章节，课件跟教学资源
+  url: /html_demo/web_scenes/9
+  pages:
+    - image: c1.png
+      desc: 在教学方案详情和管理页面，我们点击第一章节的的管理课件按钮，进入到该章节的课件编辑页面。
+    - image: c2.png
+      desc: 我们点击增加课件按钮，添加一些新的课件。
+    - image: c2_1.png
+      desc: 通过点击编辑按钮，对课件进行修改，点击保存完成修改。
+
+
+- title: 个人资源库
+  desc: 个人保存的一些学习资源跟教学方案相关的视频文档
+  url: /html_demo/web_scenes/10
+  pages:
+    - image: e1.png
+      desc: 教学方案下课件资源目录
+    - image: e2.png
+      desc: 资源目录下具体的资源列表（包括视频和文档）
+    - image: e2_1.png
+      desc: 资源详情页面
