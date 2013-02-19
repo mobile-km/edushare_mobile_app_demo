@@ -4,7 +4,7 @@
 - title: 产品概述
   url: /html_demo/05.html
 
-- title: 功能介绍
+- title: 功能介绍（WEB）
   url: /html_demo/06.html
   children:
     - title: 个人资源管理
@@ -33,6 +33,32 @@
 
     - title: 图形化数据
       url: /html_demo/0605.html 
+
+- title: 功能介绍（移动版）
+  url: /html_demo/07.html
+  children:
+    - title: 轻量知识阅读
+      url: /html_demo/0701.html
+      children:
+        - title: 课程包管理
+          url: /html_demo/070101.html
+        - title: 碎片化阅读
+          url: /html_demo/070102.html
+    - title: 个人笔记
+      url: /html_demo/0702.html
+      children:
+        - title: 快速笔记
+          url: /html_demo/070201.html
+        - title: 重要标记
+          url: /html_demo/070202.html
+    - title: 教学互动
+      url: /html_demo/0703.html
+      children:
+        - title: 课程表
+          url: /html_demo/070301.html
+        - title: 教学通知
+          url: /html_demo/070302.html
+
 
 - title: 合作机会
   url: /html_demo/08.html

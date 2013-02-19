@@ -67,7 +67,7 @@ body.html-demo{
 
     .page-html-nav{
       float:left;
-      width:180px;
+      width:170px;
 
       >.item{
         a{
@@ -134,22 +134,44 @@ body.html-demo{
 
       .page-func{
         @include floatfix;
-        .func-purpose{
+        .func-problem{
           width:300px;
           height:400px;
           float:left;
-          background-color:#ffeeee;
+          background-color:#F9F9F9;
           padding:15px;
-          border:solid 1px rgba(black, 0.1);
+          border:solid 1px #DFDFDF;
+          box-shadow:0 0 10px rgba(black, 0.05);
+          position:relative;
+          &:before{
+            content:"";
+            position:absolute;
+            top:-1px;height:5px;left:-1px;right:-1px;
+            background-color:#FE2232;
+          }
+          .t{
+            color:#FE2232;
+          }
         }
-        .func-desc{
+        .func-solution{
           margin-left:20px;
           width:300px;
           height:400px;
           float:left;
-          background-color:#eeffee;
+          background-color:#F9F9F9;
           padding:15px;
-          border:solid 1px rgba(black, 0.1);
+          border:solid 1px #DFDFDF;
+          box-shadow:0 0 10px rgba(black, 0.05);
+          position:relative;
+          &:before{
+            content:"";
+            position:absolute;
+            top:-1px;height:5px;left:-1px;right:-1px;
+            background-color:#00A256;
+          }
+          .t{
+            color:#00A256;
+          }
         }
       }
 
