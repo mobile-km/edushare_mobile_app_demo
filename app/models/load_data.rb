@@ -118,15 +118,46 @@ module LoadData
     solution = hash["solution"]
     Feature.new(:title => title, :problem => problem, :solution => solution)
   end
+  ##### 概述
+  hash = YAML.load_file(Rails.root.join("lib/data/summary.yaml"))
+  SUMMARY_DIRECTION_ITEMS = hash["direction"].map do |item|
+    SummaryItem.new(:title => item["title"], :desc => item["desc"], :image => item["image"])
+  end
+  SUMMARY_STRATEGY_ITEMS = hash["strategy"].map do |item|
+    SummaryItem.new(:title => item["title"], :desc => item["desc"], :image => item["image"])
+  end
+  SUMMARY_PRODUCT_ITEMS = hash["product"].map do |item|
+    SummaryItem.new(:title => item["title"], :desc => item["desc"], :image => item["image"])
+  end
+  SUMMARY_ITEMS = SUMMARY_DIRECTION_ITEMS + SUMMARY_STRATEGY_ITEMS + SUMMARY_PRODUCT_ITEMS
+  ##### 引用资料
+  arr = YAML.load_file(Rails.root.join("lib/data/references.yaml"))
+  REFERENCES = arr.map do |hash|
+    title = hash["title"]
+    desc = hash["desc"]
+    url = hash["url"]
+    Reference.new(:title => title, :desc => desc, :url => url)
+  end
   ##### 场景
-  arr = YAML.load_file(Rails.root.join("lib/data/scenes.yaml"))
-  SCENES = arr.map do |hash|
+  arr = YAML.load_file(Rails.root.join("lib/data/mobile_scenes.yaml"))
+  MOBILE_SCENES = arr.map do |hash|
     title = hash["title"]
     url = hash["url"]
     scene = Scene.new(:title => title, :url => url)
-    scene._build_pages(hash["pages"])
+    scene._build_pages(hash["pages"],"mobile")
     scene
   end
+
+  arr = YAML.load_file(Rails.root.join("lib/data/web_scenes.yaml"))
+  WEB_SCENES = arr.map do |hash|
+    title = hash["title"]
+    url = hash["url"]
+    scene = Scene.new(:title => title, :url => url)
+    scene._build_pages(hash["pages"],"web")
+    scene
+  end
+
+  SCENES = MOBILE_SCENES + WEB_SCENES
 
   page_hash = {}
   SCENES.map{|scene|scene.pages}.flatten.each do |page|
