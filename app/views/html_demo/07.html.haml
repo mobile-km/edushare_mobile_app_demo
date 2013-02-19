@@ -7,22 +7,21 @@
         .i
           %img{:src=>'/assets/html_demo/07-1.png'}
         %a.t{:href=>'/html_demo/0701.html'} 轻量知识阅读
-        .p 1. 下载课程包
-        .p 2. 碎片化阅读
-        .p 3. 方便的随身手册
+        - NavItem.items[2].children[0].children.each do |item|
+          .p
+            %a{:href=>'aaa'}= item.title
 
       .point.n2
         .i
           %img{:src=>'/assets/html_demo/07-2.png'}
         %a.t{:href=>'/html_demo/0702.html'} 个人笔记
-        .p 1. 快速记录想法
-        .p 2. 标记重要知识点
-        .p 3. 及时复习
-
+        - NavItem.items[2].children[1].children.each do |item|
+          .p
+            %a{:href=>'aaa'}= item.title
       .point.n3
         .i
           %img{:src=>'/assets/html_demo/07-3.png'}
         %a.t{:href=>'/html_demo/0703.html'} 教学互动
-        .p 1. 查看课程表
-        .p 2. 获取通知
-        .p 3. 随时沟通
+        - NavItem.items[2].children[2].children.each do |item|
+          .p
+            %a{:href=>'aaa'}= item.title
