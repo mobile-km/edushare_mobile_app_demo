@@ -1,0 +1,44 @@
+- title: 课程包的下载
+  desc: 可以把系统中提供的课程包下载到本地，方便离线浏览
+  url: /html_demo/mobile_scenes/1
+  pages:
+    - image: a1.png
+      desc: 这个页面显示出了系统中所有可以下载的课程包，我们点击第一个 jQuery API 进入这个课程包的详情页面
+    - image: a2.png
+      desc: 这个就是 jQuery API 课程包的详情页面，该页面显示了这个课程包的概要，作者和简介，可以点击 在线查看 直接开始浏览课程包的内容，也可以点击 下载课件 把整个课程包下载到本地，方便在没有网络的情况下浏览课程包，我们点击 下载课件
+    - image: a3.png
+      desc: 点击 下载课件 后，我们进入了这个页面，该页面显示出了已经下载完的和正在下载的课程包，经过一段时间的等待，我们看到 jQuery API 已经下载完了
+
+- title: 离线浏览课程包
+  desc: 课程包分为多个章节，每个章节下有多个词条，每个词条都是一个很细碎的 小知识，这样方便用零碎的时间进行浏览
+  url: /html_demo/mobile_scenes/2
+  pages:
+    - image: a3.png
+      desc: 这个页面显示出了已经下载完的和正在下载的课程包，我们点击已经下载完的 jQuery API，进入课程包的章节列表页面
+    - image: b1.png
+      desc: 这个就是 jQuery API 课程包的章节列表页面，该页面显示出了该课程包的所有章节 ，我们点击第一个 Ajax 进入这个章节的详情页面
+    - image: b2.png 
+      desc: 这个就是 Ajax 章节的详情页面，该页面显示了这个章节的 描述 和 章节中的词条列表，我们点击第一个 jQuery.ajax()  进入这个词条的详情页面
+    - image: b3.png
+      desc: 这个就是 jQuery.ajax() 词条的详情页面，我们可以在这里浏览词条的详细信息
+
+- title: 在课程包内通过关键词搜索词条
+  desc: 通过搜索功能，可以很方便的通过关键词找到想要查看的词条
+  url: /html_demo/mobile_scenes/3
+  pages:
+    - image: a3.png
+      desc: 这个页面显示出了已经下载完的和正在下载的课程包，我们点击右上角的搜索图标，进入搜索页面
+    - image: c1.png
+      desc: 这个搜索页面提供了一个搜索框，我们可以输入关键词来搜索所有课程包内的相关词条，在这里我们输入 class ，然后点击输入框右边的搜索图标
+    - image: c2.png
+      desc: 搜索完成后，我们可以看到搜索结果中，显示出了包含 class 关键词的词条，接下来我们点击 .addClass() 进入该词条的详情页面
+    - image: c3.png
+      desc: 这个页面就是.addClass() 词条的详情页面
+    - image: b1.png
+      desc: 系统还提供了在一个课程包内的搜索，我们在课程包的章节列表页面，点击右上角的搜索图标，进入搜索页面
+    - image: c41.png
+      desc: 我们在输入框内输入 ajax，然后点击右侧的搜索图标
+    - image: c42.png
+      desc: 搜索完成后，我们可以看到所有结果中，显示出了该课程包内包含 ajax 关键词的词条，接下来我们点击jQuery.ajax() 进入该词条的详情页面
+    - image: c43.png
+      desc: 这个页面就是 jQuery.ajax() 词条的详情页面
