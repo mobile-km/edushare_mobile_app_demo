@@ -12,7 +12,7 @@
     - image: p32.png
       desc: 答案也可以包含附件。
     - image: p42.png
-      desc: 现在最新的答案已经因为的票最高而排到了前边。
+      desc: 现在最新的答案已经因为得票最高而排到了前边。
     - image: q.png
       desc: 我们回到页面顶部点击添加到faq按钮。
     - image: q1.png
