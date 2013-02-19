@@ -9,6 +9,8 @@
 
 body.html-demo{
   font-size:14px;
+  background:url(html_demo/tt2.board.bg.png);
+
   a{
     color:#3779FF;
     &:hover{
@@ -17,44 +19,43 @@ body.html-demo{
   }
 
   .page-title{
-    background-color:#F5F5F5;
-    border-bottom:solid 1px #eee;
+    background-color:rgba(black, 0.76);
     margin-bottom:20px;
+    height:40px;
+    box-shadow:0 0 2px rgba(black, 0.2);
 
     .tt{
       width:980px;
-      padding:20px 0;
       margin:0 auto;
       position:relative;
+      @include floatfix;
+      height:40px;line-height:40px;
 
-      .t{
-        height:30px;line-height:30px;
-        font-size:26px;
-        // color:#D1372C;
+      a.logo{
+        float:left;
+        background:url(html_demo/s-logo.png) 0 8px no-repeat;
+        height:40px;line-height:40em;
+        width:200px;
+        overflow:hidden;
+        font-size:0;
+        margin-right:20px;
       }
-      a{
-        color:#666;
-        font-weight:bold;
-        &:hover{
-          color:#333;
-          text-decoration:none;
+
+      .idx, .prv, .nxt{
+        float:left;
+        a{
+          display:block;
+          color:white;
+          padding:0 10px;
+          &:hover{
+            text-decoration:none;
+            background:#006dcc; 
+          }
         }
-      }
-
-      .idx{
-        position:absolute;
-        top:20px;right:160px;
-        font-size:16px;
-      }
-      .prv{
-        position:absolute;
-        top:20px;right:80px;
-        font-size:16px;
-      }
-      .nxt{
-        position:absolute;
-        top:20px;right:0;
-        font-size:16px;
+        .quiet{
+          color:#999;
+          padding:0 10px;
+        }
       }
     }
 
@@ -67,14 +68,18 @@ body.html-demo{
 
     .page-html-nav{
       float:left;
-      width:170px;
+      width:160px;
+      background-color:white;
+      box-shadow:0 0 2px rgba(black, 0.2);
+      padding:10px;
 
-      >.item{
+      .item{
         a{
           display:block;
-          height:30px;line-height:30px;
-          border-top:solid 1px #ececec;
+          height:40px;line-height:40px;
+          border-bottom:solid 1px #ebebeb;
           color:#666;
+          padding-left:10px;
           @include transition(color 100ms ease-out 0s);
           &:hover{
             color:#333;
@@ -82,37 +87,129 @@ body.html-demo{
           }
         }
         .children{
-          margin-left:28px;
+          margin-left:10px;
+          display:none;
+          .item a{
+            border-bottom:dashed 1px #ebebeb;
+          }
+
+          .item.current{
+            a{
+              color:white;
+              text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
+            }
+          }
+        }
+
+        &.current{
+          background:url('html_demo/sprite-top-lists.png') no-repeat 0 5px;
+          a.link{
+            color:white;
+            text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
+          }
+        }
+
+        &.current, &.open{
+          .children{
+            display:block;
+          }
         }
       }
 
     }
 
+    .page-bread{
+      margin-left:200px;
+      overflow:hidden;
+      margin-bottom:20px;
+      background-color:#F3F3F3;
+      box-shadow:0 0 2px rgba(black, 0.2);
+      height:30px;line-height:30px;
+      padding:10px;
+      @include floatfix;
+
+      .home, .nav{
+        float:left;
+        height:30px;
+        a{display:block;height:30px;}
+      }
+
+      .home{
+        background:url(html_demo/sprite-top-lists1.png) no-repeat;
+        width:30px + 16px;
+        position:relative;
+        a{
+          font-size:0;
+          line-height:30em;
+          overflow:hidden;
+          width:30px;
+        }
+        &:after{
+          content:"";
+          position:absolute;
+          right:0;top:0;
+          width:16px;
+          height:30px;
+          background:url(html_demo/sprite-top-lists1.png) no-repeat right 0;
+        }
+      }
+      .nav{
+        background:url(html_demo/sprite-top-lists1.png) no-repeat -40px 0;
+        position:relative;
+        a{
+          padding:0 10px;
+          margin-right:16px;
+          color:#222;
+          text-decoration:none;
+        }
+        &:after{
+          content:"";
+          position:absolute;
+          right:0;top:0;
+          width:16px;
+          height:30px;
+          background:url(html_demo/sprite-top-lists1.png) no-repeat right 0;
+        }
+        &:last-child{
+          background:url(html_demo/sprite-top-lists1.png) no-repeat right 0;
+        }
+      }
+    }
+
+    .page-content-nav{
+      overflow:hidden;
+      margin-bottom:20px;
+      background-color:#F3F3F3;
+      box-shadow:0 0 2px rgba(black, 0.2);
+      height:30px;
+      padding:10px;
+
+      .item{
+        float:left;
+        height:30px;line-height:30px;
+        margin-right:20px;
+        position:relative;
+        padding-left:20px;
+        &:before{
+          content:"";
+          display:block;
+          background-color:#ddd;
+          width:10px;height:10px;
+          @include border-radius(20px);
+          position:absolute;
+          top:11px;left:0;
+        }
+      }
+    }
+
     .page-content{
       margin-left:200px;
+      margin-bottom:60px;
 
-      .page-content-nav{
-        overflow:hidden;
-        margin-bottom:20px;
-        padding-bottom:20px;
-        border-bottom:solid 1px #EEEEEE;
-
-        .item{
-          float:left;
-          height:30px;line-height:30px;
-          margin-right:20px;
-          position:relative;
-          padding-left:20px;
-          &:before{
-            content:"";
-            display:block;
-            background-color:#ddd;
-            width:10px;height:10px;
-            @include border-radius(20px);
-            position:absolute;
-            top:11px;left:0;
-          }
-        }
+      .page-block{
+        background-color:white;
+        box-shadow:0 0 2px rgba(black, 0.2);
+        padding:15px;
       }
 
       ul{
@@ -139,18 +236,18 @@ body.html-demo{
           height:400px;
           float:left;
           background-color:#F9F9F9;
-          padding:15px;
+          padding:15px+6px 15px 15px;
           border:solid 1px #DFDFDF;
           box-shadow:0 0 10px rgba(black, 0.05);
           position:relative;
           &:before{
             content:"";
             position:absolute;
-            top:-1px;height:5px;left:-1px;right:-1px;
-            background-color:#FE2232;
+            top:-1px;height:6px;left:-1px;right:-1px;
+            background-color:#CA4E45;
           }
           .t{
-            color:#FE2232;
+            color:#CA4E45;
           }
         }
         .func-solution{
@@ -159,18 +256,18 @@ body.html-demo{
           height:400px;
           float:left;
           background-color:#F9F9F9;
-          padding:15px;
+          padding:15px+6px 15px 15px;
           border:solid 1px #DFDFDF;
           box-shadow:0 0 10px rgba(black, 0.05);
           position:relative;
           &:before{
             content:"";
             position:absolute;
-            top:-1px;height:5px;left:-1px;right:-1px;
-            background-color:#00A256;
+            top:-1px;height:6px;left:-1px;right:-1px;
+            background-color:#4089F8;
           }
           .t{
-            color:#00A256;
+            color:#4089F8;
           }
         }
       }
@@ -181,7 +278,7 @@ body.html-demo{
 
   .page-footer{
     background-color:#F5F5F5;
-    border-top:solid 1px #EEEEEE;
+    box-shadow:0 0 2px rgba(black, 0.2);
     position:fixed;
     left:0;right:0;
     bottom:0;
@@ -190,6 +287,47 @@ body.html-demo{
       margin:0 auto;
       font-size:12px;
       height:40px;line-height:40px;
+    }
+  }
+
+  .page-hindex{
+    padding:0;
+    .title{
+      font-size:30px;
+      line-height:40px;
+      font-weight:bold;
+      margin-bottom:20px;
+      color:#333;
+    }
+    .index-img1{
+      background:url(html_demo/index1.png) #F9F9F9 no-repeat 10px 10px;
+      width:730px;height:240px;
+      padding:10px;
+      box-shadow:0 0 2px rgba(0, 0, 0, 0.2);
+      margin-bottom:30px;
+    }
+
+    .points{
+      @include floatfix;
+      margin-bottom:30px;
+      .point{
+        width:230px;
+        float:left;
+        padding-left:20px;
+        .title{
+          font-size:18px;
+          line-height:30px;
+          margin-bottom:10px;
+          color:#555;
+          font-weight:normal;
+        }
+        .p{
+          color:#555;
+        }
+        .p:before{
+          content:"- ";
+        }
+      }
     }
   }
 }
