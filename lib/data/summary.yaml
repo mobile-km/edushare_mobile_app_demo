@@ -1,0 +1,21 @@
+direction:
+  - title: 标题1
+    desc: 描述
+    image: 1.png
+  - title: 标题1
+    desc: 描述
+    image: 图片名称
+strategy:
+  - title: 标题2
+    desc: 描述
+    image: 图片名称
+  - title: 标题2
+    desc: 描述
+    image: 图片名称
+product:
+  - title: 标题3
+    desc: 描述
+    image: 图片名称
+  - title: 标题3
+    desc: 描述
+    image: 图片名称
