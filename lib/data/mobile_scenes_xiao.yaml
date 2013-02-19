@@ -1,0 +1,14 @@
+- title: 课程表
+  desc: 用户的课程表，显示每周要上的课
+  url: /html_demo/mobile_scenes/9
+  pages:
+    - image: g1.png
+    - image: g2.png
+
+
+- title: 教学通知
+  desc: 通知列表，显示了该用户收到的所有通知，包括每个通知的标题，具体时间，以及通知的 已读未读状态
+  url: /html_demo/mobile_scenes/10
+  pages:
+    - image: h1.png
+    - image: h2.png
