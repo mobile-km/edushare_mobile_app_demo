@@ -5,6 +5,14 @@ class Scene < DemoModel
     LoadData::SCENES
   end
 
+  def self.mobile_scenes
+    LoadData::MOBILE_SCENES
+  end
+
+  def self.web_scenes
+    LoadData::WEB_SCENES
+  end
+
   def _build_pages(pages_arr)
     self.pages = []
     pages_arr.each_with_index do |hash,index|

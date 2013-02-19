@@ -1,0 +1,9 @@
+- title: 场景标题
+  url: 场景地址
+  pages:
+    - image: 图片 1
+      desc: 说明 1
+    - image: 图片 2
+      desc: 说明 2
+    - image: 图片 3
+      desc: 说明 3
