@@ -1,3 +1,17 @@
+- title: 文件资源库
+  url: 
+  pages:
+    - image: e1.png
+      desc: 这个页面显示了个人文件资源库的根目录，在这里可以创建新文件夹和文件，我们点击新建文件夹。
+    - image: e11.png
+      desc: 在弹出的对话框里填写新文件夹的名字，点击确定。
+    - image: e12.png
+      desc: 我们可以看见新的文件夹被创建出来了，我们再点击上传文件并选择要上传的文件。
+    - image: e13.png
+      desc: 这里弹出了一个显示上传进度的对话框，我们关闭。
+    - image: e2.png
+      desc: 资源列表页面。
+
 - title: 诸葛亮老师的段落2
   url: /html_demo/scenes/1
   pages:
