@@ -54,7 +54,7 @@
     - title: 教学互动
       url: /html_demo/0703.html
       children:
-        - title: 课程表
+        - title: 课程信息
           url: /html_demo/070301.html
         - title: 教学通知
           url: /html_demo/070302.html

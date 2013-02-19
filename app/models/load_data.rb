@@ -119,14 +119,25 @@ module LoadData
     Feature.new(:title => title, :problem => problem, :solution => solution)
   end
   ##### 场景
-  arr = YAML.load_file(Rails.root.join("lib/data/scenes.yaml"))
-  SCENES = arr.map do |hash|
+  arr = YAML.load_file(Rails.root.join("lib/data/mobile_scenes.yaml"))
+  MOBILE_SCENES = arr.map do |hash|
     title = hash["title"]
     url = hash["url"]
     scene = Scene.new(:title => title, :url => url)
     scene._build_pages(hash["pages"])
     scene
   end
+
+  arr = YAML.load_file(Rails.root.join("lib/data/web_scenes.yaml"))
+  WEB_SCENES = arr.map do |hash|
+    title = hash["title"]
+    url = hash["url"]
+    scene = Scene.new(:title => title, :url => url)
+    scene._build_pages(hash["pages"])
+    scene
+  end
+
+  SCENES = MOBILE_SCENES + WEB_SCENES
 
   page_hash = {}
   SCENES.map{|scene|scene.pages}.flatten.each do |page|
