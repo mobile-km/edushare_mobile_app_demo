@@ -539,6 +539,9 @@ body.html-demo{
         box-shadow:0 0 10px rgba(black, 0.05);
         border:solid 1px #DFDFDF;
       }
+      &.web{
+        img{width:200px;height:auto;}
+      }
     }
   }
 }

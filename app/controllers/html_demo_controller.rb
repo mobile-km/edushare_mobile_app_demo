@@ -7,4 +7,8 @@ class HtmlDemoController < ApplicationController
   def mobile_scenes
     render "/html_demo/show_func"
   end
+
+  def web_scenes
+    render "/html_demo/show_func_web"
+  end
 end

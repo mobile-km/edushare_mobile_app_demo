@@ -10,7 +10,6 @@
   %body.html-demo
     :ruby
       current_navitem = NavItem.by_url(request.path)
-      @current_navitem = current_navitem
 
       prev_navitem = current_navitem.prev
       next_navitem = current_navitem.next
@@ -45,7 +44,10 @@
             %a.link{:href=>ni.url}= ni.title
             .children
               - ni.children.each do |sni|
-                .item{:class=>sni == current_navitem ? 'current' : ''}
+                - c1 = sni == current_navitem
+                - c2 = !current_navitem.scene.blank? && parent_navitem == sni
+
+                .item{:class=>c1 || c2 ? 'current' : ''}
                   %a.sublink{:href=>sni.url}= sni.title
 
       .page-bread
