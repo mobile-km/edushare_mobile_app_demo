@@ -88,12 +88,7 @@
     - title: 部署方式
       url: /html_demo/0801.html
     - title: 技术支持
-      url: /html_demo/0804.html
+      url: /html_demo/0802.html
 
 - title: 附录
   url: /html_demo/09.html
-  children:
-    - title: 免责声明
-      url: /html_demo/0802.html
-    - title: 版权说明
-      url: /html_demo/0803.html
