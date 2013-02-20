@@ -35,23 +35,37 @@
 
     .page-body
       .page-html-nav
+        :ruby
+          if !current_navitem.scene.blank?
+            h_nav = parent_navitem
+          else
+            h_nav = current_navitem
+          end
+
         - NavItem.items.each do |ni|
-          - is_current = ni == current_navitem
-          - is_open = ni == parent_navitem
+          - is_current = ni == h_nav
+          - is_open = ni == h_nav.parent
           - klass = is_current ? 'current' : is_open ? 'open' : ''
 
           .item{:class=>klass}
             %a.link{:href=>ni.url}= ni.title
             .children
               - ni.children.each do |sni|
-                - c1 = sni == current_navitem
-                - c2 = !current_navitem.scene.blank? && parent_navitem == sni
-
-                .item{:class=>c1 || c2 ? 'current' : ''}
+                .item{:class=>sni == h_nav ? 'current' : ''}
                   %a.sublink{:href=>sni.url}= sni.title
 
       .page-bread
-        - if parent_navitem.blank?
+        - if !current_navitem.scene.blank?
+          .home
+            %a{:href=>'/html_demo/index.html'} HOME
+          .nav
+            %a{:href=>parent_navitem.parent.url}= parent_navitem.parent.title
+          .nav
+            %a{:href=>parent_navitem.url}= parent_navitem.title
+          .nav
+            %a{:href=>current_navitem.url}= current_navitem.title
+
+        - elsif parent_navitem.blank?
           .home
             %a{:href=>'/html_demo/index.html'} HOME
           .nav

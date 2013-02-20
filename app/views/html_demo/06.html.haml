@@ -8,7 +8,7 @@
       %a.t{:href=>'/html_demo/0601.html'} 教学方案
       - NavItem.items[1].children[0].children.each do |item|
         .p
-          %a{:href=>'aaa'}= item.title
+          %a{:href=>item.scene.url}= item.title
 
     .point.n2
       .i
@@ -16,7 +16,7 @@
       %a.t{:href=>'/html_demo/0602.html'} 资源网盘
       - NavItem.items[1].children[1].children.each do |item|
         .p
-          %a{:href=>'aaa'}= item.title
+          %a{:href=>item.scene.url}= item.title
 
     .point.n3
       .i
@@ -24,4 +24,4 @@
       %a.t{:href=>'/html_demo/0603.html'} 信息推送
       - NavItem.items[1].children[2].children.each do |item|
         .p
-          %a{:href=>'aaa'}= item.title
+          %a{:href=>item.scene.url}= item.title
