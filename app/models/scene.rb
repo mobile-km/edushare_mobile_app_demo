@@ -1,5 +1,5 @@
 class Scene < DemoModel
-  attr_accessor :title, :desc, :url, :pages
+  attr_accessor :title, :desc, :url, :pages, :problem, :solution
 
   def self.make_all
     LoadData::SCENES
