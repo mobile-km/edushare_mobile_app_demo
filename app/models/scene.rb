@@ -1,5 +1,5 @@
 class Scene < DemoModel
-  attr_accessor :title, :desc, :url, :pages, :problem, :solution
+  attr_accessor :id, :title, :desc, :url, :pages, :problem, :solution, :cover_url
 
   def self.make_all
     LoadData::SCENES
@@ -14,6 +14,7 @@ class Scene < DemoModel
   end
 
   def _build_pages(pages_arr,kind)
+    self.cover_url = "/html_demo_png/#{kind}_scenes/cover/#{id}.png"
     self.pages = []
     pages_arr.each_with_index do |hash,index|
       image_url = Page.image_url(hash["image"],kind)
