@@ -1,0 +1,14 @@
+.page-show-scene
+  .page-block
+    .title= @scene.title
+    .problem
+      .t 问题
+      .p= @scene.problem
+    .solution
+      .t 应对
+      .p= @scene.solution
+    .images
+      .t 产品界面示意
+      - @scene.pages.each do |page|
+        .i
+          %img{:src=>page.image_url}

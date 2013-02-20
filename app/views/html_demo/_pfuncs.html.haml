@@ -3,9 +3,9 @@
     - sences.each do |sence|
       .sence
         .i
-          %img{:src=>sence.pages[0].image_url}
+          %img{:src=>sence.cover_url}
         .c
           .title= sence.title
           .desc= sence.desc
         .url
-          %a{:href=>sence.url} 查看
+          %a{:href=>sence.url} 更多说明

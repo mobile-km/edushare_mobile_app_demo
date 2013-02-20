@@ -9,7 +9,12 @@
 
   %body.html-demo
     :ruby
-      current_navitem = NavItem.by_url(request.path)
+      if @navitem.nil?
+        current_navitem = NavItem.by_url(request.path)
+      else
+        current_navitem = @navitem
+      end
+
       prev_navitem = current_navitem.prev
       next_navitem = current_navitem.next
       parent_navitem = current_navitem.parent
