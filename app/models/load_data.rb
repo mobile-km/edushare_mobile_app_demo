@@ -140,21 +140,29 @@ module LoadData
   end
   ##### 场景
   arr = YAML.load_file(Rails.root.join("lib/data/mobile_scenes.yaml"))
+  i = 0
   MOBILE_SCENES = arr.map do |hash|
+    i = i + 1
     title = hash["title"]
     desc = hash["desc"]
     url = hash["url"]
-    scene = Scene.new(:title => title, :url => url, :desc => desc)
+    solution = hash["solution"]
+    problem = hash["problem"]
+    scene = Scene.new(:id => i, :title => title, :url => url, :desc => desc, :solution => solution, :problem => problem)
     scene._build_pages(hash["pages"],"mobile")
     scene
   end
 
   arr = YAML.load_file(Rails.root.join("lib/data/web_scenes.yaml"))
+  i = 0
   WEB_SCENES = arr.map do |hash|
+    i = i + 1
     title = hash["title"]
     desc = hash["desc"]
     url = hash["url"]
-    scene = Scene.new(:title => title, :url => url, :desc => desc)
+    solution = hash["solution"]
+    problem = hash["problem"]
+    scene = Scene.new(:id => i, :title => title, :url => url, :desc => desc, :solution => solution, :problem => problem)
     scene._build_pages(hash["pages"],"web")
     scene
   end
