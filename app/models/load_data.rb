@@ -105,11 +105,6 @@ module LoadData
     important_note = ImportantNote.new(:entry => entry, :number => hash["number"], :time => time)
     entry.important_note = important_note
   end
-  ###### 导航
-  arr = YAML.load_file(Rails.root.join("lib/data/nav_items.yaml"))
-  result = NavItem.parse(arr)
-  NAV_ITEMS = result[:items]
-  NAV_ITEM_HASH = result[:item_hash]
   ##### 功能列表
   arr = YAML.load_file(Rails.root.join("lib/data/features.yaml"))
   FEATURES = arr.map do |hash|
@@ -174,4 +169,9 @@ module LoadData
     page_hash[page.url] = page
   end
   PAGES_HASH = page_hash
+  ###### 导航
+  arr = YAML.load_file(Rails.root.join("lib/data/nav_items.yaml"))
+  result = NavItem.parse(arr)
+  NAV_ITEMS = result[:items]
+  NAV_ITEM_HASH = result[:item_hash]
 end

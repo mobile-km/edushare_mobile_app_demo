@@ -1,5 +1,5 @@
 class NavItem < DemoModel
-  attr_accessor :title, :url, :parent, :children, :prev, :next
+  attr_accessor :title, :url, :parent, :children, :prev, :next, :scene
 
   def self.items
     LoadData::NAV_ITEMS
@@ -51,6 +51,15 @@ class NavItem < DemoModel
           children = _parse_array(c_arr) 
 
           @current_parent = parent
+        else
+          if !hash["scene"].blank?
+            item.scene = case hash["scene"]["kind"]
+            when "mobile"
+              Scene.mobile_scenes[hash["scene"]["id"]-1]
+            when "web"
+              Scene.web_scenes[hash["scene"]["id"]-1]
+            end
+          end
         end
         item.children = children
 

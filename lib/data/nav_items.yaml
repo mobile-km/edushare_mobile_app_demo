@@ -17,34 +17,67 @@
       children:
         - title: 编写方案
           url: /html_demo/060101.html
+          scene:
+            id: 1
+            kind: web
         - title: 组织课件
           url: /html_demo/060102.html
+          scene:
+            id: 2
+            kind: web
         - title: 同步资源
           url: /html_demo/060103.html
+          scene:
+            id: 3
+            kind: web
         - title: 浏览内容
           url: /html_demo/060104.html
+          scene:
+            id: 4
+            kind: web
 
     - title: 资源网盘
       url: /html_demo/0602.html
       children:
         - title: 个人文件夹
           url: /html_demo/060201.html
+          scene:
+            id: 5
+            kind: web
         - title: 公共资源库
           url: /html_demo/060202.html
+          scene:
+            id: 6
+            kind: web
         - title: 分享给他人
           url: /html_demo/060203.html
+          scene:
+            id: 7
+            kind: web
         - title: 在线浏览
           url: /html_demo/060204.html
+          scene:
+            id: 8
+            kind: web
 
     - title: 教学互动
       url: /html_demo/0603.html
       children:
         - title: 作业
           url: /html_demo/060301.html
+          scene:
+            id: 9
+            kind: web
         - title: 问答
           url: /html_demo/060302.html
+          scene:
+            id: 10
+            kind: web
         - title: 调查
           url: /html_demo/060303.html
+          scene:
+            id: 11
+            kind: web
 
 - title: 功能简介 - 移动端
   url: /html_demo/07.html
@@ -54,32 +87,62 @@
       children:
         - title: 下载课程包
           url: /html_demo/070101.html
+          scene:
+            id: 1
+            kind: mobile
         - title: 离线浏览
           url: /html_demo/070102.html
+          scene:
+            id: 2
+            kind: mobile
         - title: 搜索知识点
           url: /html_demo/070103.html
+          scene:
+            id: 3
+            kind: mobile
         - title: 查看相关作业
           url: /html_demo/070104.html
+          scene:
+            id: 4
+            kind: mobile
 
     - title: 个人笔记
       url: /html_demo/0702.html
       children:
         - title: 添加书签
           url: /html_demo/070201.html
+          scene:
+            id: 5
+            kind: mobile
         - title: 记录笔记
           url: /html_demo/070202.html
+          scene:
+            id: 6
+            kind: mobile
         - title: 标记重要知识点
           url: /html_demo/070203.html
+          scene:
+            id: 7
+            kind: mobile
 
     - title: 信息推送
       url: /html_demo/0703.html
       children:
         - title: 知识点评论
           url: /html_demo/070301.html
+          scene:
+            id: 8
+            kind: mobile
         - title: 课程表
           url: /html_demo/070302.html
+          scene:
+            id: 9
+            kind: mobile
         - title: 教学通知
           url: /html_demo/070303.html
+          scene:
+            id: 10
+            kind: mobile
 
 
 - title: 商业合作
