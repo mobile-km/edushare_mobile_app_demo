@@ -1,5 +1,5 @@
 - title: 编写教学方案
-  desc: 创建管理教学方案
+  desc: 管理教学方案，以及下属的作业、课件等相关数据和资源。
   url: /html_demo/web_scenes/1
   pages:
     - image: a1.png
@@ -18,7 +18,7 @@
       desc: 还可以通过从资源盘选择按钮，选取在个人资源盘里的的文件作为章节课件。
 
 - title: 组织课件
-  desc: 查看教学方案相关的章节，课件跟教学资源
+  desc: 管理教学方案下属章节的课件，在章节间组织课件。
   url: /html_demo/web_scenes/2
   pages:
     - image: c1.png
