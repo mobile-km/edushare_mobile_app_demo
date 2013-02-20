@@ -8,7 +8,7 @@
       %a.t{:href=>'/html_demo/0701.html'} 轻量知识阅读
       - NavItem.items[2].children[0].children.each do |item|
         .p
-          %a{:href=>'aaa'}= item.title
+          %a{:href=>item.scene.url}= item.title
 
     .point.n2
       .i
@@ -16,11 +16,11 @@
       %a.t{:href=>'/html_demo/0702.html'} 个人笔记
       - NavItem.items[2].children[1].children.each do |item|
         .p
-          %a{:href=>'aaa'}= item.title
+          %a{:href=>item.scene.url}= item.title
     .point.n3
       .i
         %img{:src=>'/assets/html_demo/07-3.png'}
       %a.t{:href=>'/html_demo/0703.html'} 教学互动
       - NavItem.items[2].children[2].children.each do |item|
         .p
-          %a{:href=>'aaa'}= item.title
+          %a{:href=>item.scene.url}= item.title

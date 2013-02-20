@@ -9,11 +9,8 @@
 
   %body.html-demo
     :ruby
-      if @navitem.nil?
-        current_navitem = NavItem.by_url(request.path)
-      else
-        current_navitem = @navitem
-      end
+      current_navitem = NavItem.by_url(request.path)
+      @current_navitem = current_navitem
 
       prev_navitem = current_navitem.prev
       next_navitem = current_navitem.next
@@ -65,7 +62,13 @@
           .nav
             %a{:href=>current_navitem.url}= current_navitem.title
 
-      - if !parent_navitem.blank? && !current_navitem.children.blank?
+      - if !current_navitem.scene.blank?
+        .page-content-nav
+          - parent_navitem.children.each do |cni|
+            .item
+              %a.link{:href=>cni.url}= cni.title
+
+      - elsif !parent_navitem.blank? && !current_navitem.children.blank?
         .page-content-nav
           - current_navitem.children.each do |cni|
             .item
