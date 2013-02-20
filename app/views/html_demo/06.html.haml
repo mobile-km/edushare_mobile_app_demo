@@ -1,28 +1,27 @@
 .page-07
-  .page-block
-    .title EduShare - 组织管理教学资源
+  .title EduShare - 组织管理教学资源
 
-    .points
-      .point.n1
-        .i
-          %img{:src=>'/assets/html_demo/07-1.png'}
-        %a.t{:href=>'/html_demo/0701.html'} 教学方案
-        - NavItem.items[1].children[0].children.each do |item|
-          .p
-            %a{:href=>'aaa'}= item.title
+  .points
+    .point.n1
+      .i
+        %img{:src=>'/assets/html_demo/06-1.png'}
+      %a.t{:href=>'/html_demo/0701.html'} 教学方案
+      - NavItem.items[1].children[0].children.each do |item|
+        .p
+          %a{:href=>'aaa'}= item.title
 
-      .point.n2
-        .i
-          %img{:src=>'/assets/html_demo/07-2.png'}
-        %a.t{:href=>'/html_demo/0702.html'} 资源网盘
-        - NavItem.items[1].children[1].children.each do |item|
-          .p
-            %a{:href=>'aaa'}= item.title
+    .point.n2
+      .i
+        %img{:src=>'/assets/html_demo/06-2.png'}
+      %a.t{:href=>'/html_demo/0702.html'} 资源网盘
+      - NavItem.items[1].children[1].children.each do |item|
+        .p
+          %a{:href=>'aaa'}= item.title
 
-      .point.n3
-        .i
-          %img{:src=>'/assets/html_demo/07-3.png'}
-        %a.t{:href=>'/html_demo/0703.html'} 教学互动
-        - NavItem.items[1].children[2].children.each do |item|
-          .p
-            %a{:href=>'aaa'}= item.title
+    .point.n3
+      .i
+        %img{:src=>'/assets/html_demo/06-3.png'}
+      %a.t{:href=>'/html_demo/0703.html'} 信息推送
+      - NavItem.items[1].children[2].children.each do |item|
+        .p
+          %a{:href=>'aaa'}= item.title

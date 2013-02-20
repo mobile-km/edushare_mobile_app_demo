@@ -71,7 +71,7 @@
         - title: 标记重要知识点
           url: /html_demo/070203.html
 
-    - title: 教学互动
+    - title: 信息推送
       url: /html_demo/0703.html
       children:
         - title: 知识点评论
