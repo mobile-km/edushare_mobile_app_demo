@@ -425,6 +425,47 @@ body.html-demo{
       }
     }
   }
+
+  .page-funclist{
+    .sences{
+      .sence{
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.05);
+        background-color:#F9F9F9;
+        border:1px solid #DFDFDF;
+        margin-bottom:15px;
+        overflow:hidden;
+
+        .i{
+          height:150px;width:90px;
+          overflow:hidden;
+          float:left;
+          margin-right:20px;
+          img{
+            height:150px;
+          }
+        }
+        .c{
+          float:left;
+          width:500px;
+          .title{
+          }
+          .desc{
+
+          }
+        }
+        .url{
+          float:right;
+          a{
+            display:block;
+            background:#4088F7;
+            color:white;
+            height:32px;line-height:32px;
+            padding:0 14px;
+          }
+        }
+      }
+    }
+  }
 }
 
 body.mobile{

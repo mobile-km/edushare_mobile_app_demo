@@ -144,7 +144,9 @@ module LoadData
     title = hash["title"]
     desc = hash["desc"]
     url = hash["url"]
-    scene = Scene.new(:title => title, :url => url, :desc => desc)
+    solution = hash["solution"]
+    problem = hash["problem"]
+    scene = Scene.new(:title => title, :url => url, :desc => desc, :solution => solution, :problem => problem)
     scene._build_pages(hash["pages"],"mobile")
     scene
   end
@@ -154,7 +156,9 @@ module LoadData
     title = hash["title"]
     desc = hash["desc"]
     url = hash["url"]
-    scene = Scene.new(:title => title, :url => url, :desc => desc)
+    solution = hash["solution"]
+    problem = hash["problem"]
+    scene = Scene.new(:title => title, :url => url, :desc => desc, :solution => solution, :problem => problem)
     scene._build_pages(hash["pages"],"web")
     scene
   end
