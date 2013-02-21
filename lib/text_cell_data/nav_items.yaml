@@ -12,7 +12,7 @@
 
 - title: 商业合作
   desc: /html_demo/08.html
-  children: lib/text_cell_data/nav_items/business_cooperation_children.yaml
+  children_yaml: lib/text_cell_data/nav_items/business_cooperation_children.yaml
 
 - title: 附录
   desc: /html_demo/09.html
