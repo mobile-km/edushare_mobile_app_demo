@@ -46,8 +46,11 @@ module TextCellParser
     end
 
     def siblings
-      arr = RawTextCell.roots if parent.blank?
-      arr = parent.children
+      if parent.blank?
+        arr = RawTextCell.roots 
+      else
+        arr = parent.children
+      end
       arr.delete self
       arr
     end
@@ -64,6 +67,10 @@ module TextCellParser
       end
 
       []
+    end
+
+    def ==(a)
+      self.id == a.id
     end
 
     def self.roots
