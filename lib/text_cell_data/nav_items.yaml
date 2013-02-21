@@ -1,18 +1,18 @@
 - title: 首页
   desc: /html_demo/index.html
-  children_yaml: index_children.yaml
+  children_yaml: lib/text_cell_data/nav_items/index_children.yaml
 
 - title: 功能简介 - 网页端
   desc: /html_demo/06.html
-  children_yaml: web_features_children.yaml
+  children_yaml: lib/text_cell_data/nav_items/web_features_children.yaml
 
 - title: 功能简介 - 移动端
   desc: /html_demo/07.html
-  children_yaml: mobile_features_children.yaml
+  children_yaml: lib/text_cell_data/nav_items/mobile_features_children.yaml
 
 - title: 商业合作
   desc: /html_demo/08.html
-  children: business_cooperation_children.yaml
+  children: lib/text_cell_data/nav_items/business_cooperation_children.yaml
 
 - title: 附录
   desc: /html_demo/09.html
