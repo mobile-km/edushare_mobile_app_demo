@@ -4,20 +4,23 @@
     - problem: 当老师开始讲一门新课之前，一般需要准备一份教学方案，把要讲的知识划分为若干个教学章节，并辅以讲义PPT，视频课件。这些信息处理工作与教学内容无关，比较模式化，却需要老师花额外的精力处理。
     - solution: EduShare 为老师提供了直观的教学方案管理界面，老师可以在网页上直接创建教学方案，然后分出若干个教学章节，最后把讲义PPT，视频课件等以附件形式放进对应的章节中。
   images:
-    - image: /html_demo_png/web_scenes/a1.png
-      alt: 这个页面是Java程序设计的课程详情页面，在该页面最下方可以看见包含的教学方案列表，我们点击添加教学方案。
-    - image: /html_demo_png/web_scenes/a2.png
-      alt: 这里是教学方案创建页面，填入对应的标题跟描述，点击确定完成创建。
-    - image: /html_demo_png/web_scenes/b1.png
-      alt: 这个页面显示教学方案详情和管理，可以在这里进入教学方案分配的页面，同时可以预览学生看到的最终效果。
-    - image: /html_demo_png/web_scenes/b2.png
-      alt: 我们点击新增章节，为该方案创建一些章节。
-    - image: /html_demo_png/web_scenes/f1.png
-      alt: 然后我们点击学生参与方案右边的分配文字链接，进入学生分配页面，默认是选中所有参与该教学方案所属课程的学生，老师可以进一步调整。我们保持全选，然后点击确认。
-    - image: /html_demo_png/web_scenes/c3.png
-      alt: 通过上传文件按钮，选择需要上传的文件，可以显示该文件上传进度。
-    - image: /html_demo_png/web_scenes/c4.png
-      alt: 还可以通过从资源盘选择按钮，选取在个人资源盘里的的文件作为章节课件。
+    - image: /html_demo_png/web_scenes/cover/1.png
+  children:
+    - images:
+      - image: /html_demo_png/web_scenes/a1.png
+        alt: 这个页面是Java程序设计的课程详情页面，在该页面最下方可以看见包含的教学方案列表，我们点击添加教学方案。
+      - image: /html_demo_png/web_scenes/a2.png
+        alt: 这里是教学方案创建页面，填入对应的标题跟描述，点击确定完成创建。
+      - image: /html_demo_png/web_scenes/b1.png
+        alt: 这个页面显示教学方案详情和管理，可以在这里进入教学方案分配的页面，同时可以预览学生看到的最终效果。
+      - image: /html_demo_png/web_scenes/b2.png
+        alt: 我们点击新增章节，为该方案创建一些章节。
+      - image: /html_demo_png/web_scenes/f1.png
+        alt: 然后我们点击学生参与方案右边的分配文字链接，进入学生分配页面，默认是选中所有参与该教学方案所属课程的学生，老师可以进一步调整。我们保持全选，然后点击确认。
+      - image: /html_demo_png/web_scenes/c3.png
+        alt: 通过上传文件按钮，选择需要上传的文件，可以显示该文件上传进度。
+      - image: /html_demo_png/web_scenes/c4.png
+        alt: 还可以通过从资源盘选择按钮，选取在个人资源盘里的的文件作为章节课件。
 
 - title: 组织课件
   desc: 管理教学方案下属章节的课件，在章节间组织课件。
@@ -26,22 +29,28 @@
     - solution: 
         EduShare 允许老师在教学方案中直接关联教学资源，把讲义PPT， 视频课件等以附件形式放进对应的章节中。如果某个讲义PPT或视频课件，在老师的个人文件夹里已经存在，可以直接引用，免去上传的麻烦。
   images:
-    - image: /html_demo_png/web_scenes/c1.png
-      alt: 在教学方案详情和管理页面，我们点击第一章节的的管理课件按钮，进入到该章节的课件编辑页面。
-    - image: /html_demo_png/web_scenes/c2.png
-      alt: 我们点击增加课件按钮，添加一些新的课件。
-    - image: /html_demo_png/web_scenes/c2_1.png
-      alt: 通过点击编辑按钮，对课件进行修改，点击保存完成修改。
+    - image: /html_demo_png/web_scenes/cover/2.png
+  children:
+    - images:
+      - image: /html_demo_png/web_scenes/c1.png
+        alt: 在教学方案详情和管理页面，我们点击第一章节的的管理课件按钮，进入到该章节的课件编辑页面。
+      - image: /html_demo_png/web_scenes/c2.png
+        alt: 我们点击增加课件按钮，添加一些新的课件。
+      - image: /html_demo_png/web_scenes/c2_1.png
+        alt: 通过点击编辑按钮，对课件进行修改，点击保存完成修改。
 
 - title: 资源的多维度展示
   desc: 在这里我们可以看到教师在教学方案里上传的课件同时被保存在了教师的个人网盘里，并且自动以课程名称来做为文件夹名称。
   problem: 传统教学资源库常以单一的层次结构组织和展示资源，既不便于从多个维度浏览，也不利于从任何一个维度出发快速查找。
   solution: EduShare 提供了资源的多维度组织，展示与利用功能。在老师创建教学方案时，就能从教学维度和个人管理维度两个方面对教学资源进行组织和展示。通过师生的线上互动，还可以更多的维度对这些资源进行访问与共享。
   images:
-    - image: /html_demo_png/web_scenes/e51.png
-      alt: 教师上传的课件资源会被保存在个人资源盘，以课程名称为目录名。
-    - image: /html_demo_png/web_scenes/e52.png
-      alt: 教师上传的课件。
+    - image: /html_demo_png/web_scenes/cover/3.png
+  children:
+    - images:
+      - image: /html_demo_png/web_scenes/e51.png
+        alt: 教师上传的课件资源会被保存在个人资源盘，以课程名称为目录名。
+      - image: /html_demo_png/web_scenes/e52.png
+        alt: 教师上传的课件。
 
 - title: 浏览教案
   desc: 查看教学方案相关的章节，课件跟教学资源
@@ -49,7 +58,10 @@
     - problem: 目前，当学生需要查看老师的PPT和课件资源时，都需要向老师索取，或从教学网上下载后查看，很不方便。
     - solution: EduShare 提供了在线浏览教学方案和直接在线观看课件的功能，方便学生随时阅览。
   images:
-    - image: /html_demo_png/web_scenes/d1.png
-      alt: 我们回到教学方案详情和管理页面，点击预览，可以看见学生看到的教学方案最终效果。这里有每个章节下边的课件查看和预览，当前是第一张杰面向对象基础的一个教学课件预览，我们点击用JAVA开发的Android程序。
-    - image: /html_demo_png/web_scenes/d2.png
-      alt: 这里我们看到用JAVA开发的Android程序这个教学视频的预览。
+    - image: /html_demo_png/web_scenes/cover/4.png
+  children:
+    - images:
+      - image: /html_demo_png/web_scenes/d1.png
+        alt: 我们回到教学方案详情和管理页面，点击预览，可以看见学生看到的教学方案最终效果。这里有每个章节下边的课件查看和预览，当前是第一张杰面向对象基础的一个教学课件预览，我们点击用JAVA开发的Android程序。
+      - image: /html_demo_png/web_scenes/d2.png
+        alt: 这里我们看到用JAVA开发的Android程序这个教学视频的预览。
