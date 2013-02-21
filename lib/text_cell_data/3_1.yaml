@@ -4,11 +4,11 @@
     - problem: 学生们利用手机查看知识点时，经常会遇到没有网络或者网络不通畅的情况。在这些情况下，知识点要么无法显示，要么下载很慢，使学生们不能正常阅读。
     - solution: EduShare 移动端提供了课程包下载功能，使学生可以提前把整个课程包下载到手机。下载完毕后，即使在没有网络的地方，也可以阅读课程包内的所有知识点。
   images:
-    - image: a1.png
+    - image: /html_demo_png/mobile_scenes/a1.png
       alt: 这个页面显示出了系统中所有可以下载的课程包，我们点击第一个 jQuery API 进入这个课程包的详情页面
-    - image: a2.png
+    - image: /html_demo_png/mobile_scenes/a2.png
       alt: 这个就是 jQuery API 课程包的详情页面，该页面显示了这个课程包的概要，作者和简介，可以点击 在线查看 直接开始浏览课程包的内容，也可以点击 下载课件 把整个课程包下载到本地，方便在没有网络的情况下浏览课程包，我们点击 下载课件
-    - image: a3.png
+    - image: /html_demo_png/mobile_scenes/a3.png
       alt: 点击 下载课件 后，我们进入了这个页面，该页面显示出了已经下载完的和正在下载的课程包，经过一段时间的等待，我们看到 jQuery API 已经下载完了
 
 - title: 离线浏览
@@ -17,13 +17,13 @@
     - problem: 学生们利用手机阅读时，因为屏幕较小，难以浏览常见格式的 PC 电子书。
     - solution: EduShare 移动端为了避免这个问题，把常见格式的电子书转化为以知识点和章节为单元的课程包，确保每个知识点短小易读，同时方便学生们在不同章节之间切换。
   images:
-    - image: a3.png
+    - image: /html_demo_png/mobile_scenes/a3.png
       alt: 这个页面显示出了已经下载完的和正在下载的课程包，我们点击已经下载完的 jQuery API，进入课程包的章节列表页面
-    - image: b1.png
+    - image: /html_demo_png/mobile_scenes/b1.png
       alt: 这个就是 jQuery API 课程包的章节列表页面，该页面显示出了该课程包的所有章节 ，我们点击第一个 Ajax 进入这个章节的详情页面
-    - image: b2.png 
+    - image: /html_demo_png/mobile_scenes/b2.png 
       alt: 这个就是 Ajax 章节的详情页面，该页面显示了这个章节的 描述 和 章节中的知识点列表，我们点击第一个 jQuery.ajax()  进入这个知识点的详情页面
-    - image: b3.png
+    - image: /html_demo_png/mobile_scenes/b3.png
       alt: 这个就是 jQuery.ajax() 知识点的详情页面，我们可以在这里浏览知识点的详细信息
 
 - title: 搜索知识点
@@ -32,21 +32,21 @@
     - problem: 当学生们希望用手机查阅一些特定主题知识点时，不喜欢按顺序浏览寻找，而是希望根据主题关键词，快速定位到目标知识点。
     - solution: EduShare 移动端为照顾这种需要，提供了关键词搜索功能，让学生们可以利用关键词搜索的方式快速定位到目标知识点。
   images: 
-    - image: a3.png
+    - image: /html_demo_png/mobile_scenes/a3.png
       alt: 这个页面显示出了已经下载完的和正在下载的课程包，我们点击右上角的搜索图标，进入搜索页面
-    - image: c1.png
+    - image: /html_demo_png/mobile_scenes/c1.png
       alt: 这个搜索页面提供了一个搜索框，我们可以输入关键词来搜索所有课程包内的相关知识点，在这里我们输入 class ，然后点击输入框右边的搜索图标
-    - image: c2.png
+    - image: /html_demo_png/mobile_scenes/c2.png
       alt: 搜索完成后，我们可以看到搜索结果中，显示出了包含 class 关键词的知识点，接下来我们点击 .addClass() 进入该知识点的详情页面
-    - image: c3.png
+    - image: /html_demo_png/mobile_scenes/c3.png
       alt: 这个页面就是.addClass() 知识点的详情页面
-    - image: b1.png
+    - image: /html_demo_png/mobile_scenes/b1.png
       alt: 系统还提供了在一个课程包内的搜索，我们在课程包的章节列表页面，点击右上角的搜索图标，进入搜索页面
-    - image: c41.png
+    - image: /html_demo_png/mobile_scenes/c41.png
       alt: 我们在输入框内输入 ajax，然后点击右侧的搜索图标
-    - image: c42.png
+    - image: /html_demo_png/mobile_scenes/c42.png
       alt: 搜索完成后，我们可以看到所有结果中，显示出了该课程包内包含 ajax 关键词的知识点，接下来我们点击jQuery.ajax() 进入该知识点的详情页面
-    - image: c43.png
+    - image: /html_demo_png/mobile_scenes/c43.png
       alt: 这个页面就是 jQuery.ajax() 知识点的详情页面
 
 - title: 作业相关知识点
@@ -55,8 +55,8 @@
     - problem: 学生在 PC 端完成作业时，常常需要查阅与作业相关的知识点，而如果在 PC 端打开电子书，并在电子书与作业之间切换，就无法保持注意力的集中。
     - solution: EduShare 提供了查看相关知识点功能，学生可以用简单的操作把 PC 端与移动端连接起来，一旦学生开始在线做作业，手机端就会自动显示出相关的知识点。
   images:
-    - image: b3.png
+    - image: /html_demo_png/mobile_scenes/b3.png
       alt: 这个是 jQuery.ajax() 知识点的详情页面，在这里我们点击 相关作业！！
-    - image: k3.png
+    - image: /html_demo_png/mobile_scenes/k3.png
       alt: 在这个页面我们可以看到 jQuery.ajax() 知识点的相关作业！
 
