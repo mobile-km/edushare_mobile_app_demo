@@ -1,0 +1,33 @@
+- title: 轻量知识阅读
+  desc: /html_demo/0701.html
+  children:
+    - title: 下载课程包
+      desc: /html_demo/mobile_scenes/1
+    - title: 离线浏览
+      desc: /html_demo/mobile_scenes/2
+    - title: 搜索知识点
+      desc: /html_demo/mobile_scenes/3
+    - title: 查看相关作业
+      desc: /html_demo/mobile_scenes/4
+
+- title: 个人笔记
+  desc: /html_demo/0702.html
+  children:
+    - title: 添加书签
+      desc: /html_demo/mobile_scenes/5
+    - title: 记录笔记
+      desc: /html_demo/mobile_scenes/6
+    - title: 标记重要知识点
+      desc: /html_demo/mobile_scenes/7
+
+- title: 信息推送
+  desc: /html_demo/0703.html
+  children:
+    - title: 知识点评论
+      desc: /html_demo/mobile_scenes/8
+    - title: 课程表
+      desc: /html_demo/mobile_scenes/9
+    - title: 教学通知
+      desc: //html_demo/mobile_scenes/10
+
+
