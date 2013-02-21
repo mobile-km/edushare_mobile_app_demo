@@ -10,6 +10,10 @@ module TextCellParser
       @raw_text_cell
     end
 
+    def level
+      raw_text_cell.level
+    end
+
     def title
       raw_text_cell.title
     end
@@ -20,6 +24,15 @@ module TextCellParser
 
     def attrs
       raw_text_cell.attrs
+    end
+
+    def sub_text_cells
+      raw_text_cell.children.map{|child| TextCell.new(child)}
+    end
+
+    def parent_text_cell
+      return nil if self.level-1 == TextCellParser::Config.nav_level
+      TextCell.new(raw_text_cell.parent)
     end
 
     def method_missing(method,*attrs)

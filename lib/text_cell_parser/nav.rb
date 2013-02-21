@@ -43,7 +43,7 @@ module TextCellParser
       raw_text_cell.siblings.map{|sibling| Nav.new(sibling)}
     end
 
-    def children
+    def sub_navs
       return [] if self.level == TextCellParser::Config.nav_level
       raw_text_cell.children.map{|child| Nav.new(child)}
     end
