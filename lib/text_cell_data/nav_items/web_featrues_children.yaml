@@ -1,0 +1,33 @@
+- title: 教学方案
+  desc: /html_demo/0601.html
+  children:
+    - title: 编写方案
+      desc: /html_demo/web_scenes/1
+    - title: 组织课件
+      desc: /html_demo/web_scenes/2
+    - title: 同步资源
+      desc: /html_demo/web_scenes/3
+    - title: 浏览内容
+      desc: /html_demo/web_scenes/4
+
+- title: 资源网盘
+  desc: /html_demo/0602.html
+  children:
+    - title: 个人文件夹
+      desc: /html_demo/web_scenes/5
+    - title: 公共资源库
+      desc: /html_demo/web_scenes/6
+    - title: 分享给他人
+      desc: /html_demo/web_scenes/7
+    - title: 在线浏览
+      desc: /html_demo/web_scenes/8
+
+- title: 教学互动
+  desc: /html_demo/0603.html
+  children:
+    - title: 作业
+      desc: /html_demo/web_scenes/9
+    - title: 问答
+      desc: /html_demo/web_scenes/10
+    - title: 调查
+      desc: /html_demo/web_scenes/11
