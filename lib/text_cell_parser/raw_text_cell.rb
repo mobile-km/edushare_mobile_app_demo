@@ -29,6 +29,12 @@ module TextCellParser
       Helper.hash_array_to_ordered_hash(@hash["attrs"])
     end
 
+    def images
+      [@hash["images"]].flatten.map do |data|
+        TextCellParser::Image.new(data)
+      end
+    end
+
     def parent
       @parent
     end

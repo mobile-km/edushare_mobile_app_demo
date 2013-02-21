@@ -26,6 +26,10 @@ module TextCellParser
       raw_text_cell.attrs
     end
 
+    def images
+      raw_text_cell.images
+    end
+
     def sub_text_cells
       raw_text_cell.children.map{|child| TextCell.new(child)}
     end
