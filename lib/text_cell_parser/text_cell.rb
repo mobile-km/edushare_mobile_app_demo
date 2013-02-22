@@ -29,6 +29,10 @@ module TextCellParser
       @hash["desc"] || ""
     end
 
+    def format
+      TextCellParser::Format.new(@hash["format"]||"")
+    end
+
     def attrs
       Helper.hash_array_to_ordered_hash(@hash["attrs"]||[])
     end
