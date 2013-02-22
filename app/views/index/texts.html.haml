@@ -27,6 +27,17 @@
           .p= attrs[:s32]
           .p= attrs[:s33]
 
+- if css == 'intro'
+  .page-text-cell.intro
+    .page-block
+      .text-cell-list
+        - @current_text_cell.children.each do |tc|
+          .item
+            .title= tc.title
+            .desc= simple_format tc.desc
+            .img
+              %img{:src=>tc.cover}
+          
 
 - if css == 'fx'
   .text-cell-imgs

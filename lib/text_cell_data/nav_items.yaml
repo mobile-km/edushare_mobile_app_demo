@@ -15,7 +15,6 @@
     - s31: 支持移动客户端访问
     - s32: 即时通知消息推送
     - s33: 轻量级课程阅读体验
-
   children_yaml: lib/text_cell_data/1.yaml
 
 - title: 功能简介 - 网页端
