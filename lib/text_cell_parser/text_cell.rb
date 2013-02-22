@@ -94,6 +94,25 @@ module TextCellParser
       self._parse(TextCellParser::DATA, nil)
     end
 
+    def self.by_url(url)
+      self.by_id(url)
+    end
+
+    def self.by_id(id)
+      ids = id.split("_").map{|id|id.to_i}
+
+      result = nil
+      id = ids.shift
+      while !id.blank?
+        cells = result.blank? ? self.roots : result.children
+        result = cells[id-1]
+        return nil if result.blank?
+        id = ids.shift
+      end
+      
+      result
+    end
+
     def self._parse(raw_data,parent)
       result = []
       raw_data.each_with_index do |hash,index|
