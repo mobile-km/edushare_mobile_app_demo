@@ -26,7 +26,7 @@ module TextCellParser
     end
 
     def desc
-      @hash["desc"]
+      @hash["desc"] || ""
     end
 
     def attrs

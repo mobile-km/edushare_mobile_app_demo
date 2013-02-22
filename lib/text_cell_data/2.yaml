@@ -1,11 +1,8 @@
 - title: 教学方案
-  desc: /html_demo/0601.html
   children_yaml: lib/text_cell_data/2_1.yaml
 
 - title: 资源网盘
-  desc: /html_demo/0602.html
   children_yaml: lib/text_cell_data/2_2.yaml
 
 - title: 教学互动
-  desc: /html_demo/0603.html
   children_yaml: lib/text_cell_data/2_3.yaml

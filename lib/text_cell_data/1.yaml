@@ -1,11 +1,8 @@
 - title: 方向与趋势
-  desc: /html_demo/0501.html
   children_yaml: lib/text_cell_data/1_1.yaml
 
 - title: 发展思路
-  desc: /html_demo/0502.html
   children_yaml: lib/text_cell_data/1_2.yaml
 
 - title: 产品概要
-  desc: /html_demo/0503.html
   children_yaml: lib/text_cell_data/1_3.yaml

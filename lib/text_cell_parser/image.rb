@@ -10,7 +10,7 @@ module TextCellParser
     end
 
     def alt
-      @data["alt"]
+      @data["alt"] || ""
     end
   end
 end
