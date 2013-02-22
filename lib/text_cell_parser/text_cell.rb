@@ -37,6 +37,15 @@ module TextCellParser
       Helper.hash_array_to_ordered_hash(@hash["attrs"]||[])
     end
 
+    def cover
+      cover = @hash["cover"]
+      return cover if !cover.blank?
+
+      images = self.images
+      return images.first.url if !images.blank?
+      ""
+    end
+
     def images
       return [] if @hash["images"].blank?
       [@hash["images"]].flatten.map do |data|

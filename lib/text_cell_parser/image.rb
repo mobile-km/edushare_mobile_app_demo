@@ -6,7 +6,7 @@ module TextCellParser
     end
 
     def url
-      @data["image"]
+      @data["image"] || ""
     end
 
     def alt
