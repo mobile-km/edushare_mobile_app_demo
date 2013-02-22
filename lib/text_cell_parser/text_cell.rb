@@ -44,7 +44,7 @@ module TextCellParser
       @parent
     end
 
-    def ancestor
+    def ancestors
       arr = []
 
       raw_text_cell = self.parent
@@ -56,12 +56,18 @@ module TextCellParser
       arr.reverse
     end
 
+    def is_ancestor_of?(another_text_cell)
+      another_text_cell.ancestors.include?(self)
+    end
+
+    def siblings_and_self
+      return TextCell.roots if parent.blank?
+
+      parent.children
+    end
+
     def siblings
-      if parent.blank?
-        arr = TextCell.roots 
-      else
-        arr = parent.children
-      end
+      arr = siblings_and_self
       arr.delete self
       arr
     end
@@ -78,6 +84,22 @@ module TextCellParser
       end
 
       []
+    end
+
+    def prev_sibling
+      text_cells = siblings_and_self
+      index = text_cells.index(self)
+      return nil if index == 0
+
+      text_cells[index-1]
+    end
+
+    def next_sibling
+      text_cells = siblings_and_self
+      index = text_cells.index(self)
+      return nil if index+1 == text_cells.length
+
+      text_cells[index+1] 
     end
 
     def ==(a)
