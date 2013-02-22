@@ -102,6 +102,33 @@ module TextCellParser
       text_cells[index+1] 
     end
 
+    def prev
+      cell = prev_sibling
+      return self.parent if cell.blank?
+      return cell if cell.children.blank?
+
+      cell = cell.children.last
+      while !cell.children.blank?
+        cell = cell.children.last
+      end
+
+      return cell
+    end
+
+    def next
+      return self.children.first if !self.children.blank?
+
+      cell = self
+      result = cell.next_sibling
+      while result.blank?
+        cell = cell.parent
+        return nil if cell.blank?
+        result = cell.next_sibling
+      end
+
+      result
+    end
+
     def ==(a)
       self.id == a.id
     end
