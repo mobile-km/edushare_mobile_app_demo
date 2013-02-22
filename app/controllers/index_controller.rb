@@ -10,6 +10,6 @@ class IndexController < ApplicationController
     else
     end
 
-    render :text => @current_text_cell
+    render :layout => 'texts'
   end
 end

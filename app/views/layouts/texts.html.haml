@@ -1,0 +1,47 @@
+!!! 5
+%html{:lang=>'zh'}
+  %head
+    %meta{:charset=>'utf-8'}
+    %title EduShare 产品介绍
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+
+  %body.html-demo
+    .page-title
+      :ruby
+        # prev_text_cell = @current_text_cell.prev
+        # next_text_cell = @current_text_cell.next
+
+      .tt
+        %a.logo{:href=>'/texts'} 返回首页
+
+        .idx
+          %a{:href=>'/texts'} 首页
+        .prv
+          / - if !prev_text_cell.blank?
+          /   %a{:href=>prev_text_cell.url} 上一页
+          / - else
+          .quiet 上一页
+        .nxt
+          / - if !next_text_cell.blank?
+          /   %a{:href=>next_text_cell.url} 下一页
+          / - else
+          .quiet 下一页
+
+    .page-body
+      .page-html-nav
+        :ruby
+          max_level = 2
+
+        = render 'layouts/texts/nav', :text_cells => TextCellParser.roots,
+                                      :max_level => 2
+
+      .page-content
+        = yield
+
+    .page-footer
+      .f
+        © 2013 MINDPIN
+
+    = yield :javascript
