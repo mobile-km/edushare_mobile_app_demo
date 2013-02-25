@@ -8,6 +8,7 @@ class IndexController < ApplicationController
     if path.nil?
       @current_text_cell = TextCellParser.roots[0]
     else
+      @current_text_cell = TextCellParser::TextCell.by_url path
     end
 
     render :layout => 'texts'

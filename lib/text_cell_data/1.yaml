@@ -1,8 +1,11 @@
 - title: 方向与趋势
+  format: css:intro
   children_yaml: lib/text_cell_data/1_1.yaml
 
 - title: 发展思路
+  format: css:intro
   children_yaml: lib/text_cell_data/1_2.yaml
 
 - title: 产品概要
+  format: css:intro
   children_yaml: lib/text_cell_data/1_3.yaml

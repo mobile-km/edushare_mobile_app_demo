@@ -37,6 +37,16 @@
         = render 'layouts/texts/nav', :text_cells => TextCellParser.roots,
                                       :max_level => 2
 
+      .page-bread
+        .home
+          %a{:href=>"/texts/#{TextCellParser.roots[0].url}"} HOME
+        - @current_text_cell.ancestors.each do |tc|
+          .nav
+            %a{:href=>"/texts/#{tc.url}"}= tc.title
+        .nav
+          %a{:href=>"/texts/#{@current_text_cell.url}"}= @current_text_cell.title
+
+
       .page-content
         = yield
 

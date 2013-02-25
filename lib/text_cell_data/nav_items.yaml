@@ -1,4 +1,20 @@
 - title: 首页
+  desc: EduShare - 高效率的教育资源共享工具
+  cover: /assets/html_demo/index1.png
+  format: css:index
+  attrs:
+    - t1: 合理组织数据
+    - s11: 通过教学方案组织教学内容
+    - s12: 多维度管理课件与作业
+    - s13: 有效评价资源利用效果
+    - t2: 共享文档和视频
+    - s21: 通过网盘保存文件
+    - s22: 分享文件给其他人
+    - s23: 在线播放和预览
+    - t3: 随时学习
+    - s31: 支持移动客户端访问
+    - s32: 即时通知消息推送
+    - s33: 轻量级课程阅读体验
   children_yaml: lib/text_cell_data/1.yaml
 
 - title: 功能简介 - 网页端

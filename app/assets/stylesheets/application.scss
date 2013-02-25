@@ -94,7 +94,7 @@ body.html-demo{
           }
 
           .item.current{
-            a{
+            >a{
               color:white;
               text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
             }
@@ -103,7 +103,7 @@ body.html-demo{
 
         &.current{
           background:url('html_demo/sprite-top-lists.png') no-repeat 0 5px;
-          a.link{
+          >a.link{
             color:white;
             text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
           }
@@ -115,7 +115,6 @@ body.html-demo{
           }
         }
       }
-
     }
 
     .page-bread{
@@ -544,6 +543,104 @@ body.html-demo{
       }
     }
   }
+
+  .page-text-cell.xxx{
+    .text-cell-title{
+      font-size:20px;
+      height:30px;line-height:30px;
+      font-weight:bold;
+      margin-bottom:20px;
+    }
+
+    .formated-list{
+      @include floatfix;
+      .text-cell{
+        float:left;
+        background-color:#F9F9F9;
+        width:200px;
+        height:400px;
+        margin-right:20px;
+        margin-bottom:20px;
+        box-shadow:0 0 3px rgba(black, 0.2);
+
+        .meta{
+          padding:15px;
+          padding-top:20px;
+          .title{
+            font-size:18px;
+            margin-bottom:20px;
+          }
+          .ctitle{
+            &:before{
+              content:"- ";
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .page-text-cell.index{
+    .text-cell-desc{
+      font-weight:bold;
+      color:#333;
+      font-size:30px;
+      font-weight:40px;
+      line-height:40px;
+      margin-bottom:20px;
+    }
+    .text-cell-cover{
+      background-color:#f9f9f9;
+      padding:10px;
+      box-shadow:0 0 2px rgba(black, 0.2);
+      margin-bottom:30px;
+      font-size:0;line-height:0;
+    }
+    .index-attrs{
+      @include floatfix;
+      margin-bottom:30px;
+      .point{
+        float:left;
+        padding-left:20px;
+        width:230px;
+        .t{
+          color:#555;
+          font-size:18px;
+          height:30px;line-height:30px;
+          margin-bottom:10px;
+        }
+        .p{
+          &:before{content:"- ";}
+          color:#555;
+        }
+      }
+    }
+  }
+
+  .page-text-cell.intro{
+    .text-cell-list{
+      .item{
+        .title{
+          font-size:16px;
+          font-weight:bold;
+          margin-bottom:10px;
+        }
+        .desc{
+          width:520px;
+          br{margin-bottom:10px;}
+        }
+        .img{
+          background-color:#f9f9f9;
+          box-shadow:0 0 2px rgba(black, 0.2);
+          margin-bottom:30px;
+          padding:10px;
+          width:500px;
+          img{width:500px;}
+        }
+      }
+    }
+  }
+
 }
 
 body.mobile{
