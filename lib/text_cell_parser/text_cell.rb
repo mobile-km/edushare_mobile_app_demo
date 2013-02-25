@@ -200,10 +200,10 @@ module TextCellParser
       self.id == a.id
     end
 
-    def method_missing(method,*attrs)
+    def method_missing(method, *attrs)
       result = method.to_s.match(/attr_(.*)/)
       return super if result.blank?
-      attrs[result[1].to_sym]
+      self.attrs[result[1].to_sym]
     end
 
     def self.roots

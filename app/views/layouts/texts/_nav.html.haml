@@ -4,6 +4,10 @@
     is_ancestor = tc.is_ancestor_of?(@current_text_cell)
 
     klass = is_current ? 'current' : is_ancestor ? 'open' : ''
+    if klass == 'open' && tc.level == max_level
+      klass = 'current'
+    end
+
 
   .item{:class=>klass, :data=>{:level=>tc.level}}
     %a.link{:href=>"/texts/#{tc.url}"}= tc.title

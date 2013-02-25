@@ -5,11 +5,13 @@
   children_yaml: lib/text_cell_data/2_1.yaml
 
 - title: 资源网盘
+  format: css:demolist
   images:
     - image: /assets/html_demo/06-2.png
   children_yaml: lib/text_cell_data/2_2.yaml
 
 - title: 教学互动
+  format: css:demolist
   images:
     - image: /assets/html_demo/06-3.png
   children_yaml: lib/text_cell_data/2_3.yaml

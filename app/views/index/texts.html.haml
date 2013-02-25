@@ -67,12 +67,18 @@
           .more
             %a{:href=>"/texts/#{tc.url}"} 更多介绍
 
-
-
-
-- if css == 'fx'
-  .text-cell-imgs
-    - @current_text_cell.images.each do |img|
-      .img
-        %img{:src=>img.url, :alt=>img.alt}
-
+- if css == 'demoscene'
+  .page-text-cell{:class=>css}
+    .page-block
+      .title= @current_text_cell.title
+      .problem
+        .t 问题
+        .p= @current_text_cell.attr_problem
+      .solution
+        .t 应对
+        .p= @current_text_cell.attr_solution
+      .imgs
+        .t 产品界面示意
+        - @current_text_cell.images.each do |img|
+          .img
+            %img{:src=>img.url, :alt=>img.alt}

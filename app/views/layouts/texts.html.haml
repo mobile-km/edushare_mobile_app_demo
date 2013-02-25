@@ -48,10 +48,12 @@
         c2 = @current_text_cell.is_match_ancestors_attr?('demo', true)
 
       - if c1 && c2
-        .page-content-nav
-          - @current_text_cell.children.each do |ctc|
-            .item
-              %a.link{:href=>ctc.url}= ctc.title
+        - ptc = @current_text_cell.get_ancestor_of_level(2)
+        - if ptc
+          .page-content-nav
+            - ptc.children.each do |ctc|
+              .item
+                %a.link{:href=>ctc.url}= ctc.title
 
       .page-content
         = yield
