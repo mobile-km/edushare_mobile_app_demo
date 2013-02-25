@@ -57,13 +57,6 @@ module TextCellParser
       @parent
     end
 
-    def find_ancestor_by_level(level)
-      self.ancestors.each do |text_cell|
-        return text_cell if text_cell.level == level.to_i
-      end
-      nil
-    end
-
     def ancestors
       arr = []
 
@@ -149,6 +142,9 @@ module TextCellParser
       result
     end
 
+    # 判断 text_cell 是否在指定的level范围内
+    # 传两个参数和传一个参数时，逻辑有区别
+    # from_level 和 to_level 大小关系可以正写或反写
     def is_match_level?(*args)
       levels = args.map{|arg|arg.to_i}.sort
       return levels[0] == self.level if levels.count == 1
@@ -159,10 +155,12 @@ module TextCellParser
       from_level.to_i <= self.level && to_level.to_i >= self.level
     end
 
+    # 判断 text_cell 的指定 attr 的值是否等于指定的 value
     def is_match_attr?(attr_name, attr_value)
       attrs[attr_name.to_sym] == attr_value
     end
 
+    # 判断 text_cell 的祖先中是否有指定 attr 值等于指定value的节点
     def is_match_ancestors_attr?(attr_name, attr_value)
       self.ancestors.each do |text_cell|
         return true if text_cell.is_match_attr?(attr_name, attr_value)
@@ -170,10 +168,32 @@ module TextCellParser
       false
     end
 
+
+    # 判断指定的 text_cell 和 another_text_cell 是否位于相同的子树
+    # 如果 text_cell 和 another_text_cell 相同，返回 true
+    # start_level 为起始比较层级，默认为 2
     def is_in_same_sub_tree?(another_text_cell, start_level=2)
-      text_cell_1 = self.find_ancestor_by_level(start_level)
-      text_cell_2 = another_text_cell.find_ancestor_by_level(start_level)
+      return true if self == another_text_cell
+
+      text_cell_1 = self.get_ancestor_of_level(start_level)
+      text_cell_2 = another_text_cell.get_ancestor_of_level(start_level)
       text_cell_1 == text_cell_2 && !!text_cell_2 
+    end
+
+    # 获取自身和自身的祖先节点中，level等于传入level的节点
+    # 如果传入level大于当前节点level，则返回nil
+    # 如果传入level等于当前节点level，则返回当前节点自身
+    # 如果传入level小于当前节点level，则返回祖先节点对应level的节点
+    # 其他异常情况，返回nil
+    def get_ancestor_of_level(level)
+      return nil if self.level < level.to_i
+      return self if self.level == level.to_i
+
+      self.ancestors.each do |text_cell|
+        return text_cell if text_cell.level == level.to_i
+      end
+      
+      nil
     end
 
     def ==(a)
