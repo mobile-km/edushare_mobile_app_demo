@@ -1,4 +1,5 @@
 - title: 教学方案
+  format: css:demolist
   images:
     - image: /assets/html_demo/06-1.png
   children_yaml: lib/text_cell_data/2_1.yaml

@@ -641,6 +641,99 @@ body.html-demo{
     }
   }
 
+  .page-text-cell.demoroot{
+    .title{
+      color:#333;
+      font-size:20px;
+      font-weight:bold;
+      line-height:30px;
+      margin-bottom:20px;
+    }
+
+    .text-cell-list{
+      @include floatfix;
+      .text-cell{
+        background-color:#f9f9f9;
+        height:400px;
+        float:left;
+        margin-right:20px;
+        width:200px;
+        box-shadow:0 0 2px rgba(0, 0, 0, 0.3);
+
+        .cover{
+          height:200px;width:200px;
+          margin-bottom:20px;
+          overflow:hidden;
+          img{width:200px;}
+        }
+        a.stitle{
+          display:block;
+          font-size:18px;
+          line-height:30px;
+          margin-bottom:15px;
+          padding-left:15px;
+          &:hover{
+            background-color:#3f87f6;
+            color:white;
+            text-decoration:none;
+          }
+        }
+        a.ctitle{
+          display:block;
+          padding-left:15px;
+          padding-right:15px;
+          &:hover{
+            background-color:#3f87f6;
+            color:white;
+            text-decoration:none;
+          }
+          &:before{
+            content:"＞ ";
+          }
+        }
+      }
+    }
+  }
+
+  .page-text-cell.demolist{
+    .text-cell-list{
+      @include floatfix;
+      .text-cell{
+        background-color:#F9F9F9;
+        box-shadow:0 0 2px rgba(0, 0, 0, 0.2);
+        margin-bottom:15px;
+        overflow:hidden;
+        .cover{
+          float:left;
+          height:150px;width:150px;
+          overflow:hidden;
+          margin-right:20px;
+          img{width:150px;}
+        }
+        .c{
+          float:left;width:400px;
+          .title{font-size:18px;margin-bottom:15px;margin-top:15px;}
+        }
+        .more{
+          float:right;
+          a{
+            display:block;
+            width:150px;height:150px;line-height:150px;
+            color:white;
+            background-color:#87B7FF;
+            text-decoration:none;
+            text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
+            font-size:16px;
+            text-align:center;
+            &:hover{
+              background-color:#418cfd;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 
 body.mobile{

@@ -10,8 +10,8 @@
   %body.html-demo
     .page-title
       :ruby
-        # prev_text_cell = @current_text_cell.prev
-        # next_text_cell = @current_text_cell.next
+        prev_text_cell = @current_text_cell.prev
+        next_text_cell = @current_text_cell.next
 
       .tt
         %a.logo{:href=>'/texts'} 返回首页
@@ -19,21 +19,18 @@
         .idx
           %a{:href=>'/texts'} 首页
         .prv
-          / - if !prev_text_cell.blank?
-          /   %a{:href=>prev_text_cell.url} 上一页
-          / - else
-          .quiet 上一页
+          - if !prev_text_cell.blank?
+            %a{:href=>prev_text_cell.url} 上一页
+          - else
+            .quiet 上一页
         .nxt
-          / - if !next_text_cell.blank?
-          /   %a{:href=>next_text_cell.url} 下一页
-          / - else
-          .quiet 下一页
+          - if !next_text_cell.blank?
+            %a{:href=>next_text_cell.url} 下一页
+          - else
+            .quiet 下一页
 
     .page-body
       .page-html-nav
-        :ruby
-          max_level = 2
-
         = render 'layouts/texts/nav', :text_cells => TextCellParser.roots,
                                       :max_level => 2
 
@@ -46,6 +43,17 @@
         .nav
           %a{:href=>"/texts/#{@current_text_cell.url}"}= @current_text_cell.title
 
+      - if @current_text_cell.level == 2
+        .page-content-nav
+          - @current_text_cell.children.each do |ctc|
+            .item
+              %a.link{:href=>ctc.url}= ctc.title
+
+      - if @current_text_cell.level == 3
+        .page-content-nav
+          - @current_text_cell.parent.children.each do |ctc|
+            .item
+              %a.link{:href=>ctc.url}= ctc.title
 
       .page-content
         = yield
