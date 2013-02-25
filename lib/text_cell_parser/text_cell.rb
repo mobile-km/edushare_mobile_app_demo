@@ -57,6 +57,13 @@ module TextCellParser
       @parent
     end
 
+    def find_ancestor_by_level(level)
+      self.ancestors.each do |text_cell|
+        return text_cell if text_cell.level == level.to_i
+      end
+      nil
+    end
+
     def ancestors
       arr = []
 
@@ -140,6 +147,33 @@ module TextCellParser
       end
 
       result
+    end
+
+    def is_match_level?(*args)
+      levels = args.map{|arg|arg.to_i}.sort
+      return levels[0] == self.level if levels.count == 1
+
+      from_level = levels[0]
+      to_level = levels[1]
+
+      from_level.to_i <= self.level && to_level.to_i >= self.level
+    end
+
+    def is_match_attr?(attr_name, attr_value)
+      attrs[attr_name.to_sym] == attr_value
+    end
+
+    def is_match_ancestors_attr?(attr_name, attr_value)
+      self.ancestors.each do |text_cell|
+        return true if text_cell.is_match_attr?(attr_name, attr_value)
+      end
+      false
+    end
+
+    def is_in_same_sub_tree?(another_text_cell, start_level=2)
+      text_cell_1 = self.find_ancestor_by_level(start_level)
+      text_cell_2 = another_text_cell.find_ancestor_by_level(start_level)
+      text_cell_1 == text_cell_2 && !!text_cell_2 
     end
 
     def ==(a)
