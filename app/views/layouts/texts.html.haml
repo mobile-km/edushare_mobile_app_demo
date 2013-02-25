@@ -43,15 +43,13 @@
         .nav
           %a{:href=>"/texts/#{@current_text_cell.url}"}= @current_text_cell.title
 
-      - if @current_text_cell.level == 2
+      :ruby
+        c1 = @current_text_cell.is_match_level?(2, 3)
+        c2 = @current_text_cell.is_match_ancestors_attr?('demo', true)
+
+      - if c1 && c2
         .page-content-nav
           - @current_text_cell.children.each do |ctc|
-            .item
-              %a.link{:href=>ctc.url}= ctc.title
-
-      - if @current_text_cell.level == 3
-        .page-content-nav
-          - @current_text_cell.parent.children.each do |ctc|
             .item
               %a.link{:href=>ctc.url}= ctc.title
 

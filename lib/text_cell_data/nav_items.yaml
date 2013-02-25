@@ -19,10 +19,14 @@
 
 - title: 功能简介 - 网页端
   desc: EduShare - 组织管理教学资源
+  attrs:
+    - demo: true
   format: css:demoroot
   children_yaml: lib/text_cell_data/2.yaml
 
 - title: 功能简介 - 移动端
+  attrs:
+    - demo: true
   format: css:demoroot
   children_yaml: lib/text_cell_data/3.yaml
 
