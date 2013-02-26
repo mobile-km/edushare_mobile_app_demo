@@ -25,6 +25,7 @@
   children_yaml: lib/text_cell_data/2.yaml
 
 - title: 功能简介 - 移动端
+  desc: EduShare 移动版 - 随时随地进行学习
   attrs:
     - demo: true
   format: css:demoroot

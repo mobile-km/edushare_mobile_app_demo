@@ -653,18 +653,22 @@ body.html-demo{
     .text-cell-list{
       @include floatfix;
       .text-cell{
+        $w:246px;
         background-color:#f9f9f9;
-        height:400px;
+        height:$w * 2;
         float:left;
         margin-right:20px;
-        width:200px;
+        width:$w;
         box-shadow:0 0 2px rgba(0, 0, 0, 0.3);
+        &:last-child{
+          margin-right:0;
+        }
 
         .cover{
-          height:200px;width:200px;
+          height:$w;width:$w;
           margin-bottom:20px;
           overflow:hidden;
-          img{width:200px;}
+          img{width:$w;}
         }
         a.stitle{
           display:block;
