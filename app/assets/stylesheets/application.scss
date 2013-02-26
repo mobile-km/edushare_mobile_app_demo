@@ -338,24 +338,37 @@ body.html-demo{
   }
 
   .page-text-cell.intro{
+    .text-bg{
+      background-color:white;
+      width:780px - 60px - 30px;
+      padding:15px;
+      position:relative;
+      &:after{
+        content:"";
+        position:absolute;
+        top:0;bottom:0;right:-60px;
+        width:60px;
+        background:url(html_demo/textbg1.png);
+      }
+    }
+
     .text-cell-list{
       .item{
         .title{
-          font-size:16px;
+          font-size:18px;
           font-weight:bold;
-          margin-bottom:10px;
+          margin-bottom:30px;
         }
         .desc{
           width:520px;
+          font-size:15px;
           br{margin-bottom:10px;}
         }
         .img{
-          background-color:#f9f9f9;
-          box-shadow:0 0 2px rgba(black, 0.2);
-          margin-bottom:30px;
-          padding:10px;
-          width:500px;
-          img{width:500px;}
+          border:solid 1px #AA9C84;
+          margin:50px 0;
+          width:520px;
+          img{width:520px;}
         }
       }
     }
@@ -477,7 +490,7 @@ body.html-demo{
         margin-bottom:10px;
       }
       .p{
-        width:550px;
+        width:520px;
       }
       position:relative;
       background-color:#f9f9f9;

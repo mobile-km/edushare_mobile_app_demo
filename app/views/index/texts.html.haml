@@ -29,12 +29,12 @@
 
 - if css == 'intro'
   .page-text-cell{:class=>css}
-    .page-block
+    .text-bg
       .text-cell-list
         - @current_text_cell.children.each do |tc|
           .item
             .title= tc.title
-            .desc= simple_format tc.desc
+            .desc= text_cell_simple_format tc.desc
             .img
               %img{:src=>tc.cover}
           
