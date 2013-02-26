@@ -52,8 +52,8 @@
         - if ptc
           .page-content-nav
             - ptc.children.each do |ctc|
-              .item
-                %a.link{:href=>ctc.url}= ctc.title
+              - klass = ctc == @current_text_cell ? 'current' : ''
+              %a.item{:href=>ctc.url, :class=>klass}= ctc.title
 
       .page-content
         = yield

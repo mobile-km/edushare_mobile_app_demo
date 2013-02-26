@@ -11,4 +11,4 @@
 - title: 信息推送
   format: css:demolist
   cover: /assets/html_demo/07-3.png
-  children_yaml: lib/text_cell_data/3_2.yaml
+  children_yaml: lib/text_cell_data/3_3.yaml

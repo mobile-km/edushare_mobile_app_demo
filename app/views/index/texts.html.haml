@@ -77,8 +77,11 @@
       .solution
         .t 应对
         .p= @current_text_cell.attr_solution
-      .imgs
-        .t 产品界面示意
+      .imgt 产品界面示意
+
+      - klass = @current_text_cell.is_match_ancestors_attr?('kind', 'mobile') ? 'mobile' : 'web'
+      .imgs{:class=>klass}
         - @current_text_cell.images.each do |img|
+          - url = img.url.sub('.png', '_thumbnail.png')
           .img
-            %img{:src=>img.url, :alt=>img.alt}
+            %img{:src=>url, :alt=>img.alt}

@@ -81,14 +81,12 @@
       - if !current_navitem.scene.blank?
         .page-content-nav
           - parent_navitem.children.each do |cni|
-            .item
-              %a.link{:href=>cni.url}= cni.title
+            %a.item{:href=>cni.url}= cni.title
 
       - elsif !parent_navitem.blank? && !current_navitem.children.blank?
         .page-content-nav
           - current_navitem.children.each do |cni|
-            .item
-              %a.link{:href=>cni.url}= cni.title
+            %a.item{:href=>cni.url}= cni.title
 
       .page-content
         = yield

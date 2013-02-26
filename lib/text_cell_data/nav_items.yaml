@@ -21,6 +21,7 @@
   desc: EduShare - 组织管理教学资源
   attrs:
     - demo: true
+    - kind: web
   format: css:demoroot
   children_yaml: lib/text_cell_data/2.yaml
 
@@ -28,6 +29,7 @@
   desc: EduShare 移动版 - 随时随地进行学习
   attrs:
     - demo: true
+    - kind: mobile
   format: css:demoroot
   children_yaml: lib/text_cell_data/3.yaml
 
