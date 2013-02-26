@@ -552,58 +552,28 @@ body.html-demo{
     }
   }
 
-  .page-text-cell.xxx{
-    .text-cell-title{
-      font-size:20px;
-      height:30px;line-height:30px;
-      font-weight:bold;
+  .page-text-cell.index{
+    .index-head{
+      background-color:white;
+      box-shadow:0 0 2px rgba(black, 0.2);
       margin-bottom:20px;
-    }
 
-    .formated-list{
-      @include floatfix;
-      .text-cell{
-        float:left;
-        background-color:#F9F9F9;
-        width:200px;
-        height:400px;
-        margin-right:20px;
-        margin-bottom:20px;
-        box-shadow:0 0 3px rgba(black, 0.2);
-
-        .meta{
-          padding:15px;
-          padding-top:20px;
-          .title{
-            font-size:18px;
-            margin-bottom:20px;
-          }
-          .ctitle{
-            &:before{
-              content:"- ";
-            }
-          }
+      .text-cell-desc{
+        font-weight:bold;
+        color:#333;
+        font-size:30px;
+        font-weight:40px;
+        line-height:40px;
+        padding:15px 15px 20px;
+      }
+      .text-cell-cover{
+        font-size:0;line-height:0;
+        img{
+          width:780px;height:auto;
         }
       }
     }
-  }
 
-  .page-text-cell.index{
-    .text-cell-desc{
-      font-weight:bold;
-      color:#333;
-      font-size:30px;
-      font-weight:40px;
-      line-height:40px;
-      margin-bottom:20px;
-    }
-    .text-cell-cover{
-      background-color:#f9f9f9;
-      padding:10px;
-      box-shadow:0 0 2px rgba(black, 0.2);
-      margin-bottom:30px;
-      font-size:0;line-height:0;
-    }
     .index-attrs{
       @include floatfix;
       margin-bottom:30px;
@@ -713,7 +683,7 @@ body.html-demo{
       .text-cell{
         background-color:#F9F9F9;
         box-shadow:0 0 2px rgba(0, 0, 0, 0.2);
-        margin-bottom:15px;
+        margin-bottom:20px;
         overflow:hidden;
         .cover{
           float:left;

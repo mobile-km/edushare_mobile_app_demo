@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-    redirect_to '/html_demo/index.html'
+    redirect_to '/texts/1'
   end
 
   def texts

@@ -44,7 +44,7 @@
           %a{:href=>"/texts/#{@current_text_cell.url}"}= @current_text_cell.title
 
       :ruby
-        c1 = @current_text_cell.is_match_level?(2, 3)
+        c1 = @current_text_cell.is_match_level?(3)
         c2 = @current_text_cell.is_match_ancestors_attr?('demo', true)
 
       - if c1 && c2
