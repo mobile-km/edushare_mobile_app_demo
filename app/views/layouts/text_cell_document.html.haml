@@ -32,10 +32,10 @@
 
     .page-body
       .page-html-nav
-        = render 'layouts/texts/nav', :text_cells => TextCellParser.roots,
+        = render 'layouts/texts/nav', :text_cells => TextCell.roots,
                                       :max_level => 2
       .page-bread
-        = render 'layouts/texts/breadcrumb', :home => TextCellParser::TextCell.by_id('1')
+        = render 'layouts/texts/breadcrumb', :home => TextCell.by_id('1')
 
       :ruby
         c1 = @current_text_cell.is_match_level?(3)
