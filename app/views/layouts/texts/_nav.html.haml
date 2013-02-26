@@ -8,7 +8,6 @@
       klass = 'current'
     end
 
-
   .item{:class=>klass, :data=>{:level=>tc.level}}
     %a.link{:href=>"/texts/#{tc.url}"}= tc.title
     - if tc.level < max_level

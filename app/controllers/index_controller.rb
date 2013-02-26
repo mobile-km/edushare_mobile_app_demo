@@ -11,6 +11,6 @@ class IndexController < ApplicationController
       @current_text_cell = TextCellParser::TextCell.by_url path
     end
 
-    render :layout => 'texts'
+    render :layout => 'text_cell_document'
   end
 end

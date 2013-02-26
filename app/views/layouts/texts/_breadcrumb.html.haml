@@ -1,0 +1,10 @@
+- home_url = home.url
+
+.nav.home
+  %a{:href=>"/texts/#{home_url}"} HOME
+
+- text_cells = @current_text_cell.ancestors + [@current_text_cell]
+- text_cells.each do |tc|
+  - if tc != home
+    .nav
+      %a{:href=>"/texts/#{tc.url}"}= tc.title
