@@ -33,4 +33,7 @@ EdushareMobileDemo::Application.routes.draw do
   get "/html_demo/mobile_scenes/:id" => "html_demo#mobile_scenes"
   get "/html_demo/web_scenes/:id" => "html_demo#web_scenes"
   get "/html_demo/*path" => "html_demo#index"
+
+  get "/texts" => "index#texts"
+  get "/texts/*path" => "index#texts"
 end

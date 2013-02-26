@@ -1,11 +1,8 @@
 - title: 轻量知识阅读
-  desc: /html_demo/0701.html
   children_yaml: lib/text_cell_data/3_1.yaml
 
 - title: 个人笔记
-  desc: /html_demo/0702.html
   children_yaml: lib/text_cell_data/3_2.yaml
 
 - title: 信息推送
-  desc: /html_demo/0703.html
   children_yaml: lib/text_cell_data/3_2.yaml

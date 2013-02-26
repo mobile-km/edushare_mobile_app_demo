@@ -1,0 +1,84 @@
+:ruby
+  css = @current_text_cell.format.css
+
+
+- if css == 'index'
+  .page-text-cell{:class=>css}
+    .page-block
+      .text-cell-desc= @current_text_cell.desc
+      .text-cell-cover
+        %img{:src=>@current_text_cell.cover}
+
+      .index-attrs
+        - attrs = @current_text_cell.attrs
+        .point
+          .t= attrs[:t1]
+          .p= attrs[:s11]
+          .p= attrs[:s12]
+          .p= attrs[:s13]
+        .point
+          .t= attrs[:t2]
+          .p= attrs[:s21]
+          .p= attrs[:s22]
+          .p= attrs[:s23]
+        .point
+          .t= attrs[:t3]
+          .p= attrs[:s31]
+          .p= attrs[:s32]
+          .p= attrs[:s33]
+
+- if css == 'intro'
+  .page-text-cell{:class=>css}
+    .page-block
+      .text-cell-list
+        - @current_text_cell.children.each do |tc|
+          .item
+            .title= tc.title
+            .desc= simple_format tc.desc
+            .img
+              %img{:src=>tc.cover}
+          
+- if css == 'demoroot'
+  .page-text-cell{:class=>css}
+    .title= @current_text_cell.desc
+
+    .text-cell-list
+      - @current_text_cell.children.each do |tc|
+        .text-cell
+          .cover
+            %img{:src=>tc.cover}
+
+          .meta
+            %a.stitle{:href=>"/texts/#{tc.url}"}= tc.title
+            .children
+              - tc.children.each do |ctc|
+                %a.ctitle{:href=>"/texts/#{ctc.url}"}= ctc.title
+
+- if css == 'demolist'
+  .page-text-cell{:class=>css}
+    .text-cell-list
+      - @current_text_cell.children.each do |tc|
+        .text-cell
+          .cover
+            %img{:src=>tc.cover}
+          .c
+            .title= tc.title
+            .desc= tc.desc
+          .more
+            %a{:href=>"/texts/#{tc.url}"} 更多介绍
+
+- if css == 'demoscene'
+  .page-text-cell{:class=>css}
+    .page-block
+      .title= @current_text_cell.title
+      .problem
+        .t 问题
+        .p= @current_text_cell.attr_problem
+      .solution
+        .t 应对
+        .p= @current_text_cell.attr_solution
+      .imgs
+        .t 产品界面示意
+        - @current_text_cell.images.each do |img|
+          .img
+            %img{:src=>img.url, :alt=>img.alt}
