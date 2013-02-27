@@ -4,8 +4,11 @@ class PTextCell
 
   field :title,   :type => String
   field :desc,    :type => String, :default => ''
+  # 内部存储格式，调用请用attrs
   field :rattrs,  :type => Array,  :default => []
+  # 内部存储格式，调用请用images
   field :rimages, :type => Array,  :default => []
+  # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
   field :cover,   :type => String
 
@@ -69,7 +72,7 @@ class PTextCell
   end
 
   def siblings_and_self
-    return self.class.roots.to_a if self.parent.nil?
+    return self.class.roots.to_a if self.parent.blank?
     self.parent.children.to_a
   end
 
@@ -81,7 +84,7 @@ class PTextCell
     get_relative_sibling(:-)
   end
 
-  def prev_sibling
+  def next_sibling
     get_relative_sibling(:+)
   end
 
@@ -137,7 +140,7 @@ class PTextCell
   end
 
   def ==(cell)
-    self == cell
+    self.id == cell.id
   end
 
   def method_missing(method, *attrs)
@@ -161,12 +164,19 @@ private
     self.siblings_and_self[index..index.send(opt, 1)].first
   end
 
+  def get_absolute_prev_sibling(cell)
+    return cell.parent if cell.prev_sibling.blank?
+    return cell.prev_sibling if cell.prev_sibling.children.blank?
+
+    get_absolute_prev_sibling(cell.prev_sibling.children.last)
+  end
+
   def traverse_order
     self.ancestors.map(&:id).join('_')
   end
 
   def traverse_ancestors(cell, acc=[])
-    return acc if cell.parent.nil?
+    return acc if cell.parent.blank?
     traverse_ancestors cell.parent, [cell.parent] + acc
   end
 
