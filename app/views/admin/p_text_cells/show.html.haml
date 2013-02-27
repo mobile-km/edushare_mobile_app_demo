@@ -10,3 +10,10 @@
         = @p_text_cell.title
       .desc
         = @p_text_cell.desc
+
+
+  .child-cells
+    - @child_cells.each do |p_text_cell|
+      .item
+        .title= link_to p_text_cell.title, admin_p_text_cell_path(p_text_cell)
+        .desc= p_text_cell.desc
