@@ -1,4 +1,8 @@
 EdushareMobileDemo::Application.routes.draw do
+  namespace :admin do
+    resources :text_cell
+  end
+
   root :to => 'index#index'
 
   resources :a1, :a2, :a3
