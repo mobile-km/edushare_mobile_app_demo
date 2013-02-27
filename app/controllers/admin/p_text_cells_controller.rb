@@ -39,5 +39,6 @@ class Admin::PTextCellsController < ApplicationController
 
   def destroy
     @p_text_cell.destroy
+    redirect_to :back
   end
 end
