@@ -3,7 +3,12 @@ class Admin::PTextCellController < ApplicationController
   layout 'web_work'
   
   def index
-    
+    @p_text_cells = PTextCell.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @p_text_cells }
+    end
   end
 
   def show

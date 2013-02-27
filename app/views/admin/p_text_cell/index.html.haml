@@ -1,12 +1,16 @@
-:ruby
-  list_url =  ''
 
 .page-index
   .title
     = link_to '添加一条', new_admin_p_text_cell_path
   .content
-    .title= "主题"
+    .title
+      .title= "主题"
+      .desc= "描述"
     .text-cell
-      / .show= link_to '显示', admin_p_text_cell_path(p_text_cell)
-      / .edit= link_to '编辑', edit_admin_p_text_cell_path(p_text_cell)
-      / .destroy= link_to '删除', admin_p_text_cell_path(p_text_cell), :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - @p_text_cells.each do |p_text_cell|
+        .title= p_text_cell.title
+        .desc= p_text_cell.desc
+
+        .show= link_to '显示', admin_p_text_cell_path(p_text_cell)
+        .edit= link_to '编辑', edit_admin_p_text_cell_path(p_text_cell)
+        .destroy= link_to '删除', admin_p_text_cell_path(p_text_cell), :method => :delete, :data => { :confirm => '确定要删除？' }
