@@ -22,6 +22,7 @@ class Admin::PTextCellsController < ApplicationController
   end
 
   def show
+    @p_text_cell = PTextCell.find(params[:id])
   end
 
   def edit
