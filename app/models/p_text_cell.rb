@@ -153,8 +153,6 @@ class PTextCell
     case method.to_s
     when /attr_(.*)/
       self.attrs[$1[1].to_sym]
-    when /format_(.*)/
-      self.format[$1[1].to_sym]
     else
       return super
     end
