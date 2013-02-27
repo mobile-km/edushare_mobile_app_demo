@@ -23,8 +23,12 @@ class PTextCell
   scope :roots, where(:parent_id => nil)
 
   def order
-    return self.id.to_s if parent.blank?
-    "#{traverse_order}_#{self.id}"
+    return self.get_sibling_order if parent.blank?
+    "#{traverse_order}_#{self.get_sibling_order}"
+  end
+
+  def get_sibling_order
+    self.siblings_and_self.index(self) + 1
   end
 
   def url
@@ -154,7 +158,9 @@ class PTextCell
   end
 
   def self.by_order(order)
-    self.find order.split("_").last
+    order.split("_").map(&:to_i).inject(self.roots) do |siblings, sibling_order|
+      siblings[sibling_order - 1].children
+    end
   end
 
 private
@@ -165,19 +171,19 @@ private
     self.siblings_and_self[index]
   end
 
-  def valid_range(a, b)
-    a < b ? a..b : b..a
-  end
-
-  def get_absolute_prev_sibling(cell)
+  def get_absolute_prev_sibling(cell, context=nil)
     return cell.parent if cell.prev_sibling.blank?
     return cell.prev_sibling if cell.prev_sibling.children.blank?
-
     get_absolute_prev_sibling(cell.prev_sibling.children.last)
   end
 
+  def get_absolute_next_sibling(cell, context=nil)
+    return cell.children.first if !cell.children.blank?
+    get_absolute_next_sibling(cell.next_sibling.children.first)
+  end
+
   def traverse_order
-    self.ancestors.map(&:id).join('_')
+    self.ancestors.map(&:get_sibling_order).join('_')
   end
 
   def traverse_ancestors(cell, acc=[])
