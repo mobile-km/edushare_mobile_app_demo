@@ -5,7 +5,7 @@ class PTextCell
   field :desc,   :type => String
   field :rattrs, :type => Array
   field :images, :type => Array
-  field :formt,  :type => String
+  field :format, :type => String
   field :cover,  :type => String
 
   belongs_to :parent,
@@ -54,10 +54,19 @@ class PTextCell
   end
 
   def prev_sibling
-    
+    get_relative_sibling(:+)
+  end
+
+  def prev_sibling
+    get_relative_sibling(:-)
   end
 
 private
+
+  def get_relative_sibling(opt)
+    index = self.siblings_and_self.index(self) 
+    self.siblings_and_self[index..index.send(opt, 1)].first
+  end
 
   def traverse_ancestors(cell, acc=[])
     return acc if cell.parent.nil?
