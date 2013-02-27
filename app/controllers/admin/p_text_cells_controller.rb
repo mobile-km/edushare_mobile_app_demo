@@ -7,9 +7,7 @@ class Admin::PTextCellsController < ApplicationController
   end
 
   def index
-    # @p_text_cells = PTextCell.all
     @p_text_cells = PTextCell.roots
-
   end
 
   def new
@@ -22,7 +20,7 @@ class Admin::PTextCellsController < ApplicationController
   end
 
   def show
-    @p_text_cell = PTextCell.find(params[:id])
+    @child_cells = PTextCell.find(@p_text_cell.id).children
   end
 
   def edit
