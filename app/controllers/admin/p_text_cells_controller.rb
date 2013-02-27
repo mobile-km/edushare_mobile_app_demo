@@ -7,7 +7,9 @@ class Admin::PTextCellsController < ApplicationController
   end
 
   def index
-    @p_text_cells = PTextCell.all
+    # @p_text_cells = PTextCell.all
+    @p_text_cells = PTextCell.roots
+
   end
 
   def new
