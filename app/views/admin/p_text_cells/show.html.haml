@@ -11,6 +11,10 @@
       .desc
         = @p_text_cell.desc
 
+  .nav
+    - @ancestors.each do |ancestor|
+      .item
+        .title= link_to ancestor.title, admin_p_text_cell_path(ancestor)
 
   .child-cells
     - @child_cells.each do |p_text_cell|
