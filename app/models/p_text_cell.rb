@@ -160,8 +160,13 @@ class PTextCell
 private
 
   def get_relative_sibling(opt)
-    index = self.siblings_and_self.index(self) 
-    self.siblings_and_self[index..index.send(opt, 1)].first
+    index = self.siblings_and_self.index(self).send opt, 1
+    return nil if index < 0 || index > self.siblings_and_self.count
+    self.siblings_and_self[index]
+  end
+
+  def valid_range(a, b)
+    a < b ? a..b : b..a
   end
 
   def get_absolute_prev_sibling(cell)
