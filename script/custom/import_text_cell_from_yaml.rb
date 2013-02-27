@@ -10,7 +10,7 @@ def yaml_to_text_cell(yaml_text_cell, parent_text_cell = nil)
   tc.desc = hash["desc"]
   tc.attrs = hash["attrs"]
   tc.images = [hash["images"]].flatten
-  tc.cover = hash["cover"]
+  tc.rcover = hash["cover"]
   tc.rformat = hash["format"]
   if !parent_text_cell.blank?
     tc.parent = parent_text_cell

@@ -10,7 +10,7 @@ class PTextCell
   field :rimages, :type => Array,  :default => []
   # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
-  field :cover,   :type => String
+  field :rcover,   :type => String
 
   belongs_to :parent,
              :foreign_key => :parent_id,
@@ -54,7 +54,7 @@ class PTextCell
   end
 
   def images
-    self.rimages.flatten.map {|data| TextCellParser::Image.new(data)}
+    self.rimages.flatten.map {|data| Image.new(data)}
   end
 
   def format=(string)
@@ -62,11 +62,11 @@ class PTextCell
   end
 
   def format
-    Format.new(self.rformat)
+    Format.new(self.rformat || "")
   end
 
   def cover
-    self.cover || images.first.url || ''
+    self.rcover || images.first.url || ''
   end
 
   def ancestors 
@@ -145,6 +145,29 @@ class PTextCell
     nil
   end
 
+  def is_match_level?(*args)
+    levels = args.map{|arg|arg.to_i}.sort
+    return levels[0] == self.level if levels.count == 1
+
+    from_level = levels[0]
+    to_level = levels[1]
+
+    from_level.to_i <= self.level && to_level.to_i >= self.level
+  end
+
+  # 判断 text_cell 的祖先中是否有指定 attr 值等于指定value的节点
+  def is_match_ancestors_attr?(attr_name, attr_value)
+    self.ancestors.each do |text_cell|
+      return true if text_cell.is_match_attr?(attr_name, attr_value)
+    end
+    false
+  end
+
+  # 判断 text_cell 的指定 attr 的值是否等于指定的 value
+  def is_match_attr?(attr_name, attr_value)
+    attrs[attr_name.to_sym] == attr_value
+  end
+
   def ==(cell)
     self.id == cell.id
   end
@@ -158,6 +181,10 @@ class PTextCell
     else
       return super
     end
+  end
+
+  def self.by_id(order)
+    self.by_order(order)
   end
 
   def self.by_url(url)
