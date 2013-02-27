@@ -17,7 +17,7 @@ class Admin::PTextCellsController < ApplicationController
 
   def create
     PTextCell.create(params[:p_text_cell])
-    redirect_to "/admin/p_text_cell"
+    redirect_to "/admin/p_text_cells"
   end
 
   def show
@@ -31,12 +31,12 @@ class Admin::PTextCellsController < ApplicationController
     @p_text_cell.update_attributes(params[:p_text_cell])
 
     if @text_cell.update_attributes(params[:p_text_cell])
-      return redirect_to "/admin/p_text_cell"
+      return redirect_to "/admin/p_text_cells"
     end
 
     error = @text_cell.errors.first
     flash[:error] = error[1]
-    redirect_to "/admin/p_text_cell/#{@p_text_cell.id}/edit"
+    redirect_to "/admin/p_text_cells/#{@p_text_cell.id}/edit"
   end
 
   def destroy
