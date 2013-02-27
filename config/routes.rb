@@ -1,6 +1,6 @@
 EdushareMobileDemo::Application.routes.draw do
   namespace :admin do
-    resources :p_text_cell
+    resources :p_text_cells
   end
 
   root :to => 'index#index'

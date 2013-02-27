@@ -6,9 +6,9 @@ class IndexController < ApplicationController
   def texts
     path = params[:path]
     if path.nil?
-      @current_text_cell = TextCellParser.roots[0]
+      @current_text_cell = TextCell.roots[0]
     else
-      @current_text_cell = TextCellParser::TextCell.by_url path
+      @current_text_cell = TextCell.by_url path
     end
 
     render :layout => 'text_cell_document'
