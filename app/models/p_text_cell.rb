@@ -36,7 +36,7 @@ class PTextCell
   end
 
   def attrs=(list)
-    self.rattrs = list.to_a.map(&:to_a)
+    self.rattrs = list.to_a.map(&:symbolize_keys).map(&:to_a)
   end
 
   def attrs
