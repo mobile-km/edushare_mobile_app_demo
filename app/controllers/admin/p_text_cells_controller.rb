@@ -14,7 +14,6 @@ class Admin::PTextCellsController < ApplicationController
     @p_text_cell = PTextCell.new
   end
 
-
   def create
     PTextCell.create(params[:p_text_cell])
     redirect_to "/admin/p_text_cells"
