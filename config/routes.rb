@@ -1,5 +1,5 @@
 EdushareMobileDemo::Application.routes.draw do
-  resources :admin do
+  namespace :admin do
     resources :text_cell
   end
 
