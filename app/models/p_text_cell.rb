@@ -158,9 +158,10 @@ class PTextCell
   end
 
   def self.by_order(order)
-    order.split("_").map(&:to_i).inject(self.roots) do |siblings, sibling_order|
+    pieces = order.split("_").map(&:to_i)
+    pieces[0...(pieces.length - 1)].inject(self.roots) do |siblings, sibling_order|
       siblings[sibling_order - 1].children
-    end
+    end[pieces.last-1]
   end
 
 private
