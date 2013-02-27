@@ -22,7 +22,7 @@ class Admin::PTextCellsController < ApplicationController
 
   def show
     @child_cells = PTextCell.find(@p_text_cell.id).children
-    @ancestors = @p_text_cell.ancestors.reverse
+    @ancestors = @p_text_cell.ancestors
   end
 
 
