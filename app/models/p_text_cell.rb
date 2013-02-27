@@ -1,12 +1,12 @@
 class PTextCell
   include Mongoid::Document
 
-  field :title,  :type => String
-  field :desc,   :type => String
-  field :rattrs, :type => Array
-  field :images, :type => Array
-  field :format, :type => String
-  field :cover,  :type => String
+  field :title,   :type => String
+  field :desc,    :type => String, :default => ''
+  field :rattrs,  :type => Array,  :default => []
+  field :rimages, :type => Array,  :default => []
+  field :format,  :type => String, :default => ''
+  field :cover,   :type => String
 
   belongs_to :parent,
              :foreign_key => :parent_id,
@@ -18,6 +18,19 @@ class PTextCell
 
   scope :roots, where(:parent_id => nil)
 
+  def order
+    return self.id.to_s if parent.blank?
+    "#{traverse_order}_#{self.id}"
+  end
+
+  def url
+    self.order
+  end
+
+  def level
+    ancestors.count
+  end
+
   def attrs=(list)
     self.rattrs = list.to_a.map(&:to_a)
   end
@@ -26,8 +39,12 @@ class PTextCell
     ActiveSupport::OrderedHash[*self.rattrs.flatten]
   end
 
+  def images=(list)
+    self.rimages = list
+  end
+
   def images
-    self.images.flatten.map {|data| TextCellParser::Image.new(data)}
+    self.rimages.flatten.map {|data| TextCellParser::Image.new(data)}
   end
 
   def cover
@@ -43,8 +60,8 @@ class PTextCell
   end
 
   def siblings_and_self
-    return self.class.roots if self.parent.nil?
-    self.parent.children
+    return self.class.roots.to_a if self.parent.nil?
+    self.parent.children.to_a
   end
 
   def siblings
@@ -54,11 +71,11 @@ class PTextCell
   end
 
   def prev_sibling
-    get_relative_sibling(:+)
+    get_relative_sibling(:-)
   end
 
   def prev_sibling
-    get_relative_sibling(:-)
+    get_relative_sibling(:+)
   end
 
 private
@@ -66,6 +83,10 @@ private
   def get_relative_sibling(opt)
     index = self.siblings_and_self.index(self) 
     self.siblings_and_self[index..index.send(opt, 1)].first
+  end
+
+  def traverse_order
+    self.ancestors.map(&:id).join('_')
   end
 
   def traverse_ancestors(cell, acc=[])
