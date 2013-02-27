@@ -1,4 +1,5 @@
 class Admin::PTextCellsController < ApplicationController
+  layout 'web_work'
   before_filter :pre_load
 
   def pre_load
@@ -7,7 +8,7 @@ class Admin::PTextCellsController < ApplicationController
 
 
   def index
-    @p_text_cells = PTextCell.all
+    @p_text_cells = PTextCell.roots
   end
 
   def new
@@ -20,6 +21,8 @@ class Admin::PTextCellsController < ApplicationController
   end
 
   def show
+    @child_cells = PTextCell.find(@p_text_cell.id).children
+    @ancestors = @p_text_cell.ancestors
   end
 
 
