@@ -6,7 +6,7 @@ class PTextCell
   field :desc,    :type => String, :default => ''
   field :rattrs,  :type => Array,  :default => []
   field :rimages, :type => Array,  :default => []
-  field :format,  :type => String, :default => ''
+  field :rformat, :type => String, :default => ''
   field :cover,   :type => String
 
   belongs_to :parent,
@@ -46,6 +46,14 @@ class PTextCell
 
   def images
     self.rimages.flatten.map {|data| TextCellParser::Image.new(data)}
+  end
+
+  def format=(string)
+    self.rformat = string
+  end
+
+  def format
+    TextCellParser::Format.new(self.rformat)
   end
 
   def cover
