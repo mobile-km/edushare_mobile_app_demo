@@ -6,6 +6,8 @@ class PTextCell
   field :desc,    :type => String, :default => ''
   # 内部存储格式，调用请用attrs
   field :rattrs,  :type => Array,  :default => []
+  # 内部存储格式，调用请用images
+  field :rimages, :type => Array,  :default => []
   # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
   field :cover,   :type => String
@@ -47,16 +49,20 @@ class PTextCell
     ActiveSupport::OrderedHash[*self.rattrs.flatten]
   end
 
+  def images=(list)
+    self.rimages = list
+  end
+
+  def images
+    self.rimages.flatten.map {|data| TextCellParser::Image.new(data)}
+  end
+
   def format=(string)
-    self.rformat = formats_str.split(";").inject({}) do |hash, str|
-      arr = str.split(":")
-      hash[arr[0].to_sym] = arr[1]
-      hash
-    end
+    self.rformat = string
   end
 
   def format
-    TextCellParser::Format.new(self.rformat)
+    Format.new(self.rformat)
   end
 
   def cover
@@ -180,6 +186,7 @@ private
   end
 
   def get_absolute_next_sibling(cell, context=nil)
+    return context
     return cell.children.first if !cell.children.blank?
     get_absolute_next_sibling(cell.next_sibling.children.first)
   end
