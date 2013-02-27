@@ -1,3 +1,4 @@
+# -*- coding: no-conversion -*-
 class PTextCell
   include Mongoid::Document
 
@@ -65,9 +66,7 @@ class PTextCell
   end
 
   def siblings
-    arr = siblings_and_self.dup.to_a
-    arr.delete self
-    arr
+    siblings_and_self.dup.to_a.reject {|cell| cell == self}
   end
 
   def prev_sibling
@@ -76,6 +75,75 @@ class PTextCell
 
   def prev_sibling
     get_relative_sibling(:+)
+  end
+
+  def prev
+    cell = prev_sibling
+    return self.parent if cell.blank?
+    return cell if cell.children.blank?
+
+    cell = cell.children.last
+    while !cell.children.blank?
+      cell = cell.children.last
+    end
+
+    return cell
+  end
+
+  def next
+    return self.children.first if !self.children.blank?
+
+    cell = self
+    result = cell.next_sibling
+    while result.blank?
+      cell = cell.parent
+      return nil if cell.blank?
+      result = cell.next_sibling
+    end
+
+    result
+  end
+
+  def is_in_same_sub_tree?(another_text_cell, start_level=2)
+    return true if self == another_text_cell
+
+    text_cell_1 = self.get_ancestor_of_level(start_level)
+    text_cell_2 = another_text_cell.get_ancestor_of_level(start_level)
+    text_cell_1 == text_cell_2 && !!text_cell_2 
+  end
+
+  # 获取自身和自身的祖先节点中，level等于传入level的节点
+  # 如果传入level大于当前节点level，则返回nil
+  # 如果传入level等于当前节点level，则返回当前节点自身
+  # 如果传入level小于当前节点level，则返回祖先节点对应level的节点
+  # 其他异常情况，返回nil
+  def get_ancestor_of_level(level)
+    return nil if self.level < level.to_i
+    return self if self.level == level.to_i
+
+    self.ancestors.each do |text_cell|
+      return text_cell if text_cell.level == level.to_i
+    end
+    
+    nil
+  end
+
+  def ==(cell)
+    self == cell
+  end
+
+  def method_missing(method, *attrs)
+    result = method.to_s.match(/attr_(.*)/)
+    return super if result.blank?
+    self.attrs[result[1].to_sym]
+  end
+
+  def self.by_url(url)
+    self.by_order(url)
+  end
+
+  def self.by_order(order)
+    self.find order.split("_").last
   end
 
 private
