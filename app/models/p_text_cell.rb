@@ -6,8 +6,6 @@ class PTextCell
   field :desc,    :type => String, :default => ''
   # 内部存储格式，调用请用attrs
   field :rattrs,  :type => Array,  :default => []
-  # 内部存储格式，调用请用images
-  field :rimages, :type => Array,  :default => []
   # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
   field :cover,   :type => String
@@ -19,6 +17,8 @@ class PTextCell
   has_many   :children,
              :foreign_key => :parent_id,
              :class_name  => 'PTextCell'
+
+  has_many   :images
 
   scope :roots, where(:parent_id => nil)
 
@@ -47,16 +47,12 @@ class PTextCell
     ActiveSupport::OrderedHash[*self.rattrs.flatten]
   end
 
-  def images=(list)
-    self.rimages = list
-  end
-
-  def images
-    self.rimages.flatten.map {|data| TextCellParser::Image.new(data)}
-  end
-
   def format=(string)
-    self.rformat = string
+    self.rformat = formats_str.split(";").inject({}) do |hash, str|
+      arr = str.split(":")
+      hash[arr[0].to_sym] = arr[1]
+      hash
+    end
   end
 
   def format
@@ -148,9 +144,14 @@ class PTextCell
   end
 
   def method_missing(method, *attrs)
-    result = method.to_s.match(/attr_(.*)/)
-    return super if result.blank?
-    self.attrs[result[1].to_sym]
+    case method.to_s
+    when /attr_(.*)/
+      self.attrs[$1[1].to_sym]
+    when /format_(.*)/
+      self.format[$1[1].to_sym]
+    else
+      return super
+    end
   end
 
   def self.by_url(url)
