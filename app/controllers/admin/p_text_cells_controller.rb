@@ -1,10 +1,9 @@
 class Admin::PTextCellsController < ApplicationController
   before_filter :pre_load
-
+  layout 'web_work'
   def pre_load
     @p_text_cell = PTextCell.find params[:id] if params[:id]
   end
-
 
   def index
     @p_text_cells = PTextCell.all
@@ -21,7 +20,6 @@ class Admin::PTextCellsController < ApplicationController
 
   def show
   end
-
 
   def edit
   end
