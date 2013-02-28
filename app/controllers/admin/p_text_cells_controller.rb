@@ -1,6 +1,6 @@
 class Admin::PTextCellsController < ApplicationController
   before_filter :pre_load
-  layout 'web_work'
+  layout 'admin'
   def pre_load
     @p_text_cell = PTextCell.find params[:id] if params[:id]
   end
