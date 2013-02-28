@@ -1,5 +1,4 @@
 class Admin::PTextCellsController < ApplicationController
-  layout 'web_work'
   before_filter :pre_load
   layout 'web_work'
   def pre_load
