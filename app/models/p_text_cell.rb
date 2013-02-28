@@ -18,7 +18,8 @@ class PTextCell
 
   has_many   :children,
              :foreign_key => :parent_id,
-             :class_name  => 'PTextCell'
+             :class_name  => 'PTextCell',
+             :order => [[:_id, :asc]]
 
   has_many   :images
 
@@ -195,6 +196,30 @@ class PTextCell
     pieces[0...(pieces.length - 1)].inject(self.roots) do |siblings, sibling_order|
       siblings[sibling_order - 1].children
     end[pieces.last-1]
+  end
+
+  def to_hash
+    hash = {}
+    hash["title"]  = self.title   if !self.title.blank?
+    hash["desc"]   = self.desc    if !self.desc.blank?
+    hash["cover"]  = self.cover   if !self.cover.blank?
+    hash["format"] = self.rformat if !self.rformat.blank?
+
+    if !self.attrs.blank?
+      hash["attrs"]  = self.attrs.map do |key,value|
+        {key.to_s=>value}
+      end
+    end
+
+    if !self.images.blank?
+      hash["images"] = self.images.map{|image|image.to_hash}
+    end
+
+    if !self.children.blank?
+      hash["children"] = self.children.map{|text_cell|text_cell.to_hash}
+    end
+
+    hash
   end
 
 private

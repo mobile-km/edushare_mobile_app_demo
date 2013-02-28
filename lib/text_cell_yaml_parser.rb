@@ -1,6 +1,5 @@
 class TextCellYamlParser
   CONFIG = YAML.load_file(Rails.root.join("config/text_cell_config.yaml"))
-  DATA = YAML.load_file(Rails.root.join("lib/text_cell_data/nav_items.yaml"))
 
   class TextCell
     def initialize(hash)
@@ -31,8 +30,8 @@ class TextCellYamlParser
       end
     end
 
-    def self.roots
-      self._parse(DATA)
+    def self.roots(yaml_file_path = "lib/text_cell_data/nav_items.yaml")
+      self._parse(YAML.load_file(Rails.root.join(yaml_file_path)))
     end
 
   end
