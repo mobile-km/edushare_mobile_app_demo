@@ -22,11 +22,23 @@
         .title= link_to p_text_cell.title, admin_p_text_cell_path(p_text_cell)
         .desc= p_text_cell.desc
         .attrs
-          .add= link_to '增加一条', 'javascript:;'
+          .add= link_to '增加属性', 'javascript:;'
           .attr
             - p_text_cell.attrs.each do |attr|
               .key= attr.key
               .value= attr.value
+            .add-attr
+              = form_tag(:url => {:action => ''})  do
+                .field
+                  %label 增加属性
+                  .key
+                    = text_area_tag :key
+                  .value
+                    = text_area_tag :value
+
+                .field.submit
+                  = button_to "增加", "javascript:;"
+
 
         .edit= link_to '编辑', edit_admin_p_text_cell_path(p_text_cell)
         .destroy= link_to '删除', admin_p_text_cell_path(p_text_cell), :method => :delete, :data => { :confirm => '确定要删除？' }
