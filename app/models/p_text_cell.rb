@@ -204,18 +204,6 @@ private
     self.siblings_and_self[index]
   end
 
-  def get_absolute_prev_sibling(cell, context=nil)
-    return cell.parent if cell.prev_sibling.blank?
-    return cell.prev_sibling if cell.prev_sibling.children.blank?
-    get_absolute_prev_sibling(cell.prev_sibling.children.last)
-  end
-
-  def get_absolute_next_sibling(cell, context=nil)
-    return context
-    return cell.children.first if !cell.children.blank?
-    get_absolute_next_sibling(cell.next_sibling.children.first)
-  end
-
   def traverse_order
     self.ancestors.map(&:get_sibling_order).join('_')
   end

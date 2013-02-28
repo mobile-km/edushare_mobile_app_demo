@@ -7,6 +7,7 @@ gem 'mongoid', '~> 2.6.0'
 gem 'json'
 gem 'therubyracer'
 gem 'haml'
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
@@ -15,4 +16,3 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
