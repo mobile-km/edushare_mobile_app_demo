@@ -10,7 +10,7 @@ class PTextCell
   field :rimages, :type => Array,  :default => []
   # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
-  field :cover,   :type => String
+  field :rcover,   :type => String
 
   belongs_to :parent,
              :foreign_key => :parent_id,
@@ -20,11 +20,17 @@ class PTextCell
              :foreign_key => :parent_id,
              :class_name  => 'PTextCell'
 
+  has_many   :images
+
   scope :roots, where(:parent_id => nil)
 
   def order
-    return self.id.to_s if parent.blank?
-    "#{traverse_order}_#{self.id}"
+    return self.get_sibling_order if parent.blank?
+    "#{traverse_order}_#{self.get_sibling_order}"
+  end
+
+  def get_sibling_order
+    self.siblings_and_self.index(self) + 1
   end
 
   def url
@@ -48,7 +54,7 @@ class PTextCell
   end
 
   def images
-    self.rimages.flatten.map {|data| TextCellParser::Image.new(data)}
+    self.rimages.flatten.map {|data| Image.new(data)}
   end
 
   def format=(string)
@@ -56,11 +62,11 @@ class PTextCell
   end
 
   def format
-    TextCellParser::Format.new(self.rformat)
+    Format.new(self.rformat || "")
   end
 
   def cover
-    self.cover || images.first.url || ''
+    self.rcover || images.first.url || ''
   end
 
   def ancestors 
@@ -139,14 +145,44 @@ class PTextCell
     nil
   end
 
+  def is_match_level?(*args)
+    levels = args.map{|arg|arg.to_i}.sort
+    return levels[0] == self.level if levels.count == 1
+
+    from_level = levels[0]
+    to_level = levels[1]
+
+    from_level.to_i <= self.level && to_level.to_i >= self.level
+  end
+
+  # 判断 text_cell 的祖先中是否有指定 attr 值等于指定value的节点
+  def is_match_ancestors_attr?(attr_name, attr_value)
+    self.ancestors.each do |text_cell|
+      return true if text_cell.is_match_attr?(attr_name, attr_value)
+    end
+    false
+  end
+
+  # 判断 text_cell 的指定 attr 的值是否等于指定的 value
+  def is_match_attr?(attr_name, attr_value)
+    attrs[attr_name.to_sym] == attr_value
+  end
+
   def ==(cell)
     self.id == cell.id
   end
 
   def method_missing(method, *attrs)
-    result = method.to_s.match(/attr_(.*)/)
-    return super if result.blank?
-    self.attrs[result[1].to_sym]
+    case method.to_s
+    when /attr_(.*)/
+      self.attrs[$1[1].to_sym]
+    else
+      return super
+    end
+  end
+
+  def self.by_id(order)
+    self.by_order(order)
   end
 
   def self.by_url(url)
@@ -154,7 +190,10 @@ class PTextCell
   end
 
   def self.by_order(order)
-    self.find order.split("_").last
+    pieces = order.split("_").map(&:to_i)
+    pieces[0...(pieces.length - 1)].inject(self.roots) do |siblings, sibling_order|
+      siblings[sibling_order - 1].children
+    end[pieces.last-1]
   end
 
 private
@@ -165,19 +204,8 @@ private
     self.siblings_and_self[index]
   end
 
-  def valid_range(a, b)
-    a < b ? a..b : b..a
-  end
-
-  def get_absolute_prev_sibling(cell)
-    return cell.parent if cell.prev_sibling.blank?
-    return cell.prev_sibling if cell.prev_sibling.children.blank?
-
-    get_absolute_prev_sibling(cell.prev_sibling.children.last)
-  end
-
   def traverse_order
-    self.ancestors.map(&:id).join('_')
+    self.ancestors.map(&:get_sibling_order).join('_')
   end
 
   def traverse_ancestors(cell, acc=[])
