@@ -31,8 +31,8 @@
                 - if p_text_cell.attrs.length > 0
                   - p_text_cell.attrs.each do |attr|
                     :ruby
-                      key = attr.keys.first
-                      value = attr[key]
+                      key = attr[0]
+                      value = attr[1]
                     .item
                       %input{:name => "keys[]", :size => "20", :type => "text", :value => key}
                       %input{:name => "values[]", :size => "20", :type => "text", :value => value}
