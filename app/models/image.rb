@@ -11,4 +11,10 @@ class Image
     self.image.url
   end
 
+  def to_hash
+    hash = {"image" => url}
+    hash["alt"] = self.alt if !self.alt.blank?
+    hash
+  end
+
 end
