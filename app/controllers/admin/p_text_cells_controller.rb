@@ -46,15 +46,14 @@ class Admin::PTextCellsController < ApplicationController
   def save_attrs
     length = params['keys'].length
   
-    attrs = []
     i = 0
     while i < length  do
-      attrs << {"#{params['keys'][i]}" => params['values'][i]}
+      @p_text_cell.attrs = [{params['keys'][i] => params['values'][i]}]
       i +=1
     end
-    @p_text_cell.attrs = attrs
-   
-
+    @p_text_cell.save
+    
+    return redirect_to :back
   end
 end
 

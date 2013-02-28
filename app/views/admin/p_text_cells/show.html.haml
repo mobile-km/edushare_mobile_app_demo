@@ -28,9 +28,8 @@
             = form_tag("/admin/p_text_cells/save_attrs?id=#{p_text_cell.id}")  do
               
               .attr-list
-                - if !p_text_cell.attrs.blank?
+                - if p_text_cell.attrs.length > 0
                   - p_text_cell.attrs.each do |attr|
-
                     :ruby
                       key = attr.keys.first
                       value = attr[key]
