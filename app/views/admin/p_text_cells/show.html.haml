@@ -4,7 +4,7 @@
     .title
       .title= "主题"
       .desc= "描述"
-
+      
     .text-cell
       .title
         = @p_text_cell.title
@@ -21,3 +21,12 @@
       .item
         .title= link_to p_text_cell.title, admin_p_text_cell_path(p_text_cell)
         .desc= p_text_cell.desc
+        .attrs
+          .add= link_to '增加一条', 'javascript:;'
+          .attr
+            - p_text_cell.attrs.each do |attr|
+              .key= attr.key
+              .value= attr.value
+
+        .edit= link_to '编辑', edit_admin_p_text_cell_path(p_text_cell)
+        .destroy= link_to '删除', admin_p_text_cell_path(p_text_cell), :method => :delete, :data => { :confirm => '确定要删除？' }

@@ -1,11 +1,9 @@
 class Admin::PTextCellsController < ApplicationController
-  layout 'web_work'
   before_filter :pre_load
-
+  layout 'web_work'
   def pre_load
     @p_text_cell = PTextCell.find params[:id] if params[:id]
   end
-
 
   def index
     @p_text_cells = PTextCell.roots
@@ -24,7 +22,6 @@ class Admin::PTextCellsController < ApplicationController
     @child_cells = PTextCell.find(@p_text_cell.id).children
     @ancestors = @p_text_cell.ancestors
   end
-
 
   def edit
   end
