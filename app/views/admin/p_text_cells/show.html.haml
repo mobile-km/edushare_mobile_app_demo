@@ -28,12 +28,18 @@
             = form_tag("/admin/p_text_cells/save_attrs?id=#{p_text_cell.id}")  do
               
               .attr-list
-                .item
-                  %input{:name => "keys[]", :size => "20", :type => "text"}
-                  %input{:name => "values[]", :size => "20", :type => "text"}
+                - if !p_text_cell.attrs.blank?
+                  - p_text_cell.attrs.each do |attr|
+
+                    :ruby
+                      key = attr.keys.first
+                      value = attr[key]
+                    .item
+                      %input{:name => "keys[]", :size => "20", :type => "text", :value => key}
+                      %input{:name => "values[]", :size => "20", :type => "text", :value => value}
 
               .field.submit
-                = button_to "增加", "javascript:;"
+                = button_to "保存", "javascript:;"
 
 
         .edit= link_to '编辑', edit_admin_p_text_cell_path(p_text_cell)
