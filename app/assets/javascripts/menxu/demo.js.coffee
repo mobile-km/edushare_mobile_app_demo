@@ -1,4 +1,3 @@
-alert(1)
 jQuery ->
   $mark = jQuery('.page-b3 .mark')
   $link = $mark.find('.important a')
@@ -14,10 +13,10 @@ jQuery ->
 
 jQuery ->
   $attrs = jQuery('.page-admin-show .child-cells .attrs')
-  console.log($attrs)
   $add = $attrs.find('.add a')
   $add_attr = $attrs.find('.add-attr')
 
   $add.click ->
-    alert('aaa')
-    $add_attr.css({display:'inline'})
+    jQuery(this).parent().children('.add-attr').css({display:'inline'})
+    # $atr = jQuery(this).siblings()
+    # $atr.css({display:'inline'})
