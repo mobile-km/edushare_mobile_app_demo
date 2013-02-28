@@ -22,7 +22,8 @@ class PTextCell
 
   has_many   :images
 
-  scope :roots, where(:parent_id => nil)
+  scope :roots, where(:parent_id => nil).order_by([[:_id, :asc]])
+
 
   def order
     return self.get_sibling_order if parent.blank?
@@ -38,7 +39,7 @@ class PTextCell
   end
 
   def level
-    ancestors.count
+    ancestors.count + 1
   end
 
   def attrs=(list)
@@ -175,7 +176,7 @@ class PTextCell
   def method_missing(method, *attrs)
     case method.to_s
     when /attr_(.*)/
-      self.attrs[$1[1].to_sym]
+      self.attrs[$1.to_sym]
     else
       return super
     end
