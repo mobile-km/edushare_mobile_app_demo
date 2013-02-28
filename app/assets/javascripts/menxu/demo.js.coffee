@@ -17,7 +17,6 @@ jQuery ->
   $add_attr = $attrs.find('.add-attr')
 
   $add.click ->
-    alert(2)
-    jQuery(this).parent().children(jQuery('.add-attr')).css({display:'inline'})
-    # jQuery(this).siblings().css('background-color', 'red');
-
+    jQuery(this).closest('.attrs').children('.add-attr').css({display:'inline'})
+    # $atr = jQuery(this).siblings()
+    # $atr.css({display:'inline'})
