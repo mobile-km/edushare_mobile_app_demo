@@ -11,6 +11,7 @@ class Admin::PTextCellsController < ApplicationController
 
   def new
     @p_text_cell = PTextCell.new
+    @p_text_cell.rattrs.build
   end
 
   def create
@@ -24,10 +25,10 @@ class Admin::PTextCellsController < ApplicationController
   end
 
   def edit
+    @p_text_cell.rattrs.build
   end
 
   def update
-
     if @p_text_cell.update_attributes(params[:p_text_cell])
       return redirect_to "/admin/p_text_cells"
     end

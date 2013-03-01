@@ -34,6 +34,7 @@ class PTextCell
              :order => [[:_id, :asc]]
 
   has_mongoid_attached_file :cover
+  accepts_nested_attributes_for :rattrs
 
   scope :roots, where(:parent_id => nil).order_by([[:_id, :asc]])
 
