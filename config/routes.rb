@@ -4,7 +4,11 @@ EdushareMobileDemo::Application.routes.draw do
     resources :p_text_cells do
       collection do
         post :save_attrs
-        post :move_position
+      end
+
+      member do
+        put :move_up
+        put :move_down
       end
     end
   end
