@@ -67,7 +67,8 @@ class PTextCell
 
   def attrs
     self.reload
-    self.rattrs.map(&:to_hash)
+    #TODO 顺序有BUG，待修改
+    ActiveSupport::OrderedHash[*self.rattrs.map(&:to_hash).map(&:to_a).flatten]
   end
 
   def format=(string)
