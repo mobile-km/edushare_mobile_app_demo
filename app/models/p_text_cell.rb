@@ -15,7 +15,6 @@ class PTextCell
 
   increments :position
 
-
   belongs_to :parent,
              :foreign_key => :parent_id,
              :class_name  => 'PTextCell'
@@ -31,7 +30,7 @@ class PTextCell
              :foreign_key => :text_cell_id,
              :class_name  => 'Attr',
              :order => [[:_id, :asc]]
-             
+
   has_mongoid_attached_file :cover
 
   scope :roots, where(:parent_id => nil).order_by([[:_id, :asc]])

@@ -9,8 +9,11 @@ gem 'therubyracer'
 gem 'haml'
 gem 'paperclip', '~> 2.7'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+<<<<<<< HEAD
 gem 'mongoid-autoinc'
 
+=======
+>>>>>>> e3d5620d22ee115c74029af03c8865ede3d1c661
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
