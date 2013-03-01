@@ -4,8 +4,6 @@ class PTextCell
 
   field :title,   :type => String
   field :desc,    :type => String, :default => ''
-  # 内部存储格式，调用请用attrs
-  field :rattrs,  :type => Array,  :default => []
   # 内部存储格式，调用请用images
   field :rimages, :type => Array,  :default => []
   # 内部存储格式，调用请用format
@@ -22,6 +20,11 @@ class PTextCell
              :order => [[:_id, :asc]]
 
   has_many   :images
+
+  has_many   :rattrs,
+             :foreign_key => :text_cell_id,
+             :class_name  => 'Attr',
+             :order => [[:_id, :asc]]
 
   scope :roots, where(:parent_id => nil).order_by([[:_id, :asc]])
 
@@ -43,12 +46,20 @@ class PTextCell
     ancestors.count + 1
   end
 
-  def attrs=(list)
-    self.rattrs = list.to_a.map(&:symbolize_keys).map(&:to_a)
+  # list [{:a=>1},{:b=>2}]
+  def update_attrs(list)
+    self.rattrs.destroy_all
+    list.map(&:symbolize_keys).each do |attr_hash|
+      arr = attr_hash.to_a.flatten
+      key = arr[0].to_sym
+      value = arr[1]
+      self.rattrs.create(key => value)
+    end
   end
 
   def attrs
-    ActiveSupport::OrderedHash[*self.rattrs.flatten]
+    self.reload
+    self.rattrs.map(&:to_hash)
   end
 
   def images=(list)
