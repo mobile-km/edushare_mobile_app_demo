@@ -2,14 +2,18 @@
 class PTextCell
   include Mongoid::Document
   include Mongoid::Paperclip
+  include Mongoid::Autoinc
+
 
   field :title,   :type => String
   field :desc,    :type => String, :default => ''
   # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
 
+  field :position, :type => Integer
 
-  auto_increment :position
+
+  increments :position
 
 
   belongs_to :parent,
