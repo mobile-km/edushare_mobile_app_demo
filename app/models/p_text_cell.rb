@@ -16,10 +16,11 @@ class PTextCell
   has_many   :rattrs,
              :foreign_key => :text_cell_id,
              :class_name  => 'Attr',
-             :order => [[:_id, :asc]]
+             :order => [[:_id, :asc]],
+             :autosave => true
 
   has_mongoid_attached_file :cover
-  accepts_nested_attributes_for :rattrs
+  accepts_nested_attributes_for :rattrs, :allow_destroy => true
 
   def order
     return self.get_sibling_order if parent.blank?
@@ -37,6 +38,20 @@ class PTextCell
   def level
     ancestors.count + 1
   end
+
+  def rattrs_attributes=(args)
+    args.each do |params|
+      if params['_destroy']
+        Attr.find(params['_id']).destroy
+        next
+      elsif params['_id']
+        Attr.find(params['_id']).update_attributes(params)
+      else
+        Attr.create params.merge(:text_cell_id => self.id)
+      end
+    end
+  end
+
 
   # list [{:a=>1},{:b=>2}]
   def update_attrs(list)

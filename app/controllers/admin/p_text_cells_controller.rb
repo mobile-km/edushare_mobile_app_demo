@@ -11,7 +11,6 @@ class Admin::PTextCellsController < ApplicationController
 
   def new
     @p_text_cell = PTextCell.new
-    @p_text_cell.rattrs.build
   end
 
   def create

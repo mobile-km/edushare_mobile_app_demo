@@ -9,8 +9,13 @@
     .attrs
       %a.add-new-attr{:href=>'javascript:;'} 增加属性
 
-      = f.fields_for @p_text_cell.rattrs do |builder|
-        = render 'admin/p_text_cells/parts/attr_fields', :f => builder
+      - @p_text_cell.rattrs.each do |rattr|
+        .item{:class => rattr.new_record? ? 'new' : ''}
+          - if rattr.persisted?
+            = hidden_field_tag "p_text_cell[rattrs_attributes][][_id]", rattr._id
+            = check_box_tag "p_text_cell[rattrs_attributes][][_destroy]", 1
+          %input{:name => "p_text_cell[rattrs_attributes][][key]", :size => "20", :type => "text", :value => rattr.key}
+          %input{:name => "p_text_cell[rattrs_attributes][][value]", :size => "20", :type => "text", :value => rattr.value}
 
     .field
       =f.submit
