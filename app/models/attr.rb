@@ -8,6 +8,8 @@ class Attr
              :foreign_key => :text_cell_id,
              :class_name  => 'PTextCell'
 
+  validates :key, :value, :presence => true
+
   def to_hash
     {self.key.to_sym => self.value}
   end

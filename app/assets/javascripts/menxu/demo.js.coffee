@@ -13,10 +13,9 @@ jQuery ->
 
 jQuery ->
   # 增加属性表单
-  $attrs = jQuery('.page-admin-show .child-cells .attrs')
-  $attrs.find('.add-new-attr').click ->
+  $attrs = jQuery('.page-model-form .attrs')
+  $new = $attrs.find('.item.new').clone()
 
-    jQuery('<div class="item"></div>')
-      .append(jQuery('<input type="text" size="20" name="keys[]" />'))
-      .append(jQuery('<input type="text" size="20" name="values[]" />'))
-      .appendTo(jQuery(this).closest('.attrs').children('.add-attr').children('form').children('.attr-list'))
+
+  $attrs.find('.add-new-attr').click ->
+    $attrs.append $new.clone()
