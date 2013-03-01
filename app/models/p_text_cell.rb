@@ -9,7 +9,6 @@ class PTextCell
   field :rformat, :type => String, :default => ''
 
 
-  auto_increment :position
 
 
   belongs_to :parent,
@@ -27,7 +26,7 @@ class PTextCell
              :foreign_key => :text_cell_id,
              :class_name  => 'Attr',
              :order => [[:_id, :asc]]
-             
+
   has_mongoid_attached_file :cover
 
   scope :roots, where(:parent_id => nil).order_by([[:_id, :asc]])
