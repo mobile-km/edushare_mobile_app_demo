@@ -1,0 +1,47 @@
+.page-admin-p-text-cells-index{
+  margin-top: 20px;
+  margin-left: 20px;
+
+  .title{
+
+  }
+
+  .content{
+    margin-top: 15px;
+
+    .title{
+      span.title{
+
+      }
+      span.desc{
+        margin-left: 50px;
+      }
+    }
+    .text-cell{
+      margin-top: 10px;
+      .p-text-cells{
+        ul li {
+          .show{
+            /*background-color: rgba(#789, 0.76);*/
+            .desc{
+              margin-left: 50px;
+            }
+            .show{
+              margin-left: 200px;
+            }
+          }
+          .child .child-cells{
+            margin-left: 20px;
+            margin-top: 10px;
+            ul li{
+              margin-top: 10px;
+              margin-bottom: 10px;
+              margin-left: 20px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

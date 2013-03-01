@@ -1,0 +1,18 @@
+.child-cells
+  %ul
+    - child_cells.each do |child_cell|
+      %li
+        .show
+          %span.title= link_to child_cell.title, admin_p_text_cell_path(child_cell)
+
+          %span.edit= link_to '编辑', edit_admin_p_text_cell_path(child_cell)
+          %span.destroy= link_to '删除', admin_p_text_cell_path(child_cell), :method => :delete, :data => { :confirm => '确定要删除？' }
+          %span.copy= link_to '复制', 'javascript:;' 
+          %span.up= link_to '向上移动', 'javascript:;'
+          %span.down= link_to '向下移动', 'javascript:;'
+
+        :ruby
+          @child_cells = PTextCell.find(child_cell.id).children
+
+        .child
+          = render "admin/p_text_cells/parts/child_cells" ,:child_cells  => @child_cells
