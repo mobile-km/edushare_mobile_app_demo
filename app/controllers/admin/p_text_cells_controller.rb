@@ -69,4 +69,9 @@ class Admin::PTextCellsController < ApplicationController
     return redirect_to :back
   end
 
+  def copy
+    @p_text_cell.copy
+    return redirect_to :back
+  end
+
 end

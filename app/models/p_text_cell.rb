@@ -147,6 +147,26 @@ class PTextCell
     attrs[attr_name.to_sym] == attr_value
   end
 
+  def copy
+    copy_text_cell = PTextCell.new
+    copy_text_cell.title = "#{self.title}_copy"
+    copy_text_cell.desc = self.desc
+    copy_text_cell.rformat = self.rformat
+
+    if !self.cover.path.blank?
+      copy_text_cell.cover = File.open(self.cover.path)
+    end
+    # TODO attrs
+    self.images.each do |image_model|
+      copy_text_cell.images.create(
+        :image => File.open(image_model.image.path),
+        :alt => image_model.alt
+      )
+    end
+    copy_text_cell.save
+    copy_text_cell.move_below(self)
+  end
+
   def ==(cell)
     self.id == cell.id
   end

@@ -9,6 +9,7 @@ EdushareMobileDemo::Application.routes.draw do
       member do
         put :move_up
         put :move_down
+        put :copy
       end
     end
   end
