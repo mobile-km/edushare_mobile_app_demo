@@ -175,17 +175,25 @@ class PTextCell
     copy_text_cell.desc = self.desc
     copy_text_cell.rformat = self.rformat
 
-    if !self.cover.path.blank?
-      copy_text_cell.cover = File.open(self.cover.path)
+    if !self.cover_without_first_image.path.blank?
+      copy_text_cell.cover = File.open(self.cover_without_first_image.path)
     end
-    # TODO attrs
+
+    copy_text_cell.save
+
+    self.rattrs.each do |rattr|
+      copy_text_cell.rattrs.create(
+        :key => rattr.key,
+        :value => rattr.value
+      )
+    end
+
     self.images.each do |image_model|
       copy_text_cell.images.create(
         :image => File.open(image_model.image.path),
         :alt => image_model.alt
       )
     end
-    copy_text_cell.save
     copy_text_cell.move_below(self)
   end
 
