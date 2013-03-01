@@ -6,5 +6,11 @@
     .field
       =f.text_area :desc
 
+    .attrs
+      %a.add-new-attr{:href=>'javascript:;'} 增加属性
+
+      = f.fields_for @p_text_cells.rattrs do |builder|
+        = render 'admin/p_text_cells/parts/attr_fields', :f => builder
+
     .field
       =f.submit

@@ -19,6 +19,7 @@ class PTextCell
              :order => [[:_id, :asc]]
 
   has_mongoid_attached_file :cover
+  accepts_nested_attributes_for :rattrs
 
   def order
     return self.get_sibling_order if parent.blank?
