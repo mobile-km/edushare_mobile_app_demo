@@ -6,15 +6,27 @@
     .field
       =f.text_area :desc
 
+    .field
+      = f.file_field :cover
+
+    .field
+      = f.text_field :rformat
+
     .attrs
       %a.add-new-attr{:href=>'javascript:;'} 增加属性
 
       .item.new
         - rattr = @p_text_cell.rattrs.build
-        - if rattr.persisted?
-          = hidden_field_tag "p_text_cell[rattrs_attributes][][_id]", rattr._id
         %input{:name => "p_text_cell[rattrs_attributes][][key]", :size => "20", :type => "text", :value => rattr.key}
         %input{:name => "p_text_cell[rattrs_attributes][][value]", :size => "20", :type => "text", :value => rattr.value}
+
+    .images
+      %a.add-new-image{:href=>'javascript:;'} 增加图片
+
+      .image.new
+        - image = @p_text_cell.images.build
+        = file_field_tag "p_text_cell[images_attributes][][image]"
+        = text_field_tag "p_text_cell[images_attributes][][alt]"
 
     .field
       =f.submit

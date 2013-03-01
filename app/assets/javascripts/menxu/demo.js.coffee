@@ -16,6 +16,14 @@ jQuery ->
   $attrs = jQuery('.page-model-form .attrs')
   $new = $attrs.find('.item.new').clone()
 
-
   $attrs.find('.add-new-attr').click ->
     $attrs.append $new.clone()
+
+
+jQuery ->
+  # 增加属性表单
+  $images = jQuery('.page-model-form .images')
+  $new = $images.find('.image.new').clone()
+
+  $images.find('.add-new-image').click ->
+    $images.append $new.clone()

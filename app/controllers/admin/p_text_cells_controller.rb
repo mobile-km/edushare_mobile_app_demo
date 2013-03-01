@@ -25,6 +25,7 @@ class Admin::PTextCellsController < ApplicationController
 
   def edit
     @p_text_cell.rattrs.build
+    @p_text_cell.images.build
   end
 
   def update
@@ -41,7 +42,6 @@ class Admin::PTextCellsController < ApplicationController
     @p_text_cell.destroy
     redirect_to :back
   end
-
 
   def save_attrs
     length = params['keys'].length

@@ -21,6 +21,7 @@ class PTextCell
 
   has_mongoid_attached_file :cover
   accepts_nested_attributes_for :rattrs, :allow_destroy => true
+  accepts_nested_attributes_for :images, :allow_destroy => true
 
   def cover_with_first_image
     return cover_without_first_image.url if !cover_file_name.blank?
@@ -60,6 +61,18 @@ class PTextCell
     end
   end
 
+  def images_attributes=(args)
+    args.each do |params|
+      if params['_destroy']
+        Image.find(params['_id']).destroy
+        next
+      elsif params['_id']
+        Image.find(params['_id']).update_attributes(params)
+      else
+        Image.create params.merge(:p_text_cell_id => self.id)
+      end
+    end
+  end
 
   # list [{:a=>1},{:b=>2}]
   def update_attrs(list)

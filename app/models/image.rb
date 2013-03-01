@@ -7,6 +7,8 @@ class Image
   belongs_to :p_text_cell
   has_mongoid_attached_file :image
 
+  validates :image_content_type, :presence => true
+
   def url
     self.image.url
   end
