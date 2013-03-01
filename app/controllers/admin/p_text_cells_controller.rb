@@ -58,5 +58,9 @@ class Admin::PTextCellsController < ApplicationController
     
     return redirect_to :back
   end
+
+
+  def move_position
+  end
 end
 
