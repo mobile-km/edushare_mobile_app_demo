@@ -1,11 +1,9 @@
 class Admin::PTextCellsController < ApplicationController
-  layout 'web_work'
   before_filter :pre_load
-
+  layout 'admin'
   def pre_load
     @p_text_cell = PTextCell.find params[:id] if params[:id]
   end
-
 
   def index
     @p_text_cells = PTextCell.roots
@@ -25,7 +23,6 @@ class Admin::PTextCellsController < ApplicationController
     @ancestors = @p_text_cell.ancestors
   end
 
-
   def edit
   end
 
@@ -44,4 +41,22 @@ class Admin::PTextCellsController < ApplicationController
     @p_text_cell.destroy
     redirect_to :back
   end
+
+
+  def save_attrs
+    length = params['keys'].length
+  
+    i = 0
+    attrs = []
+    while i < length  do
+      # @p_text_cell.attrs = [{params['keys'][i] => params['values'][i]}]
+      attrs << {params['keys'][i] => params['values'][i]}
+      i +=1
+    end
+    @p_text_cell.attrs = attrs
+    @p_text_cell.save
+    
+    return redirect_to :back
+  end
 end
+
