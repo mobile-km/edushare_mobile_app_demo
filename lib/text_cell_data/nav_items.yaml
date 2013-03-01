@@ -1,6 +1,6 @@
 - title: 首页
   desc: EduShare - 高效率的教育资源共享工具
-  cover: /assets/html_demo/index1.png
+  cover: app/assets/images/html_demo/index1.png
   format: css:index
   attrs:
     - t1: 合理组织数据

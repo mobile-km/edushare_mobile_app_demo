@@ -9,9 +9,6 @@ class Attr
              :class_name  => 'PTextCell'
 
   def to_hash
-    hash = serializable_hash
-    hash.delete "_id"
-    hash.delete "text_cell_id"
-    hash.symbolize_keys
+    {self.key.to_sym => self.value}
   end
 end

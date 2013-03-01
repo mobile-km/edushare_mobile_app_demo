@@ -4,19 +4,19 @@
   attrs:
     - problem: 教学科研活动中产生的大量数字化资源，令老师和学生们难以管理，难以快速获取所需的资源。
     - solution: EduShare 提供统一的，多层次的云端个人文件夹，让资源不再占满桌面，更能借助云平台实现即需即取。
-  cover: /html_demo_png/web_scenes/cover/5.png
+  cover: public/html_demo_png/web_scenes/cover/5.png
   images:
-    - image: /html_demo_png/web_scenes/e1.png
+    - image: public/html_demo_png/web_scenes/e1.png
       alt: 这个页面显示了个人文件资源库的根目录，在这里可以创建新文件夹和文件，我们点击新建文件夹。
-    - image: /html_demo_png/web_scenes/e11.png
+    - image: public/html_demo_png/web_scenes/e11.png
       alt: 在弹出的对话框里填写新文件夹的名字，点击确定。
-    - image: /html_demo_png/web_scenes/e12.png
+    - image: public/html_demo_png/web_scenes/e12.png
       alt: 我们可以看见新的文件夹被创建出来了，我们再点击上传文件并选择要上传的文件。
-    - image: /html_demo_png/web_scenes/e13.png
+    - image: public/html_demo_png/web_scenes/e13.png
       alt: 这里弹出了一个显示上传进度的对话框，我们关闭它。
-    - image: /html_demo_png/web_scenes/e14.png
+    - image: public/html_demo_png/web_scenes/e14.png
       alt: 我们可以看见文件已经上传到根目录了。
-    - image: /html_demo_png/web_scenes/e15.png
+    - image: public/html_demo_png/web_scenes/e15.png
       alt: 这里展示的是资源查看和预览页面。当前资源是视频资源，页面上有视频播放器，上传的视频会在后台自动转码、截取不同时间段的截图并在该页面显示出来。
 
 - title: 公共资源库
@@ -25,13 +25,13 @@
   attrs:
     - problem: 在很多学校里，老师共享资源的手段还停留在电子邮件的阶段。为了分享文件，他们不得不离开已经有序的个人文件夹，做额外的上传和下载操作，如果希望保留文件夹结构，还需要额外打包，非常不便。
     - solution: EduShare 提供文件夹整体分享功能，老师可以在系统直接把整个文件夹分享到公共资源库。这种分享方式不但免去了额外的上传和下载操作，还保留了资源文件夹的原始结构，明显改进了分享的效率。
-  cover: /html_demo_png/web_scenes/cover/6.png
+  cover: public/html_demo_png/web_scenes/cover/6.png
   images:
-    - image: /html_demo_png/web_scenes/e4.png
+    - image: public/html_demo_png/web_scenes/e4.png
       alt: 接下来我们回到资源查看和预览页面，这次我们点击加入公共资源库，弹出一个选择公共资源分类的对话框，我们选择无分类并点击确定选择的分类完成这个过程。
-    - image: /html_demo_png/web_scenes/e41.png
+    - image: public/html_demo_png/web_scenes/e41.png
       alt: 我们可以看到该视频被加入到公共资源库，并且可以修改它的所属分类。
-    - image: /html_demo_png/web_scenes/e42.png
+    - image: public/html_demo_png/web_scenes/e42.png
       alt: 公共资源库页面，展示公共资源分类和所有用户贡献的公共资源
 
 - title: 分享给他人
@@ -40,13 +40,13 @@
   attrs:
     - problem: 老师在工作时常需要把某些资源单独分享给某个学生或课程小组，目前他们常通过发送个人或群组邮件的方式分享，不断操作麻烦，还容易出错。
     - solution: EduShare 提供了文件夹按权限分享功能，老师可以把整个文件夹分享到某个学生，或者某个群组。
-  cover: /html_demo_png/web_scenes/cover/7.png
+  cover: public/html_demo_png/web_scenes/cover/7.png
   images:
-    - image: /html_demo_png/web_scenes/e16.png
+    - image: public/html_demo_png/web_scenes/e16.png
       alt: 在资源查看和预览页面，还可以对文件资源进行分享，在这里我们可以看见共享给他人和加入公共资源库两种分享途径，我们先点击共享给其他人。
-    - image: /html_demo_png/web_scenes/e3.png
+    - image: public/html_demo_png/web_scenes/e3.png
       alt: 这里是选择共享目标的界面，点击选择要共享的课程，弹出一个选择对话框，我们选择了Java程序设计这门课，并点确定。
-    - image: /html_demo_png/web_scenes/e31.png
+    - image: public/html_demo_png/web_scenes/e31.png
       alt: 我们可以看见选中的课程里数字发生了变化，继续点确定提交选择的共享目标，该视频就会被共享给所有Java程序设计课程的参与者。
 
 - title: 在线浏览
@@ -55,12 +55,12 @@
   attrs:
     - problem: 老师常需要在讲课过程中各种动画/视频/音频，在课堂上无论定位文件还是下载播放，都会干扰注意力。
     - solution: EduShare 提供了多维度的资源组织，使老师可以在线浏览定位到需要播放的文件。另外，利用多媒体文件在线即时播放功能，老师在网页上就能直接播放这些文件。
-  cover: /html_demo_png/web_scenes/cover/8.png
+  cover: public/html_demo_png/web_scenes/cover/8.png
   images:
-    - image: /html_demo_png/web_scenes/e1.png
+    - image: public/html_demo_png/web_scenes/e1.png
       alt: 这个页面显示了个人文件资源库的根目录，在这里可以创建新文件夹和文件，我们点击新建文件夹。
-    - image: /html_demo_png/web_scenes/e42.png
+    - image: public/html_demo_png/web_scenes/e42.png
       alt: 公共资源库页面，展示公共资源分类和所有用户贡献的公共资源
-    - image: /html_demo_png/web_scenes/e15.png
+    - image: public/html_demo_png/web_scenes/e15.png
       alt: 这里展示的是资源查看和预览页面。当前资源是视频资源，页面上有视频播放器，上传的视频会在后台自动转码、截取不同时间段的截图并在该页面显示出来。
 

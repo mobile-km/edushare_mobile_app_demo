@@ -11,7 +11,7 @@
     教学资源平台是为了满足广大师生教与学的需要，充分将教学资源进行整合，打造一个专业的、开放的、共享的教学资源服务平台，最终实现教育过程的全面信息化，从而达到提高教育教学水平的目的。  
     
   images: 
-    image: /html_demo_png/summary/central-gov-policy.png
+    image: public/html_demo_png/summary/central-gov-policy.png
 
 - title: 为各类院校打造开放的云端教学资源库
   desc: 
@@ -20,12 +20,12 @@
     实现完善的资源库管理，资源共享共建，为各类院校相关专业的教学资源库建设提供技术服务，搭建应用平台。
 
   images: 
-    image: /html_demo_png/summary/open-edu-resource-cloud.png
+    image: public/html_demo_png/summary/open-edu-resource-cloud.png
   
 - title: 实现各种终端设备的资源访问和应用支持
   desc: 
     在浏览器访问的基础上，逐步实现平板电脑、智能手机的自由访问。
     
   images: 
-    image: /html_demo_png/summary/multi-device-access.png
+    image: public/html_demo_png/summary/multi-device-access.png
   

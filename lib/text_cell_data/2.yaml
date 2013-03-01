@@ -1,14 +1,14 @@
 - title: 教学方案
   format: css:demolist
-  cover: /assets/html_demo/06-1.png
+  cover: app/assets/images/html_demo/06-1.png
   children_yaml: lib/text_cell_data/2_1.yaml
 
 - title: 资源网盘
   format: css:demolist
-  cover: /assets/html_demo/06-2.png
+  cover: app/assets/images/html_demo/06-2.png
   children_yaml: lib/text_cell_data/2_2.yaml
 
 - title: 教学互动
   format: css:demolist
-  cover: /assets/html_demo/06-3.png
+  cover: app/assets/images/html_demo/06-3.png
   children_yaml: lib/text_cell_data/2_3.yaml

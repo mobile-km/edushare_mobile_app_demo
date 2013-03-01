@@ -43,9 +43,7 @@ class PTextCell
     self.rattrs.destroy_all
     list.map(&:symbolize_keys).each do |attr_hash|
       arr = attr_hash.to_a.flatten
-      key = arr[0].to_sym
-      value = arr[1]
-      self.rattrs.create(key => value)
+      self.rattrs.create(:key => arr[0], :value => arr[1])
     end
   end
 

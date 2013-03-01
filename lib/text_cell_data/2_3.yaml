@@ -4,33 +4,33 @@
   attrs:
     - problem: 现阶段，老师处理作业还停留在口头布置，提交作业到邮箱的方式。在学生较多的时候，无论是布置还是查收作业都比较费时费力，更难做到量化统计。
     - solution: EduShare 提供了在线作业处理功能，一份作业的布置和提交可分为多个逻辑步骤完成。既能减少布置提交作业的麻烦，又能统计出每位学生的作业完成情况。更进一步，每位学生的作业完成情况都以进度条方式展示，一目了然。
-  cover: /html_demo_png/web_scenes/cover/9.png
+  cover: public/html_demo_png/web_scenes/cover/9.png
   images:
-    - image: /html_demo_png/web_scenes/a11.png
+    - image: public/html_demo_png/web_scenes/a11.png
       alt: 这里展示了包含一个教学方案的课程页面，我们点击第Java程序设计教学方案进入它的详情页面。
-    - image: /html_demo_png/web_scenes/b21.png
+    - image: public/html_demo_png/web_scenes/b21.png
       alt: 这里是Java程序设计这个教学方案的详情页面，显示了该教学方案包含的章节，以及这些章节的管理，我们点击面向对象程序设计张杰的管理作业进入该章节的作业管理页面。
-    - image: /html_demo_png/web_scenes/g1.png
+    - image: public/html_demo_png/web_scenes/g1.png
       alt: 这个页面显示了面向对象设计这个章节包含的作业，我们点击创建作业进入创建作业页面。
-    - image: /html_demo_png/web_scenes/g2.png
+    - image: public/html_demo_png/web_scenes/g2.png
       alt: 这个页面显示了创建作业的表单，我们输入所需内容点击布置作业进入该新作业的详情页面。
-    - image: /html_demo_png/web_scenes/g3.png
+    - image: public/html_demo_png/web_scenes/g3.png
       alt: 这里显示了作业详情页面，这里可以看到作业的标题、描述、过期时间以及参考附件和作业要求，还可以查看学生作业完成状况、作业相关事件的时间线以及作业信息预览的入口。我们回到面向对象程序设计这个教学方案的详情页面。
-    - image: /html_demo_png/web_scenes/g4.png
+    - image: public/html_demo_png/web_scenes/g4.png
       alt: 可以看到面向对象程序设计这个教学方案当前已经包含3个新布置的作业，我们再回到类和对象的基本概念作业的详情页面并点击查看时间线进入作业时间线页面。
-    - image: /html_demo_png/web_scenes/h1.png
+    - image: public/html_demo_png/web_scenes/h1.png
       alt: 这是围绕作业相关活动进行直观线性展示的时间线，可以查看在具体的时间点发生的活动并访问活动的相关资源。
-    - image: /html_demo_png/web_scenes/h2.png
+    - image: public/html_demo_png/web_scenes/h2.png
       alt: 过了若干时间后，我们看到随着时间的推移时间线上的内容将随着互动的进行不断延伸增。
-    - image: /html_demo_png/web_scenes/h3.png
+    - image: public/html_demo_png/web_scenes/h3.png
       alt: 又过了若干时间后，我们看到时间线上的内容更多了，我们回到类和对象的基本概念这个作业的详情页面并点击预览进入作业信息预览页面。
-    - image: /html_demo_png/web_scenes/i1.png
+    - image: public/html_demo_png/web_scenes/i1.png
       alt: 这个页面显示了学生能看到的作业信息，在这里除了可以看到作业的各种相关信息，学生还可以在该页面上传作业要求的附件并查阅作业的相关评论。
-    - image: /html_demo_png/web_scenes/j1.png
+    - image: public/html_demo_png/web_scenes/j1.png
       alt: 这个页面展示学生参与的教学方案，可以看到该生在各教学方案上的作业完成的进度，以及查看作业练习和查看课件页面的入口。我们点击Java程序设计教学方案的查看作业练习进入该教学方案的章节列表页面。
-    - image: /html_demo_png/web_scenes/j2.png
+    - image: public/html_demo_png/web_scenes/j2.png
       alt: 这个页面是Java程序设计这个教学方案的章节列表页面，显示了该教学方案包含的章节，以及这些章节下的作业概况，我们点击面向对象程序设计章节的管理作业进入该章节的作业汇总页面。
-    - image: /html_demo_png/web_scenes/j3.png
+    - image: public/html_demo_png/web_scenes/j3.png
       alt: 这个页面是面向对象程序设计章节作业汇总页面，显示了该章节下的所有作业概览以及完成进度，每完成一个作业提交要求就代表作业完成了一部分，我们回到学生参与的教学方案页面并点击Java程序设计教学方案的查看课件链接进入该教学方案的课件列表页面。
 
 - title: 问答
@@ -39,25 +39,25 @@
   attrs:
     - problem: 在师生问答活动中，经常遇到一些很多学生都会提的问题。尽管老师并不想反复解说，却没有好办法解决。
     - solution: EduShare 提供了社会化问答平台，不但能记录与展示老师与学生讨论的全过程，还能够自动识别和归集这些被频繁提问的问题。不仅减轻老师的负担，还能促成知识的重复利用。
-  cover: /html_demo_png/web_scenes/cover/10.png
+  cover: public/html_demo_png/web_scenes/cover/10.png
   images:
-    - image: /html_demo_png/web_scenes/o1.png
+    - image: public/html_demo_png/web_scenes/o1.png
       alt: 这个页面显示的是学生自己提出的所有问题列表。
-    - image: /html_demo_png/web_scenes/p1.png
+    - image: public/html_demo_png/web_scenes/p1.png
       alt: 这个页面显示的是教师收到的问题列表，我们点击第一个问题 “java如不想么每次都进行空值判断 if(o!=null) 怎么做？”，进入问答页面 
-    - image: /html_demo_png/web_scenes/p2.png
+    - image: public/html_demo_png/web_scenes/p2.png
       alt: 这个页面显示问答的互动，在这里老师和其他同学会对问题以及回答做出评论、为问题增加自己的答案，并且可以投票支持或反对某个答案，老师还可以把这个问题汇总到faq。
-    - image: /html_demo_png/web_scenes/p31.png
+    - image: public/html_demo_png/web_scenes/p31.png
       alt: 随着时间的推移，问题的答案逐渐增多，一些答案的得票数也发生变化。
-    - image: /html_demo_png/web_scenes/p32.png
+    - image: public/html_demo_png/web_scenes/p32.png
       alt: 答案也可以包含附件。
-    - image: /html_demo_png/web_scenes/p42.png
+    - image: public/html_demo_png/web_scenes/p42.png
       alt: 现在最新的答案已经因为得票最高而排到了前边。
-    - image: /html_demo_png/web_scenes/q.png
+    - image: public/html_demo_png/web_scenes/q.png
       alt: 我们回到页面顶部点击添加到faq按钮。
-    - image: /html_demo_png/web_scenes/q1.png
+    - image: public/html_demo_png/web_scenes/q1.png
       alt: 这里是faq添加页面，我们填上上相应的标题并选择相应的课程，点击确定。
-    - image: /html_demo_png/web_scenes/q2.png
+    - image: public/html_demo_png/web_scenes/q2.png
       alt: 这个页面显示的是faq汇总，老师可以通过刚才的过程把一些问题问题及其答案汇总到这里。
 
 - title: 调查
@@ -66,13 +66,13 @@
   attrs:
     - problem: 在调整课程内容或对老师教学水平做评估时，都需要收集学生的反馈信息。目前这类信息调查，以填表的形式进行，费时费力。
     - solution: EduShare 提供在线调查和结果统计功能，不但能帮助老师在线进行各类调查，还能以信息图的方式直观地呈现调查结果。
-  cover: /html_demo_png/web_scenes/cover/11.png
+  cover: public/html_demo_png/web_scenes/cover/11.png
   images:
-    - image: /html_demo_png/web_scenes/r.png
+    - image: public/html_demo_png/web_scenes/r.png
       alt: 这个页面显示的是需要学生参与的在线调查列表，我们点击第一项“大学生消费状况调查”，进入到学生调查问卷页面
-    - image: /html_demo_png/web_scenes/r1.png
+    - image: public/html_demo_png/web_scenes/r1.png
       alt: 这个页面显示的是学生调查问卷，包含多个选择题。
-    - image: /html_demo_png/web_scenes/s.png
+    - image: public/html_demo_png/web_scenes/s.png
       alt: 这个页面显示的当前登录老师发起的调查问卷列表，我们点击第一项“大学生消费状况调查”。
-    - image: /html_demo_png/web_scenes/s1.png
+    - image: public/html_demo_png/web_scenes/s1.png
       alt: 这个页面显示的是该调查问卷的结果汇总，采用直观的统计信息图。

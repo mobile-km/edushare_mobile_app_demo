@@ -1,14 +1,14 @@
 - title: 轻量知识阅读
   format: css:demolist
-  cover: /assets/html_demo/07-1.png
+  cover: app/assets/images/html_demo/07-1.png
   children_yaml: lib/text_cell_data/3_1.yaml
 
 - title: 个人笔记
   format: css:demolist
-  cover: /assets/html_demo/07-2.png
+  cover: app/assets/images/html_demo/07-2.png
   children_yaml: lib/text_cell_data/3_2.yaml
 
 - title: 信息推送
   format: css:demolist
-  cover: /assets/html_demo/07-3.png
+  cover: app/assets/images/html_demo/07-3.png
   children_yaml: lib/text_cell_data/3_3.yaml
