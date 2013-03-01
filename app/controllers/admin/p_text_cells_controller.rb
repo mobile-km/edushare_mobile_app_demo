@@ -61,6 +61,7 @@ class Admin::PTextCellsController < ApplicationController
 
 
   def move_position
+    
   end
 end
 
