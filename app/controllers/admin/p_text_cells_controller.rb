@@ -61,7 +61,17 @@ class Admin::PTextCellsController < ApplicationController
 
 
   def move_position
-    
+    target_id = params[:target_id]
+    current_position = @p_text_cell.position
+
+    target_cell = PTextCell.find(target_id)
+    @p_text_cell.position = target_cell.position
+    target_cell.position = current_position
+
+    @p_text_cell.save
+    target_cell.save
+
+    return redirect_to :back
   end
 end
 
