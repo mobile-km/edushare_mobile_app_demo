@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class PTextCell
+  require 'autoinc'
   include Mongoid::Document
   include Mongoid::Paperclip
   include Mongoid::Autoinc
