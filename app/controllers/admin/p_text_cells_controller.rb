@@ -59,19 +59,14 @@ class Admin::PTextCellsController < ApplicationController
     return redirect_to :back
   end
 
-
-  def move_position
-    target_id = params[:target_id]
-    current_position = @p_text_cell.position
-
-    target_cell = PTextCell.find(target_id)
-    @p_text_cell.position = target_cell.position
-    target_cell.position = current_position
-
-    @p_text_cell.save
-    target_cell.save
-
+  def move_up
+    @p_text_cell.move_up
     return redirect_to :back
   end
-end
 
+  def move_down
+    @p_text_cell.move_down
+    return redirect_to :back
+  end
+
+end

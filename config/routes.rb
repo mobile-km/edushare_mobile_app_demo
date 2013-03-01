@@ -7,7 +7,8 @@ EdushareMobileDemo::Application.routes.draw do
       end
 
       member do
-        get :move_position
+        put :move_up
+        put :move_down
       end
     end
   end

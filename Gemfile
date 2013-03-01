@@ -9,7 +9,7 @@ gem 'therubyracer'
 gem 'haml'
 gem 'paperclip', '~> 2.7'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
-gem 'mongoid-autoinc'
+gem 'mongoid-tree', :require => 'mongoid/tree'
 
 
 group :assets do

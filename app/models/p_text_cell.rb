@@ -1,30 +1,15 @@
 # -*- coding: utf-8 -*-
 class PTextCell
-  require 'autoinc'
   include Mongoid::Document
   include Mongoid::Paperclip
-  include Mongoid::Autoinc
+  include Mongoid::Tree
+  include Mongoid::Tree::Ordering
 
 
   field :title,   :type => String
   field :desc,    :type => String, :default => ''
   # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
-
-  field :position, :type => Integer
-
-
-  increments :position, :scope => :parent_id
-
-
-  belongs_to :parent,
-             :foreign_key => :parent_id,
-             :class_name  => 'PTextCell'
-
-  has_many   :children,
-             :foreign_key => :parent_id,
-             :class_name  => 'PTextCell',
-             :order => [[:position, :desc]]
 
   has_many   :images
 
@@ -35,18 +20,13 @@ class PTextCell
 
   has_mongoid_attached_file :cover
 
-  # default_scope order_by([[:position, :desc]])
-  scope :roots, where(:parent_id => nil).order_by([[:position, :desc]])
-
-
-
   def order
     return self.get_sibling_order if parent.blank?
     "#{traverse_order}_#{self.get_sibling_order}"
   end
 
   def get_sibling_order
-    self.siblings_and_self.index(self) + 1
+    self.siblings_and_self.to_a.index(self) + 1
   end
 
   def url
@@ -81,29 +61,16 @@ class PTextCell
     Format.new(self.rformat || "")
   end
 
-  def ancestors 
-    traverse_ancestors self
-  end
-
   def is_ancestor_of?(cell)
-    cell.ancestors.include? self
-  end
-
-  def siblings_and_self
-    return self.class.roots.to_a if self.parent.blank?
-    self.parent.children.to_a
-  end
-
-  def siblings
-    siblings_and_self.dup.to_a.reject {|cell| cell == self}
+    ancestor_of?(cell)
   end
 
   def prev_sibling
-    get_relative_sibling(:-)
+    higher_siblings.last
   end
 
   def next_sibling
-    get_relative_sibling(:+)
+    lower_siblings.first
   end
 
   def prev
@@ -234,19 +201,8 @@ class PTextCell
 
 private
 
-  def get_relative_sibling(opt)
-    index = self.siblings_and_self.index(self).send opt, 1
-    return nil if index < 0 || index > self.siblings_and_self.count
-    self.siblings_and_self[index]
-  end
-
   def traverse_order
     self.ancestors.map(&:get_sibling_order).join('_')
-  end
-
-  def traverse_ancestors(cell, acc=[])
-    return acc if cell.parent.blank?
-    traverse_ancestors cell.parent, [cell.parent] + acc
   end
 
 end
