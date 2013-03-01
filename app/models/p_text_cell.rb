@@ -53,14 +53,6 @@ class PTextCell
     ActiveSupport::OrderedHash[*self.rattrs.flatten]
   end
 
-  def images=(list)
-    self.rimages = list
-  end
-
-  def images
-    self.rimages.flatten.map {|data| Image.new(data)}
-  end
-
   def format=(string)
     self.rformat = string
   end
