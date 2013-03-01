@@ -8,6 +8,10 @@ class PTextCell
   field :rattrs,  :type => Array,  :default => []
   field :rformat, :type => String, :default => ''
 
+
+  auto_increment :position
+
+
   belongs_to :parent,
              :foreign_key => :parent_id,
              :class_name  => 'PTextCell'
