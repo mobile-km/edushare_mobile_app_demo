@@ -21,6 +21,14 @@ class PTextCell
   has_mongoid_attached_file :cover
   accepts_nested_attributes_for :rattrs
 
+  def cover_with_first_image
+    return cover_without_first_image.url if !cover_file_name.blank?
+
+    return images.first.url if !images.blank?
+    ""
+  end
+  alias_method_chain :cover, :first_image
+
   def order
     return self.get_sibling_order if parent.blank?
     "#{traverse_order}_#{self.get_sibling_order}"
