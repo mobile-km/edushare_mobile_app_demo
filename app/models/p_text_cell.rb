@@ -1,14 +1,16 @@
-# -*- coding: no-conversion -*-
+# -*- coding: utf-8 -*-
 class PTextCell
   include Mongoid::Document
+  include Mongoid::Paperclip
 
   field :title,   :type => String
   field :desc,    :type => String, :default => ''
-  # 内部存储格式，调用请用images
-  field :rimages, :type => Array,  :default => []
   # 内部存储格式，调用请用format
   field :rformat, :type => String, :default => ''
-  field :rcover,   :type => String
+
+
+  auto_increment :position
+
 
   belongs_to :parent,
              :foreign_key => :parent_id,
@@ -25,6 +27,8 @@ class PTextCell
              :foreign_key => :text_cell_id,
              :class_name  => 'Attr',
              :order => [[:_id, :asc]]
+             
+  has_mongoid_attached_file :cover
 
   scope :roots, where(:parent_id => nil).order_by([[:_id, :asc]])
 
@@ -76,10 +80,6 @@ class PTextCell
 
   def format
     Format.new(self.rformat || "")
-  end
-
-  def cover
-    self.rcover || images.first.url || ''
   end
 
   def ancestors 
