@@ -15,7 +15,8 @@ class PTextCell
   field :position, :type => Integer
 
 
-  increments :position
+  increments :position, :scope => :parent_id
+
 
   belongs_to :parent,
              :foreign_key => :parent_id,
