@@ -24,7 +24,7 @@ class PTextCell
   has_many   :children,
              :foreign_key => :parent_id,
              :class_name  => 'PTextCell',
-             :order => [[:_id, :asc]]
+             :order => [[:position, :desc]]
 
   has_many   :images
 
@@ -35,7 +35,9 @@ class PTextCell
 
   has_mongoid_attached_file :cover
 
-  scope :roots, where(:parent_id => nil).order_by([[:_id, :asc]])
+  # default_scope order_by([[:position, :desc]])
+  scope :roots, where(:parent_id => nil).order_by([[:position, :desc]])
+
 
 
   def order
